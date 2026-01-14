@@ -18,7 +18,7 @@ st.set_page_config(
     page_title="Card Analytics | Editorial",
     page_icon="",
     layout="wide",
-    initial_sidebar_state="expanded"
+    initial_sidebar_state="collapsed"
 )
 
 # =============================================================================
@@ -223,22 +223,13 @@ st.markdown("""
         transform: none !important;
     }
 
-    [data-testid="stSidebar"] > div:first-child {
-        padding: 2rem 1.5rem;
-        width: 300px !important;
-    }
-
-    /* Hide sidebar collapse button */
-    [data-testid="stSidebar"] button[kind="header"] {
+    /* Hide sidebar completely */
+    [data-testid="stSidebar"] {
         display: none !important;
     }
 
-    .sidebar-title {
-        font-family: 'Playfair Display', Georgia, serif;
-        font-size: 1.3rem;
-        font-weight: 600;
-        color: var(--charcoal);
-        margin-bottom: 0.5rem;
+    [data-testid="stSidebarCollapsedControl"] {
+        display: none !important;
     }
 
     .sidebar-subtitle {
@@ -958,6 +949,7 @@ BASE_DIR = Path(__file__).parent
 IMAGES_DIR = BASE_DIR / "card_images"
 CSV_FILE = BASE_DIR / "Top 300 Cards - 2025.csv"
 ANALYSIS_FILE = BASE_DIR / "card_analysis.json"
+TREND_DATA_FILE = BASE_DIR / "trend_data_2026.json"
 CARDS_PER_PAGE = 15
 
 # Warm color palette for charts
@@ -1016,6 +1008,41 @@ def load_analysis_data() -> list:
             return json.load(f)
     except Exception:
         return []
+
+
+@st.cache_data(ttl=3600)
+def load_trend_data() -> dict:
+    """Load 2026 trend data from JSON file."""
+    if not TREND_DATA_FILE.exists():
+        return get_default_trend_data()
+
+    try:
+        with open(TREND_DATA_FILE, "r") as f:
+            return json.load(f)
+    except Exception:
+        return get_default_trend_data()
+
+
+def get_default_trend_data() -> dict:
+    """Return minimal default trend structure when file is unavailable."""
+    return {
+        "last_updated": "N/A",
+        "version": "default",
+        "sources": [],
+        "color_trends": {
+            "pantone_color_of_year": {
+                "name": "Not Available",
+                "hex": "#888888",
+                "description": "Trend data not loaded"
+            },
+            "emerging_palettes": [],
+            "seasonal_shifts": {}
+        },
+        "illustration_trends": [],
+        "typography_trends": [],
+        "theme_motif_trends": [],
+        "color_name_to_hex": {}
+    }
 
 
 def get_card_image_path(card_name: str) -> Path | None:
@@ -2061,25 +2088,13 @@ def render_gallery(df: pd.DataFrame, analysis_lookup: dict):
         else:
             img_html = '<div class="no-image-placeholder">No Preview</div>'
 
-        # Truncate title
+        # Truncate title and escape HTML characters
         title_display = display_name[:45] + "..." if len(display_name) > 45 else display_name
+        # Escape HTML special characters
+        title_display = title_display.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
+        occasion_safe = occasion.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
-        card_html = f"""
-        <div class="card-item">
-            <div class="card-image-container">
-                {img_html}
-                <div class="card-rank-badge">#{rank}</div>
-                <div class="card-occasion-tag">{occasion}</div>
-            </div>
-            <div class="card-info">
-                <div class="card-title">{title_display}</div>
-                <div class="card-sends">
-                    <span class="card-sends-value">{sends:,}</span>
-                    <span class="card-sends-label">sends</span>
-                </div>
-            </div>
-        </div>
-        """
+        card_html = f'<div class="card-item"><div class="card-image-container">{img_html}<div class="card-rank-badge">#{rank}</div><div class="card-occasion-tag">{occasion_safe}</div></div><div class="card-info"><div class="card-title">{title_display}</div><div class="card-sends"><span class="card-sends-value">{sends:,}</span><span class="card-sends-label">sends</span></div></div></div>'
         cards_html.append(card_html)
         card_data_list.append({
             "card_id": card_id,
@@ -2091,27 +2106,8 @@ def render_gallery(df: pd.DataFrame, analysis_lookup: dict):
         })
 
     # Render all cards in a CSS grid
-    st.markdown(f"""
-    <div class="gallery-grid">
-        {''.join(cards_html)}
-    </div>
-    """, unsafe_allow_html=True)
-
-    # Card details section (collapsible)
-    with st.expander("View Card Details", expanded=False):
-        detail_cols = st.columns(5)
-        for idx, card_data in enumerate(card_data_list):
-            col = detail_cols[idx % 5]
-            with col:
-                card_id = card_data["card_id"]
-                change_color = "#4CAF50" if card_data["change"] >= 0 else "#F44336"
-                st.markdown(f"**#{card_data['rank']}**")
-                st.markdown(f"Sends: {card_data['sends']:,}")
-                st.markdown(f"<span style='color:{change_color}'>{card_data['change']:+,.0f} ({card_data['change_pct']:+.1f}%)</span>", unsafe_allow_html=True)
-                if card_id in analysis_lookup:
-                    analysis = analysis_lookup[card_id]
-                    st.markdown(f"*{analysis.get('design_style', 'N/A').replace('_', ' ').title()}*")
-                st.markdown("---")
+    grid_html = f'<div class="gallery-grid">{"".join(cards_html)}</div>'
+    st.markdown(grid_html, unsafe_allow_html=True)
 
     st.markdown("<br>", unsafe_allow_html=True)
 
@@ -2119,41 +2115,31 @@ def render_gallery(df: pd.DataFrame, analysis_lookup: dict):
     if not show_all and total_pages > 1:
         st.markdown("<br>", unsafe_allow_html=True)
 
-        # Navigation buttons at the bottom
+        # Navigation buttons at the bottom using number_input for direct page control
         nav_col1, nav_col2, nav_col3, nav_col4, nav_col5 = st.columns([1, 1, 2, 1, 1])
 
         with nav_col1:
             if st.button("⏮ First", key="gallery_first", disabled=(current_page == 1)):
                 st.session_state.gallery_page_num = 1
-                st.rerun()
 
         with nav_col2:
-            if st.button("◀ Previous", key="gallery_prev", disabled=(current_page == 1)):
-                st.session_state.gallery_page_num = current_page - 1
-                st.rerun()
+            if st.button("◀ Prev", key="gallery_prev", disabled=(current_page == 1)):
+                st.session_state.gallery_page_num = max(1, current_page - 1)
 
         with nav_col3:
-            new_page = st.selectbox(
-                "Page",
-                options=range(1, total_pages + 1),
-                index=current_page - 1,
-                format_func=lambda x: f"Page {x} of {total_pages}",
-                key="gallery_page_selector",
-                label_visibility="collapsed"
-            )
-            if new_page != current_page:
-                st.session_state.gallery_page_num = new_page
-                st.rerun()
+            st.markdown(f"""
+            <div style="text-align: center; padding: 8px; font-family: 'Source Sans 3', sans-serif; font-size: 0.95rem; color: #1a1a1a;">
+                Page <strong>{current_page}</strong> of <strong>{total_pages}</strong>
+            </div>
+            """, unsafe_allow_html=True)
 
         with nav_col4:
             if st.button("Next ▶", key="gallery_next", disabled=(current_page == total_pages)):
-                st.session_state.gallery_page_num = current_page + 1
-                st.rerun()
+                st.session_state.gallery_page_num = min(total_pages, current_page + 1)
 
         with nav_col5:
             if st.button("Last ⏭", key="gallery_last", disabled=(current_page == total_pages)):
                 st.session_state.gallery_page_num = total_pages
-                st.rerun()
 
 
 def render_color_performance_by_occasion(df: pd.DataFrame, analysis_lookup: dict, color_hex: dict):
@@ -3820,6 +3806,462 @@ def render_creative_brief_generator(analysis_data: list):
 
 
 # =============================================================================
+# TREND INTELLIGENCE HUB
+# =============================================================================
+
+def hex_to_rgb(hex_color: str) -> tuple:
+    """Convert hex color to RGB tuple."""
+    hex_color = hex_color.lstrip('#')
+    return tuple(int(hex_color[i:i+2], 16) for i in (0, 2, 4))
+
+
+def calculate_color_similarity(hex1: str, hex2: str) -> float:
+    """Calculate similarity between two hex colors (0-100 scale)."""
+    try:
+        r1, g1, b1 = hex_to_rgb(hex1)
+        r2, g2, b2 = hex_to_rgb(hex2)
+        distance = ((r1-r2)**2 + (g1-g2)**2 + (b1-b2)**2) ** 0.5
+        # Max distance is ~441 (black to white), normalize to 0-100
+        return max(0, 100 - (distance / 441 * 100))
+    except:
+        return 0
+
+
+def get_card_trend_alignment(card_data: dict, trend_data: dict) -> dict:
+    """Calculate how well a card aligns with current trends."""
+    color_scores = []
+    style_scores = []
+    typo_scores = []
+    theme_scores = []
+    matching_trends = []
+
+    # Get color name to hex mapping
+    color_map = trend_data.get("color_name_to_hex", {}) or {}
+
+    # Color trend alignment
+    card_colors = card_data.get("primary_colors") or []
+    pantone = trend_data.get("color_trends", {}).get("pantone_color_of_year", {}) or {}
+    pantone_hex = pantone.get("hex", "#888888")
+
+    for color_name in card_colors:
+        card_hex = color_map.get(color_name.lower(), "#888888")
+        if card_hex != "#RAINBOW":  # Skip multicolor
+            sim = calculate_color_similarity(card_hex, pantone_hex)
+            color_scores.append(sim)
+            if sim > 70:
+                matching_trends.append(f"Pantone {pantone.get('name', '')}")
+
+    # Check emerging palettes
+    for palette in (trend_data.get("color_trends", {}).get("emerging_palettes") or []):
+        for p_color in (palette.get("colors") or []):
+            for color_name in card_colors:
+                card_hex = color_map.get(color_name.lower(), "#888888")
+                if card_hex != "#RAINBOW":
+                    sim = calculate_color_similarity(card_hex, p_color.get("hex", "#888888"))
+                    if sim > 60:
+                        color_scores.append(sim)
+                        if sim > 75:
+                            matching_trends.append(palette.get("name", ""))
+
+    # Style trend alignment
+    card_style = (card_data.get("design_style") or "").lower()
+    for trend in (trend_data.get("illustration_trends") or []):
+        compatible = [s.lower() for s in (trend.get("compatible_styles") or [])]
+        if card_style in compatible:
+            score = trend.get("popularity_score", 50)
+            style_scores.append(score)
+            matching_trends.append(trend.get("name", ""))
+        elif any(card_style in c or c in card_style for c in compatible):
+            style_scores.append(trend.get("popularity_score", 50) * 0.7)
+
+    # Typography trend alignment
+    card_typo = (card_data.get("typography_style") or "").lower()
+    for trend in (trend_data.get("typography_trends") or []):
+        compatible = [t.lower() for t in (trend.get("compatible_typography") or [])]
+        if card_typo in compatible or any(card_typo in c for c in compatible):
+            typo_scores.append(trend.get("popularity_score", 50))
+            matching_trends.append(trend.get("name", ""))
+
+    # Theme trend alignment
+    card_themes = [t.lower() for t in (card_data.get("themes") or [])]
+    for trend in (trend_data.get("theme_motif_trends") or []):
+        keywords = [k.lower() for k in (trend.get("keywords") or [])]
+        compatible = [t.lower() for t in (trend.get("compatible_themes") or [])]
+        matches = set(card_themes) & (set(keywords) | set(compatible))
+        if matches:
+            score = len(matches) / max(len(card_themes), 1) * trend.get("popularity_score", 50)
+            theme_scores.append(score)
+            if score > 30:
+                matching_trends.append(trend.get("name", ""))
+
+    # Calculate category scores
+    color_score = max(color_scores) if color_scores else 20
+    style_score = max(style_scores) if style_scores else 20
+    typo_score = max(typo_scores) if typo_scores else 20
+    theme_score = max(theme_scores) if theme_scores else 20
+
+    # Weighted overall score
+    overall = (color_score * 0.30 + style_score * 0.30 +
+               typo_score * 0.15 + theme_score * 0.25)
+
+    return {
+        "color_score": round(color_score, 1),
+        "style_score": round(style_score, 1),
+        "typography_score": round(typo_score, 1),
+        "theme_score": round(theme_score, 1),
+        "overall_score": round(overall, 1),
+        "matching_trends": list(set(matching_trends))[:5]
+    }
+
+
+def aggregate_portfolio_trends(analysis_data: list, trend_data: dict) -> dict:
+    """Analyze entire portfolio against trends."""
+    alignments = []
+
+    for card in analysis_data:
+        alignment = get_card_trend_alignment(card, trend_data)
+        alignments.append({
+            "card_name": card.get("card_name", "Unknown"),
+            "card_id": card.get("card_id", ""),
+            "sends": card.get("sends_current", 0),
+            "rank": card.get("rank", 999),
+            **alignment
+        })
+
+    # Sort by overall score
+    alignments.sort(key=lambda x: x["overall_score"], reverse=True)
+
+    # Calculate stats
+    scores = [a["overall_score"] for a in alignments]
+    avg_score = sum(scores) / len(scores) if scores else 0
+
+    # Count trend-aligned cards (score > 50)
+    aligned_count = sum(1 for s in scores if s > 50)
+
+    # Find opportunities - trends with high popularity but low card coverage
+    opportunities = []
+    for trend in trend_data.get("illustration_trends", [])[:3]:
+        trend_cards = [a for a in alignments if trend.get("name", "") in a.get("matching_trends", [])]
+        if len(trend_cards) < 10:
+            opportunities.append({
+                "trend": trend.get("name", ""),
+                "popularity": trend.get("popularity_score", 0),
+                "your_cards": len(trend_cards),
+                "opportunity": "High" if trend.get("popularity_score", 0) > 80 else "Medium"
+            })
+
+    for trend in trend_data.get("theme_motif_trends", [])[:3]:
+        trend_cards = [a for a in alignments if trend.get("name", "") in a.get("matching_trends", [])]
+        if len(trend_cards) < 15:
+            opportunities.append({
+                "trend": trend.get("name", ""),
+                "popularity": trend.get("popularity_score", 0),
+                "your_cards": len(trend_cards),
+                "opportunity": "High" if trend.get("popularity_score", 0) > 80 else "Medium"
+            })
+
+    return {
+        "total_cards": len(alignments),
+        "average_score": round(avg_score, 1),
+        "aligned_count": aligned_count,
+        "aligned_pct": round(aligned_count / len(alignments) * 100, 1) if alignments else 0,
+        "trend_leaders": alignments[:10],
+        "trend_laggards": alignments[-10:],
+        "opportunities": opportunities[:5]
+    }
+
+
+def render_trend_intelligence_hub(df: pd.DataFrame, analysis_lookup: dict, analysis_data: list):
+    """Render the Trend Intelligence Hub tab."""
+
+    # Load trend data
+    trend_data = load_trend_data()
+
+    # Section header
+    st.markdown("""
+    <div class="section-container">
+        <div class="section-header">
+            <span class="section-number">07</span>
+            <h2 class="section-title">Trend Intelligence Hub</h2>
+            <div class="section-line"></div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # Header with refresh button
+    col1, col2 = st.columns([4, 1])
+    with col1:
+        st.markdown(f"""
+        <div style="font-size: 0.9rem; color: #8B8680; margin-bottom: 1rem;">
+            <strong>Data Version:</strong> {trend_data.get("version", "N/A")} |
+            <strong>Last Updated:</strong> {trend_data.get("last_updated", "N/A")} |
+            <strong>Sources:</strong> {", ".join(trend_data.get("sources", [])[:3])}
+        </div>
+        """, unsafe_allow_html=True)
+    with col2:
+        if st.button("Refresh Trends", key="refresh_trends"):
+            load_trend_data.clear()
+            st.rerun()
+
+    # Trend Overview Cards
+    st.markdown("""
+    <div class="chart-container" style="margin-bottom: 2rem;">
+        <div class="chart-title">2026 Trend Highlights</div>
+        <div class="chart-subtitle">Key trends shaping the greeting card industry this year</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    col1, col2, col3, col4 = st.columns(4, gap="medium")
+
+    # Pantone Color of the Year
+    pantone = trend_data.get("color_trends", {}).get("pantone_color_of_year", {})
+    with col1:
+        st.markdown(f"""
+        <div style="background: white; border-radius: 12px; padding: 1.5rem; text-align: center;
+                    box-shadow: 0 4px 16px rgba(45,42,38,0.08); height: 200px;">
+            <div style="font-size: 0.7rem; color: #8B8680; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">
+                Pantone 2026
+            </div>
+            <div style="width: 70px; height: 70px; background: {pantone.get('hex', '#888')};
+                        border-radius: 50%; margin: 0 auto 1rem;
+                        box-shadow: 0 4px 20px {pantone.get('hex', '#888')}50;"></div>
+            <div style="font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #2D2A26; font-weight: 600;">
+                {pantone.get('name', 'N/A')}
+            </div>
+            <div style="font-size: 0.75rem; color: #8B8680; margin-top: 0.25rem;">{pantone.get('hex', '')}</div>
+        </div>
+        """, unsafe_allow_html=True)
+
+    # Top Illustration Trend
+    illust_trends = trend_data.get("illustration_trends", [])
+    top_illust = illust_trends[0] if illust_trends else {}
+    with col2:
+        st.markdown(f"""
+        <div style="background: white; border-radius: 12px; padding: 1.5rem; text-align: center;
+                    box-shadow: 0 4px 16px rgba(45,42,38,0.08); height: 200px;">
+            <div style="font-size: 0.7rem; color: #8B8680; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">
+                Top Illustration Style
+            </div>
+            <div style="font-size: 2rem; margin: 0.5rem 0;">🎨</div>
+            <div style="font-family: 'Playfair Display', serif; font-size: 1rem; color: #2D2A26; font-weight: 600;">
+                {top_illust.get('name', 'N/A')}
+            </div>
+            <div style="background: #E8E4DE; border-radius: 10px; height: 8px; margin-top: 0.75rem; overflow: hidden;">
+                <div style="background: #C65D3B; height: 100%; width: {top_illust.get('popularity_score', 0)}%;"></div>
+            </div>
+            <div style="font-size: 0.75rem; color: #4CAF50; margin-top: 0.5rem;">{top_illust.get('growth_rate', '')}</div>
+        </div>
+        """, unsafe_allow_html=True)
+
+    # Typography Trend
+    typo_trends = trend_data.get("typography_trends", [])
+    top_typo = typo_trends[0] if typo_trends else {}
+    with col3:
+        st.markdown(f"""
+        <div style="background: white; border-radius: 12px; padding: 1.5rem; text-align: center;
+                    box-shadow: 0 4px 16px rgba(45,42,38,0.08); height: 200px;">
+            <div style="font-size: 0.7rem; color: #8B8680; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">
+                Typography Trend
+            </div>
+            <div style="font-size: 2rem; margin: 0.5rem 0;">Aa</div>
+            <div style="font-family: 'Playfair Display', serif; font-size: 1rem; color: #2D2A26; font-weight: 600;">
+                {top_typo.get('name', 'N/A')}
+            </div>
+            <div style="font-size: 0.8rem; color: #5C5955; margin-top: 0.5rem; font-style: italic;">
+                {top_typo.get('mood', '')}
+            </div>
+            <div style="font-size: 0.75rem; color: #C65D3B; margin-top: 0.5rem;">Score: {top_typo.get('popularity_score', 0)}</div>
+        </div>
+        """, unsafe_allow_html=True)
+
+    # Theme Trend
+    theme_trends = trend_data.get("theme_motif_trends", [])
+    top_theme = theme_trends[0] if theme_trends else {}
+    with col4:
+        keywords = ", ".join(top_theme.get("keywords", [])[:3])
+        st.markdown(f"""
+        <div style="background: white; border-radius: 12px; padding: 1.5rem; text-align: center;
+                    box-shadow: 0 4px 16px rgba(45,42,38,0.08); height: 200px;">
+            <div style="font-size: 0.7rem; color: #8B8680; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">
+                Trending Theme
+            </div>
+            <div style="font-size: 2rem; margin: 0.5rem 0;">🌸</div>
+            <div style="font-family: 'Playfair Display', serif; font-size: 1rem; color: #2D2A26; font-weight: 600;">
+                {top_theme.get('name', 'N/A')}
+            </div>
+            <div style="font-size: 0.75rem; color: #8B8680; margin-top: 0.5rem;">{keywords}</div>
+            <div style="font-size: 0.75rem; color: #C65D3B; margin-top: 0.25rem;">Score: {top_theme.get('popularity_score', 0)}</div>
+        </div>
+        """, unsafe_allow_html=True)
+
+    st.markdown("<br>", unsafe_allow_html=True)
+
+    # Color Trends Section
+    with st.expander("🎨 Color Trends", expanded=True):
+        st.markdown(f"""
+        <div style="padding: 1rem 0;">
+            <h4 style="font-family: 'Playfair Display', serif; margin-bottom: 1rem;">Pantone Color of the Year 2026</h4>
+            <div style="display: flex; align-items: center; gap: 2rem; margin-bottom: 2rem;">
+                <div style="width: 120px; height: 120px; background: {pantone.get('hex', '#888')};
+                            border-radius: 16px; box-shadow: 0 8px 32px {pantone.get('hex', '#888')}40;"></div>
+                <div>
+                    <div style="font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; color: #2D2A26;">
+                        {pantone.get('name', 'N/A')}
+                    </div>
+                    <div style="color: #8B8680; margin: 0.5rem 0;">{pantone.get('hex', '')}</div>
+                    <div style="color: #5C5955; max-width: 400px; line-height: 1.5;">{pantone.get('description', '')}</div>
+                </div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+        # Emerging Palettes
+        st.markdown("<h4 style='font-family: Playfair Display, serif; margin: 1.5rem 0 1rem;'>Emerging Color Palettes</h4>", unsafe_allow_html=True)
+        palette_cols = st.columns(4)
+        for idx, palette in enumerate(trend_data.get("color_trends", {}).get("emerging_palettes", [])[:4]):
+            with palette_cols[idx]:
+                colors_html = "".join([
+                    f'<div style="width: 40px; height: 40px; background: {c.get("hex", "#888")}; border-radius: 8px;" title="{c.get("name", "")}"></div>'
+                    for c in palette.get("colors", [])
+                ])
+                st.markdown(f"""
+                <div style="background: #FDFBF7; border-radius: 12px; padding: 1rem; border: 1px solid #E8E4DE;">
+                    <div style="font-weight: 600; color: #2D2A26; margin-bottom: 0.75rem;">{palette.get('name', '')}</div>
+                    <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem;">{colors_html}</div>
+                    <div style="font-size: 0.8rem; color: #8B8680; font-style: italic;">{palette.get('mood', '')}</div>
+                </div>
+                """, unsafe_allow_html=True)
+
+    # Illustration & Theme Trends
+    with st.expander("✏️ Style & Theme Trends", expanded=False):
+        col1, col2 = st.columns(2)
+
+        with col1:
+            st.markdown("<h4 style='font-family: Playfair Display, serif;'>Illustration Trends</h4>", unsafe_allow_html=True)
+            for trend in illust_trends[:5]:
+                st.markdown(f"""
+                <div style="background: white; border-radius: 8px; padding: 1rem; margin-bottom: 0.75rem; border: 1px solid #E8E4DE;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div style="font-weight: 600; color: #2D2A26;">{trend.get('name', '')}</div>
+                        <div style="color: #4CAF50; font-size: 0.85rem;">{trend.get('growth_rate', '')}</div>
+                    </div>
+                    <div style="font-size: 0.85rem; color: #5C5955; margin: 0.5rem 0;">{trend.get('description', '')[:100]}...</div>
+                    <div style="background: #E8E4DE; border-radius: 6px; height: 6px; overflow: hidden;">
+                        <div style="background: #C65D3B; height: 100%; width: {trend.get('popularity_score', 0)}%;"></div>
+                    </div>
+                </div>
+                """, unsafe_allow_html=True)
+
+        with col2:
+            st.markdown("<h4 style='font-family: Playfair Display, serif;'>Theme & Motif Trends</h4>", unsafe_allow_html=True)
+            for trend in theme_trends[:5]:
+                keywords = " • ".join(trend.get("keywords", [])[:4])
+                st.markdown(f"""
+                <div style="background: white; border-radius: 8px; padding: 1rem; margin-bottom: 0.75rem; border: 1px solid #E8E4DE;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div style="font-weight: 600; color: #2D2A26;">{trend.get('name', '')}</div>
+                        <div style="background: #C65D3B; color: white; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem;">
+                            {trend.get('popularity_score', 0)}
+                        </div>
+                    </div>
+                    <div style="font-size: 0.85rem; color: #5C5955; margin: 0.5rem 0;">{trend.get('description', '')[:100]}...</div>
+                    <div style="font-size: 0.75rem; color: #8B8680;">{keywords}</div>
+                </div>
+                """, unsafe_allow_html=True)
+
+    # Portfolio Trend Alignment
+    st.markdown("""
+    <div class="chart-container" style="margin-top: 2rem;">
+        <div class="chart-title">Portfolio Trend Alignment</div>
+        <div class="chart-subtitle">How your card portfolio aligns with 2026 trends</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # Calculate portfolio alignment
+    portfolio_stats = aggregate_portfolio_trends(analysis_data, trend_data)
+
+    col1, col2, col3 = st.columns([1, 1, 1])
+
+    with col1:
+        # Alignment donut chart
+        fig = go.Figure(data=[go.Pie(
+            labels=["Trend-Aligned", "Classic Style"],
+            values=[portfolio_stats["aligned_count"], portfolio_stats["total_cards"] - portfolio_stats["aligned_count"]],
+            hole=0.65,
+            marker=dict(colors=["#C65D3B", "#E8E4DE"]),
+            textposition='outside',
+            textinfo='percent'
+        )])
+        fig.update_layout(
+            height=250,
+            margin=dict(l=20, r=20, t=20, b=20),
+            paper_bgcolor="rgba(0,0,0,0)",
+            showlegend=False,
+            annotations=[dict(
+                text=f'<b>{portfolio_stats["aligned_pct"]:.0f}%</b><br>Aligned',
+                x=0.5, y=0.5,
+                font=dict(size=14, family="Playfair Display, serif", color="#2D2A26"),
+                showarrow=False
+            )]
+        )
+        st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False})
+
+    with col2:
+        st.markdown(f"""
+        <div style="padding: 1rem;">
+            <div style="font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 1rem;">Portfolio Stats</div>
+            <div style="margin-bottom: 0.75rem;">
+                <span style="color: #8B8680;">Average Trend Score:</span>
+                <span style="font-weight: 600; color: #2D2A26; font-size: 1.2rem; margin-left: 0.5rem;">{portfolio_stats['average_score']}</span>
+            </div>
+            <div style="margin-bottom: 0.75rem;">
+                <span style="color: #8B8680;">Trend-Aligned Cards:</span>
+                <span style="font-weight: 600; color: #4CAF50; margin-left: 0.5rem;">{portfolio_stats['aligned_count']}</span>
+            </div>
+            <div>
+                <span style="color: #8B8680;">Total Cards Analyzed:</span>
+                <span style="font-weight: 600; color: #2D2A26; margin-left: 0.5rem;">{portfolio_stats['total_cards']}</span>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+    with col3:
+        st.markdown("<div style='font-family: Playfair Display, serif; font-size: 1.2rem; margin-bottom: 1rem;'>Opportunities</div>", unsafe_allow_html=True)
+        for opp in portfolio_stats.get("opportunities", [])[:3]:
+            color = "#C65D3B" if opp["opportunity"] == "High" else "#FF9800"
+            st.markdown(f"""
+            <div style="background: {color}15; border-left: 3px solid {color}; padding: 0.5rem 0.75rem; margin-bottom: 0.5rem; border-radius: 0 6px 6px 0;">
+                <div style="font-weight: 600; font-size: 0.85rem; color: #2D2A26;">{opp['trend']}</div>
+                <div style="font-size: 0.75rem; color: #8B8680;">You have {opp['your_cards']} cards • Popularity: {opp['popularity']}</div>
+            </div>
+            """, unsafe_allow_html=True)
+
+    # Top Trend-Aligned Cards
+    st.markdown("<br>", unsafe_allow_html=True)
+    st.markdown("<h4 style='font-family: Playfair Display, serif;'>Top Trend-Aligned Cards</h4>", unsafe_allow_html=True)
+
+    leader_cols = st.columns(5)
+    for idx, card in enumerate(portfolio_stats.get("trend_leaders", [])[:5]):
+        with leader_cols[idx]:
+            trends_display = ", ".join(card.get("matching_trends", [])[:2]) or "Classic"
+            score_color = "#4CAF50" if card["overall_score"] >= 60 else "#FF9800" if card["overall_score"] >= 40 else "#9E9E9E"
+            card_name_short = card["card_name"][:25] + "..." if len(card["card_name"]) > 25 else card["card_name"]
+            st.markdown(f"""
+            <div style="background: white; border-radius: 10px; padding: 1rem; border: 1px solid #E8E4DE; height: 140px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <span style="font-weight: 600; color: #2D2A26;">#{card['rank']}</span>
+                    <span style="background: {score_color}20; color: {score_color}; padding: 0.2rem 0.5rem; border-radius: 10px; font-size: 0.75rem; font-weight: 600;">
+                        {card['overall_score']:.0f}
+                    </span>
+                </div>
+                <div style="font-size: 0.85rem; color: #2D2A26; margin-bottom: 0.5rem; line-height: 1.3;">{card_name_short}</div>
+                <div style="font-size: 0.7rem; color: #C65D3B;">{trends_display}</div>
+                <div style="font-size: 0.7rem; color: #8B8680; margin-top: 0.25rem;">{card['sends']:,} sends</div>
+            </div>
+            """, unsafe_allow_html=True)
+
+
+# =============================================================================
 # MAIN APPLICATION
 # =============================================================================
 def main():
@@ -3840,11 +4282,8 @@ def main():
     # Render hero section
     render_hero(df)
 
-    # Render sidebar filters
-    filters = render_sidebar_filters(df, analysis_lookup)
-
-    # Apply filters
-    filtered_df = apply_filters(df, filters, analysis_lookup)
+    # Show all 301 cards by default (no filtering)
+    filtered_df = df
 
     # Render charts
     render_charts(filtered_df, analysis_lookup)
@@ -3855,8 +4294,11 @@ def main():
     # Render artist performance intelligence
     render_artist_performance(analysis_data, df)
 
-    # Tabs for Gallery, Data Table, Card Comparison, and Portfolio Gap Analysis
-    tab1, tab2, tab3, tab4, tab5 = st.tabs(["Gallery", "Data Table", "Card Comparison", "Portfolio Gap Analysis", "Creative Briefs"])
+    # Tabs for Gallery, Data Table, Card Comparison, Portfolio Gap Analysis, Creative Briefs, and Trend Intelligence
+    tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
+        "Gallery", "Data Table", "Card Comparison",
+        "Portfolio Gap Analysis", "Creative Briefs", "Trend Intelligence"
+    ])
 
     with tab1:
         render_gallery(filtered_df, analysis_lookup)
@@ -3872,6 +4314,9 @@ def main():
 
     with tab5:
         render_creative_brief_generator(analysis_data)
+
+    with tab6:
+        render_trend_intelligence_hub(filtered_df, analysis_lookup, analysis_data)
 
 
 if __name__ == "__main__":

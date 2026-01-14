@@ -1,0 +1,274 @@
+{
+  "last_updated": "2026-01-14",
+  "version": "2026.Q1",
+  "sources": [
+    "Pantone Color Institute",
+    "Creative Bloq",
+    "Adobe",
+    "Fontfabric",
+    "GCU Community"
+  ],
+  "source_urls": {
+    "pantone": "https://www.pantone.com/color-of-the-year/2026",
+    "design_trends": "https://www.creativebloq.com/design/graphic-design/texture-warmth-and-tactile-rebellion-the-big-graphic-design-trends-for-2026",
+    "typography": "https://www.creativebloq.com/design/fonts-typography/breaking-rules-and-bringing-joy-top-typography-trends-for-2026",
+    "greeting_cards": "https://gcucommunity.com/2025/07/18/graphic-design-trends-for-2026-fresh-inspiration-for-your-greeting-cards/"
+  },
+
+  "color_trends": {
+    "pantone_color_of_year": {
+      "name": "Cloud Dancer",
+      "code": "PANTONE 11-4201",
+      "hex": "#F0EEE9",
+      "description": "A billowy, balanced white imbued with a feeling of serenity. Cloud Dancer serves as a symbol of calming influence in a society rediscovering the value of quiet reflection. Associated with new beginnings, it signifies our desire for a fresh start.",
+      "mood": "Serene, calming, fresh, pure",
+      "note": "First time Pantone has chosen a shade of white for Color of the Year"
+    },
+    "emerging_palettes": [
+      {
+        "name": "Serene Neutrals",
+        "colors": [
+          {"name": "Cloud Dancer", "hex": "#F0EEE9"},
+          {"name": "Soft Cream", "hex": "#FAF7F2"},
+          {"name": "Warm Gray", "hex": "#C4BFBA"},
+          {"name": "Sage Whisper", "hex": "#D4DED1"}
+        ],
+        "mood": "Calm, peaceful, grounded",
+        "best_for": ["sympathy", "thinking_of_you", "thank_you", "wedding"]
+      },
+      {
+        "name": "Tactile Warmth",
+        "colors": [
+          {"name": "Terracotta", "hex": "#C65D3B"},
+          {"name": "Warm Sand", "hex": "#E8D5B7"},
+          {"name": "Deep Ochre", "hex": "#CC7722"},
+          {"name": "Burnt Umber", "hex": "#8B4513"}
+        ],
+        "mood": "Warm, organic, handcrafted",
+        "best_for": ["thank_you", "birthday", "fall", "friendship"]
+      },
+      {
+        "name": "Joyful Maximalism",
+        "colors": [
+          {"name": "Electric Pink", "hex": "#FF1493"},
+          {"name": "Sunshine Yellow", "hex": "#FFD700"},
+          {"name": "Vibrant Orange", "hex": "#FF6B35"},
+          {"name": "Kelly Green", "hex": "#4CBB17"}
+        ],
+        "mood": "Bold, energetic, celebratory",
+        "best_for": ["birthday", "congratulations", "celebration", "graduation"]
+      },
+      {
+        "name": "Retro Futurism",
+        "colors": [
+          {"name": "Chrome Silver", "hex": "#C0C0C0"},
+          {"name": "Cosmic Purple", "hex": "#7B68EE"},
+          {"name": "Neon Cyan", "hex": "#00FFFF"},
+          {"name": "Space Navy", "hex": "#1E3A5F"}
+        ],
+        "mood": "Futuristic, nostalgic, optimistic",
+        "best_for": ["new_year", "graduation", "congratulations", "birthday"]
+      }
+    ],
+    "seasonal_shifts": {
+      "spring_2026": {
+        "palette": ["#F0EEE9", "#E8D5C4", "#D4DED1", "#F5E6E0"],
+        "palette_names": ["Cloud Dancer", "Warm Blush", "Sage Mist", "Soft Pink"],
+        "theme": "Soft, airy neutrals with organic undertones - reflecting Cloud Dancer influence"
+      },
+      "summer_2026": {
+        "palette": ["#FF6B35", "#FFD700", "#00CED1", "#98FB98"],
+        "palette_names": ["Sunset Orange", "Golden Sun", "Tropical Teal", "Fresh Mint"],
+        "theme": "Vibrant maximalism meets coastal energy"
+      },
+      "fall_2026": {
+        "palette": ["#C65D3B", "#8B4513", "#CC7722", "#654321"],
+        "palette_names": ["Terracotta", "Saddle Brown", "Ochre", "Dark Brown"],
+        "theme": "Rich earth tones with handcrafted, textured feel"
+      },
+      "winter_2026": {
+        "palette": ["#F0EEE9", "#C0C0C0", "#1E3A5F", "#8B0000"],
+        "palette_names": ["Cloud Dancer", "Silver", "Deep Navy", "Deep Red"],
+        "theme": "Cloud Dancer white paired with elegant metallics and deep accents"
+      }
+    }
+  },
+
+  "illustration_trends": [
+    {
+      "name": "Naive & Imperfect Design",
+      "description": "Childlike, imperfect, human. Uneven fills, scratchy linework, smiley suns, and illustrations that look handmade with visible human touch. A deliberate rejection of AI's hyper-polished aesthetic.",
+      "popularity_score": 95,
+      "growth_rate": "+52% YoY",
+      "compatible_styles": ["illustrated", "whimsical", "cute", "handmade", "artistic"],
+      "keywords": ["naive", "childlike", "imperfect", "handmade", "wobbly", "human", "scratchy", "organic"]
+    },
+    {
+      "name": "Anti-AI Crafting",
+      "description": "Deliberate rejection of AI's hyper-polished aesthetic. Wobbly outlines, loose illustration, wrong spacing, and textures that look like risograph or leaky marker. Emphasizes unmistakably human-made work.",
+      "popularity_score": 92,
+      "growth_rate": "+48% YoY",
+      "compatible_styles": ["illustrated", "artistic", "retro_vintage", "handmade"],
+      "keywords": ["handcrafted", "imperfect", "risograph", "analog", "textured", "human", "anti-ai", "authentic"]
+    },
+    {
+      "name": "Mixed Media Collage",
+      "description": "Blending photography, illustration, collage, and 3D elements to create layered visuals that feel tactile, unexpected, and full of personality.",
+      "popularity_score": 88,
+      "growth_rate": "+35% YoY",
+      "compatible_styles": ["artistic", "modern", "collage", "mixed_media", "bold_graphic"],
+      "keywords": ["collage", "mixed media", "layered", "tactile", "photography", "3D", "texture"]
+    },
+    {
+      "name": "Textured Flat Design",
+      "description": "Flat illustrations enhanced with grain, noise, and organic textures. Risograph-inspired aesthetic that adds warmth and tactility to both physical and digital designs.",
+      "popularity_score": 86,
+      "growth_rate": "+30% YoY",
+      "compatible_styles": ["illustrated", "minimalist", "retro_vintage", "modern"],
+      "keywords": ["grain", "texture", "risograph", "noise", "flat", "warm", "tactile"]
+    },
+    {
+      "name": "Maximalist Chaos",
+      "description": "Loud, layered, and unapologetically full of personality. A rebellion against sterile, hyper-polished branding with bold patterns, intricate details, and vibrant colors.",
+      "popularity_score": 84,
+      "growth_rate": "+28% YoY",
+      "compatible_styles": ["bold_graphic", "illustrated", "colorful", "artistic"],
+      "keywords": ["maximalist", "bold", "layered", "vibrant", "chaos", "personality", "detailed"]
+    }
+  ],
+
+  "typography_trends": [
+    {
+      "name": "Expressive Kinetic Type",
+      "description": "Letters that bounce, twist, overlap, or interact with illustrations. Typography as the hero image - big, stacked, stretched, rotated. Letterforms become UI, diagrams, and visual elements.",
+      "popularity_score": 94,
+      "compatible_typography": ["display", "sans_serif", "custom"],
+      "mood": "Dynamic, playful, bold, expressive",
+      "keywords": ["kinetic", "expressive", "bouncing", "warping", "dynamic", "bold", "oversized"]
+    },
+    {
+      "name": "Bubbly & Puffy Letterforms",
+      "description": "Oversized sans-serifs, bubbly and puffy letterforms, wavy and distorted bubble-like fonts. Playful and approachable typography that brings joy.",
+      "popularity_score": 88,
+      "compatible_typography": ["display", "sans_serif", "bubble"],
+      "mood": "Fun, approachable, joyful, friendly",
+      "keywords": ["bubbly", "puffy", "rounded", "soft", "playful", "fun", "wavy"]
+    },
+    {
+      "name": "Handwritten Revival",
+      "description": "Handwritten-style fonts adding personal touch. Loopy cursives and authentic scripts that feel genuine and intimate, especially for personal occasions.",
+      "popularity_score": 85,
+      "compatible_typography": ["handwritten", "script", "brush", "cursive"],
+      "mood": "Personal, intimate, authentic, warm",
+      "keywords": ["handwritten", "script", "personal", "authentic", "cursive", "loopy", "intimate"]
+    },
+    {
+      "name": "High-Contrast Serifs",
+      "description": "The return of elegant high-contrast serifs. Modern serifs with dramatic thick-thin contrast bringing sophistication and editorial quality.",
+      "popularity_score": 82,
+      "compatible_typography": ["serif", "elegant", "editorial", "classic"],
+      "mood": "Sophisticated, elegant, editorial, refined",
+      "keywords": ["serif", "contrast", "elegant", "editorial", "classic", "refined"]
+    }
+  ],
+
+  "theme_motif_trends": [
+    {
+      "name": "Human Touch & Authenticity",
+      "description": "The defining trend of 2026: celebrating imperfection and human-made quality. Woodcut illustration, hand-drawn elements, and designs that feel unmistakably crafted by human hands.",
+      "keywords": ["handmade", "authentic", "imperfect", "human", "crafted", "organic", "personal"],
+      "compatible_themes": ["handmade", "organic", "personal", "artistic", "craft"],
+      "occasions": ["thank_you", "thinking_of_you", "friendship", "birthday"],
+      "popularity_score": 96
+    },
+    {
+      "name": "Joyful Celebration",
+      "description": "Maximalist celebration with confetti explosions, layered patterns, and joyful excess. Bold colors and energetic designs that bring happiness.",
+      "keywords": ["celebration", "joy", "confetti", "party", "bold", "colorful", "festive", "happy"],
+      "compatible_themes": ["celebration", "party", "confetti", "balloons", "cake"],
+      "occasions": ["birthday", "congratulations", "graduation", "new_year", "celebration"],
+      "popularity_score": 89
+    },
+    {
+      "name": "Calm & Mindfulness",
+      "description": "Inspired by Cloud Dancer - serene designs emphasizing quiet reflection, new beginnings, and peaceful moments. Clean, soft, and calming aesthetics.",
+      "keywords": ["calm", "serene", "peaceful", "mindful", "quiet", "reflection", "zen", "gentle"],
+      "compatible_themes": ["nature", "minimal", "soft", "peaceful", "botanical"],
+      "occasions": ["sympathy", "thinking_of_you", "get_well", "encouragement", "wedding"],
+      "popularity_score": 87
+    },
+    {
+      "name": "Retro Futurism",
+      "description": "Mid-century Space Age optimism meets futuristic shine. Chrome textures, sci-fi typography, and color palettes blending cosmic neons with soft pastels.",
+      "keywords": ["retro", "futuristic", "chrome", "space", "cosmic", "neon", "vintage", "sci-fi"],
+      "compatible_themes": ["abstract", "geometric", "tech", "space", "celebration"],
+      "occasions": ["new_year", "graduation", "congratulations", "birthday"],
+      "popularity_score": 81
+    },
+    {
+      "name": "Eco & Sustainability",
+      "description": "Environmental consciousness in design. Natural materials, earth tones, botanical elements, and messaging around sustainability and nature.",
+      "keywords": ["eco", "sustainable", "nature", "botanical", "earth", "organic", "green", "natural"],
+      "compatible_themes": ["nature", "botanical", "flowers", "earth", "organic"],
+      "occasions": ["thank_you", "thinking_of_you", "birthday", "general"],
+      "popularity_score": 78
+    },
+    {
+      "name": "Personalization & Unique",
+      "description": "Cards that feel unique and special, reflecting individual style. Custom elements, personal touches, and one-of-a-kind designs.",
+      "keywords": ["personal", "unique", "custom", "individual", "special", "one-of-a-kind"],
+      "compatible_themes": ["personal", "custom", "unique", "special"],
+      "occasions": ["birthday", "anniversary", "wedding", "thank_you"],
+      "popularity_score": 85
+    }
+  ],
+
+  "color_name_to_hex": {
+    "white": "#FFFFFF",
+    "cloud dancer": "#F0EEE9",
+    "cream": "#FFFDD0",
+    "ivory": "#FFFFF0",
+    "off-white": "#FAF9F6",
+    "beige": "#F5F5DC",
+    "tan": "#D2B48C",
+    "pink": "#FFC0CB",
+    "hot pink": "#FF69B4",
+    "blush": "#DE5D83",
+    "coral": "#FF7F50",
+    "salmon": "#FA8072",
+    "red": "#DC143C",
+    "burgundy": "#800020",
+    "maroon": "#800000",
+    "orange": "#FF8C00",
+    "peach": "#FFCBA4",
+    "gold": "#FFD700",
+    "yellow": "#FFD93D",
+    "mustard": "#FFDB58",
+    "brown": "#8B4513",
+    "terracotta": "#C65D3B",
+    "green": "#228B22",
+    "sage": "#9DC183",
+    "mint": "#98FF98",
+    "teal": "#008080",
+    "turquoise": "#40E0D0",
+    "blue": "#4169E1",
+    "navy": "#000080",
+    "sky blue": "#87CEEB",
+    "lavender": "#E6E6FA",
+    "purple": "#9370DB",
+    "violet": "#8B00FF",
+    "plum": "#DDA0DD",
+    "magenta": "#FF00FF",
+    "black": "#000000",
+    "gray": "#808080",
+    "silver": "#C0C0C0",
+    "multicolor": "#RAINBOW"
+  },
+
+  "key_insights": {
+    "defining_theme": "2026 is defined by the deliberate rejection of AI's hyper-polished aesthetic in favor of work that feels unmistakably made by human hands.",
+    "pantone_significance": "First time Pantone chose white - symbolizing calm and fresh starts in a frenetic society.",
+    "design_direction": "Uniformity is out, character is in. Designers are reaching for more personality, more craft, and more joy.",
+    "greeting_card_focus": "Millennials are now the largest card buyers - they're not occasion-driven but design-driven, buying when they see something that makes them think of someone."
+  }
+}
