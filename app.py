@@ -3441,10 +3441,10 @@ def analyze_high_performing_patterns(analysis_data: list) -> dict:
 
     for card in analysis_data:
         sends = card.get("sends_current", 0)
-        occasion = card.get("occasion", "general")
-        style = card.get("design_style", "unknown")
-        colors = card.get("primary_colors", [])
-        themes = card.get("themes", [])
+        occasion = card.get("occasion") or "general"
+        style = card.get("design_style") or "unknown"
+        colors = card.get("primary_colors") or []
+        themes = card.get("themes") or []
         card_name = card.get("card_name", "")
         rank = card.get("rank", 999)
 
@@ -3459,16 +3459,18 @@ def analyze_high_performing_patterns(analysis_data: list) -> dict:
         style_stats[style]["cards"].append({"name": card_name, "sends": sends, "rank": rank})
 
         # Color stats (for each color in the card)
-        for color in colors[:2]:  # Focus on top 2 colors
-            color_stats[color]["total_sends"] += sends
-            color_stats[color]["count"] += 1
-            color_stats[color]["cards"].append({"name": card_name, "sends": sends, "rank": rank})
+        if colors:
+            for color in colors[:2]:  # Focus on top 2 colors
+                color_stats[color]["total_sends"] += sends
+                color_stats[color]["count"] += 1
+                color_stats[color]["cards"].append({"name": card_name, "sends": sends, "rank": rank})
 
         # Theme stats
-        for theme in themes:
-            theme_stats[theme]["total_sends"] += sends
-            theme_stats[theme]["count"] += 1
-            theme_stats[theme]["cards"].append({"name": card_name, "sends": sends, "rank": rank})
+        if themes:
+            for theme in themes:
+                theme_stats[theme]["total_sends"] += sends
+                theme_stats[theme]["count"] += 1
+                theme_stats[theme]["cards"].append({"name": card_name, "sends": sends, "rank": rank})
 
         # Occasion + Style combination
         combo_key = f"{occasion}|{style}"
