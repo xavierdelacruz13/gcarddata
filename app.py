@@ -376,8 +376,8 @@ st.markdown("""
     =========================================== */
     .gallery-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1.5rem;
     }
 
     .card-item {
@@ -614,12 +614,24 @@ st.markdown("""
     /* ===========================================
        RESPONSIVE
     =========================================== */
+    @media (max-width: 1400px) {
+        .gallery-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
     @media (max-width: 1200px) {
         .gallery-grid {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
         }
 
         .hero-stats-container {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 900px) {
+        .gallery-grid {
             grid-template-columns: repeat(2, 1fr);
         }
     }
@@ -937,7 +949,7 @@ BASE_DIR = Path(__file__).parent
 IMAGES_DIR = BASE_DIR / "card_images"
 CSV_FILE = BASE_DIR / "Top 300 Cards - 2025.csv"
 ANALYSIS_FILE = BASE_DIR / "card_analysis.json"
-CARDS_PER_PAGE = 12
+CARDS_PER_PAGE = 15
 
 # Warm color palette for charts
 CHART_COLORS = [
@@ -2137,24 +2149,33 @@ def render_gallery(df: pd.DataFrame, analysis_lookup: dict):
         st.info("No cards match the current filters.")
         return
 
-    # Pagination
+    # Pagination settings
     total_cards = len(df)
-    total_pages = (total_cards + CARDS_PER_PAGE - 1) // CARDS_PER_PAGE
 
-    # Page selector
+    # Display options at the top
     col1, col2, col3 = st.columns([1, 1, 1])
     with col2:
-        current_page = st.selectbox(
-            "Page",
-            options=range(1, total_pages + 1),
-            format_func=lambda x: f"Page {x} of {total_pages}",
-            key="gallery_page",
-            label_visibility="collapsed"
-        )
+        show_all = st.checkbox("Show all cards on one page", key="gallery_show_all")
 
-    start_idx = (current_page - 1) * CARDS_PER_PAGE
-    end_idx = min(start_idx + CARDS_PER_PAGE, total_cards)
-    page_df = df.iloc[start_idx:end_idx]
+    if show_all:
+        page_df = df
+        start_idx = 0
+        end_idx = total_cards
+        total_pages = 1
+        current_page = 1
+    else:
+        total_pages = (total_cards + CARDS_PER_PAGE - 1) // CARDS_PER_PAGE
+        # Initialize session state for page if not exists
+        if "gallery_page_num" not in st.session_state:
+            st.session_state.gallery_page_num = 1
+        current_page = st.session_state.gallery_page_num
+        # Ensure current page is valid
+        if current_page > total_pages:
+            current_page = 1
+            st.session_state.gallery_page_num = 1
+        start_idx = (current_page - 1) * CARDS_PER_PAGE
+        end_idx = min(start_idx + CARDS_PER_PAGE, total_cards)
+        page_df = df.iloc[start_idx:end_idx]
 
     # Filter status
     st.markdown(f"""
@@ -2166,11 +2187,11 @@ def render_gallery(df: pd.DataFrame, analysis_lookup: dict):
     </div>
     """, unsafe_allow_html=True)
 
-    # Render cards in 3-column grid
-    cols = st.columns(3, gap="large")
+    # Render cards in 5-column grid
+    cols = st.columns(5, gap="medium")
 
     for idx, (_, card) in enumerate(page_df.iterrows()):
-        col = cols[idx % 3]
+        col = cols[idx % 5]
 
         with col:
             card_name = card["Card Name"]
@@ -2246,6 +2267,46 @@ def render_gallery(df: pd.DataFrame, analysis_lookup: dict):
                             st.markdown(f"**Themes:** {', '.join(t.title() for t in themes)}")
 
             st.markdown("<br>", unsafe_allow_html=True)
+
+    # Bottom pagination navigation (only show if not showing all)
+    if not show_all and total_pages > 1:
+        st.markdown("<br>", unsafe_allow_html=True)
+
+        # Navigation buttons at the bottom
+        nav_col1, nav_col2, nav_col3, nav_col4, nav_col5 = st.columns([1, 1, 2, 1, 1])
+
+        with nav_col1:
+            if st.button("⏮ First", key="gallery_first", disabled=(current_page == 1)):
+                st.session_state.gallery_page_num = 1
+                st.rerun()
+
+        with nav_col2:
+            if st.button("◀ Previous", key="gallery_prev", disabled=(current_page == 1)):
+                st.session_state.gallery_page_num = current_page - 1
+                st.rerun()
+
+        with nav_col3:
+            new_page = st.selectbox(
+                "Page",
+                options=range(1, total_pages + 1),
+                index=current_page - 1,
+                format_func=lambda x: f"Page {x} of {total_pages}",
+                key="gallery_page_selector",
+                label_visibility="collapsed"
+            )
+            if new_page != current_page:
+                st.session_state.gallery_page_num = new_page
+                st.rerun()
+
+        with nav_col4:
+            if st.button("Next ▶", key="gallery_next", disabled=(current_page == total_pages)):
+                st.session_state.gallery_page_num = current_page + 1
+                st.rerun()
+
+        with nav_col5:
+            if st.button("Last ⏭", key="gallery_last", disabled=(current_page == total_pages)):
+                st.session_state.gallery_page_num = total_pages
+                st.rerun()
 
 
 def render_color_performance_by_occasion(df: pd.DataFrame, analysis_lookup: dict, color_hex: dict):
