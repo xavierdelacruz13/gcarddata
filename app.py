@@ -382,18 +382,21 @@ st.markdown("""
 
     .card-item {
         background: var(--white);
-        border-radius: 12px;
+        border-radius: 10px;
         overflow: hidden;
         box-shadow: 0 4px 20px rgba(45, 42, 38, 0.06);
         border: 1px solid rgba(45, 42, 38, 0.06);
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         cursor: pointer;
         position: relative;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
     }
 
     .card-item:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 20px 40px rgba(45, 42, 38, 0.12);
+        transform: translateY(-6px);
+        box-shadow: 0 16px 32px rgba(45, 42, 38, 0.12);
     }
 
     .card-image-container {
@@ -401,6 +404,7 @@ st.markdown("""
         overflow: hidden;
         aspect-ratio: 4/5;
         background: var(--cream-dark);
+        flex-shrink: 0;
     }
 
     .card-image-container img {
@@ -416,46 +420,50 @@ st.markdown("""
 
     .card-rank-badge {
         position: absolute;
-        top: 1rem;
-        left: 1rem;
+        top: 0.6rem;
+        left: 0.6rem;
         background: var(--white);
         color: var(--charcoal);
         font-family: 'Playfair Display', Georgia, serif;
-        font-size: 0.85rem;
+        font-size: 0.75rem;
         font-weight: 600;
-        padding: 0.4rem 0.8rem;
-        border-radius: 6px;
+        padding: 0.3rem 0.6rem;
+        border-radius: 5px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         z-index: 2;
     }
 
     .card-occasion-tag {
         position: absolute;
-        top: 1rem;
-        right: 1rem;
+        top: 0.6rem;
+        right: 0.6rem;
         background: var(--terracotta);
         color: var(--white);
         font-family: 'Source Sans 3', sans-serif;
-        font-size: 0.7rem;
+        font-size: 0.6rem;
         font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 0.5px;
-        padding: 0.35rem 0.7rem;
+        padding: 0.25rem 0.5rem;
         border-radius: 4px;
         z-index: 2;
     }
 
     .card-info {
-        padding: 1.25rem 1.5rem 1.5rem;
+        padding: 0.875rem 1rem 1rem;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
     }
 
     .card-title {
         font-family: 'Playfair Display', Georgia, serif;
-        font-size: 1rem;
+        font-size: 0.85rem;
         font-weight: 600;
         color: var(--charcoal);
-        margin-bottom: 0.75rem;
-        line-height: 1.4;
+        margin-bottom: 0.5rem;
+        line-height: 1.35;
+        height: 2.3em;
         display: -webkit-box;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
@@ -465,19 +473,20 @@ st.markdown("""
     .card-sends {
         display: flex;
         align-items: center;
-        gap: 0.5rem;
+        gap: 0.4rem;
+        margin-top: auto;
     }
 
     .card-sends-value {
         font-family: 'Source Sans 3', sans-serif;
-        font-size: 1.1rem;
+        font-size: 0.95rem;
         font-weight: 600;
         color: var(--terracotta);
     }
 
     .card-sends-label {
         font-family: 'Source Sans 3', sans-serif;
-        font-size: 0.8rem;
+        font-size: 0.7rem;
         color: var(--gray);
     }
 
@@ -1463,166 +1472,6 @@ def render_charts(df: pd.DataFrame, analysis_lookup: dict):
             st.plotly_chart(fig_donut, use_container_width=True, config={"displayModeBar": False})
 
 
-def render_momentum_tracker(df: pd.DataFrame, analysis_lookup: dict):
-    """Render momentum tracker showing rising and declining cards."""
-
-    # Calculate percentage change for each card using analysis data
-    momentum_data = []
-
-    for item in analysis_lookup.values():
-        card_id = item.get("card_id", "")
-        card_name = item.get("card_name", "")
-        current = item.get("sends_current", 0)
-        previous = item.get("sends_previous", 0)
-        occasion = item.get("occasion", "general")
-
-        # Calculate percentage change (avoid division by zero)
-        if previous > 0:
-            pct_change = ((current - previous) / previous) * 100
-        else:
-            pct_change = 0 if current == 0 else 100
-
-        momentum_data.append({
-            "card_id": card_id,
-            "card_name": card_name,
-            "current": current,
-            "previous": previous,
-            "pct_change": pct_change,
-            "occasion": occasion.replace("_", " ").title() if occasion else "General"
-        })
-
-    # Sort by percentage change
-    momentum_data.sort(key=lambda x: x["pct_change"], reverse=True)
-
-    # Get rising stars (top 10 positive) and declining cards (top 10 negative)
-    rising_stars = [d for d in momentum_data if d["pct_change"] > 0][:10]
-    declining_cards = [d for d in momentum_data if d["pct_change"] < 0]
-    declining_cards.sort(key=lambda x: x["pct_change"])  # Most negative first
-    declining_cards = declining_cards[:10]
-
-    # Section header
-    st.markdown("""
-    <div class="chart-container" style="margin-top: 2.5rem;">
-        <div class="chart-title">Momentum Tracker</div>
-        <div class="chart-subtitle">Cards with the highest growth and decline in send volume</div>
-    </div>
-    """, unsafe_allow_html=True)
-
-    col1, col2 = st.columns(2, gap="large")
-
-    # Rising Stars column
-    with col1:
-        st.markdown("""
-        <div style="background: linear-gradient(135deg, #E8F5E9 0%, #F1F8E9 100%);
-                    border-radius: 12px; padding: 1.5rem; border: 1px solid rgba(76, 175, 80, 0.2);">
-            <h4 style="font-family: 'Playfair Display', serif; color: #2E7D32; margin-bottom: 1rem; font-size: 1.2rem;">
-                Rising Stars
-            </h4>
-            <p style="font-size: 0.8rem; color: #558B2F; margin-bottom: 1rem;">Top 10 cards with highest positive growth</p>
-        """, unsafe_allow_html=True)
-
-        for i, card in enumerate(rising_stars):
-            # Create sparkline visual indicator (simple bar representation)
-            pct = min(card["pct_change"], 100)  # Cap at 100 for display
-            bar_width = max(10, min(pct, 100))  # Minimum 10% width for visibility
-
-            # Truncate card name for display
-            display_name = card["card_name"][:35] + "..." if len(card["card_name"]) > 35 else card["card_name"]
-
-            st.markdown(f"""
-            <div style="background: white; border-radius: 8px; padding: 0.75rem 1rem; margin-bottom: 0.5rem;
-                        border-left: 4px solid #4CAF50; position: relative; overflow: hidden;">
-                <div style="position: absolute; top: 0; left: 0; height: 100%; width: {bar_width}%;
-                            background: linear-gradient(90deg, rgba(76, 175, 80, 0.1) 0%, rgba(76, 175, 80, 0.02) 100%);
-                            z-index: 0;"></div>
-                <div style="position: relative; z-index: 1;">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                        <div style="flex: 1; min-width: 0;">
-                            <div style="font-family: 'Source Sans 3', sans-serif; font-size: 0.85rem;
-                                        font-weight: 600; color: #2D2A26; white-space: nowrap;
-                                        overflow: hidden; text-overflow: ellipsis;">{display_name}</div>
-                            <div style="font-size: 0.7rem; color: #8B8680; margin-top: 0.15rem;">
-                                {card["occasion"]} | {card["current"]:,} sends
-                            </div>
-                        </div>
-                        <div style="text-align: right; margin-left: 0.75rem;">
-                            <div style="font-family: 'Playfair Display', serif; font-size: 1rem;
-                                        font-weight: 700; color: #2E7D32;">+{card["pct_change"]:.1f}%</div>
-                            <div style="font-size: 0.65rem; color: #66BB6A;">
-                                {"^" * min(5, max(1, int(card["pct_change"] / 2)))}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            """, unsafe_allow_html=True)
-
-        if not rising_stars:
-            st.markdown("""
-            <div style="text-align: center; padding: 2rem; color: #8B8680;">
-                No cards with positive growth in current selection
-            </div>
-            """, unsafe_allow_html=True)
-
-        st.markdown("</div>", unsafe_allow_html=True)
-
-    # Declining Cards column
-    with col2:
-        st.markdown("""
-        <div style="background: linear-gradient(135deg, #FFEBEE 0%, #FFF3E0 100%);
-                    border-radius: 12px; padding: 1.5rem; border: 1px solid rgba(244, 67, 54, 0.2);">
-            <h4 style="font-family: 'Playfair Display', serif; color: #C62828; margin-bottom: 1rem; font-size: 1.2rem;">
-                Declining Cards
-            </h4>
-            <p style="font-size: 0.8rem; color: #E65100; margin-bottom: 1rem;">Top 10 cards with highest negative change</p>
-        """, unsafe_allow_html=True)
-
-        for i, card in enumerate(declining_cards):
-            # Create sparkline visual indicator
-            pct = min(abs(card["pct_change"]), 100)
-            bar_width = max(10, min(pct, 100))
-
-            # Truncate card name for display
-            display_name = card["card_name"][:35] + "..." if len(card["card_name"]) > 35 else card["card_name"]
-
-            st.markdown(f"""
-            <div style="background: white; border-radius: 8px; padding: 0.75rem 1rem; margin-bottom: 0.5rem;
-                        border-left: 4px solid #F44336; position: relative; overflow: hidden;">
-                <div style="position: absolute; top: 0; right: 0; height: 100%; width: {bar_width}%;
-                            background: linear-gradient(270deg, rgba(244, 67, 54, 0.1) 0%, rgba(244, 67, 54, 0.02) 100%);
-                            z-index: 0;"></div>
-                <div style="position: relative; z-index: 1;">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                        <div style="flex: 1; min-width: 0;">
-                            <div style="font-family: 'Source Sans 3', sans-serif; font-size: 0.85rem;
-                                        font-weight: 600; color: #2D2A26; white-space: nowrap;
-                                        overflow: hidden; text-overflow: ellipsis;">{display_name}</div>
-                            <div style="font-size: 0.7rem; color: #8B8680; margin-top: 0.15rem;">
-                                {card["occasion"]} | {card["current"]:,} sends
-                            </div>
-                        </div>
-                        <div style="text-align: right; margin-left: 0.75rem;">
-                            <div style="font-family: 'Playfair Display', serif; font-size: 1rem;
-                                        font-weight: 700; color: #C62828;">{card["pct_change"]:.1f}%</div>
-                            <div style="font-size: 0.65rem; color: #EF5350;">
-                                {"v" * min(5, max(1, int(abs(card["pct_change"]) / 2)))}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            """, unsafe_allow_html=True)
-
-        if not declining_cards:
-            st.markdown("""
-            <div style="text-align: center; padding: 2rem; color: #8B8680;">
-                No cards with negative growth in current selection
-            </div>
-            """, unsafe_allow_html=True)
-
-        st.markdown("</div>", unsafe_allow_html=True)
-
-
 def render_executive_summary(df: pd.DataFrame, analysis_lookup: dict):
     """Render deep executive insights and analysis."""
 
@@ -1893,9 +1742,6 @@ def render_executive_summary(df: pd.DataFrame, analysis_lookup: dict):
             st.markdown(f'<p style="font-size: 0.85rem; color: #5C5955; margin-bottom: 0.75rem; line-height: 1.4;">{insight}</p>', unsafe_allow_html=True)
 
         st.markdown("</div>", unsafe_allow_html=True)
-
-    # Momentum Tracker Section
-    render_momentum_tracker(df, analysis_lookup)
 
     # Style Performance Recommendations
     st.markdown("""
@@ -2187,86 +2033,87 @@ def render_gallery(df: pd.DataFrame, analysis_lookup: dict):
     </div>
     """, unsafe_allow_html=True)
 
-    # Render cards in 5-column grid
-    cols = st.columns(5, gap="medium")
+    # Build all card HTML for CSS grid layout
+    cards_html = []
+    card_data_list = []
 
     for idx, (_, card) in enumerate(page_df.iterrows()):
-        col = cols[idx % 5]
+        card_name = card["Card Name"]
+        card_id = card["Card ID"]
+        display_name = card["Display Name"]
+        rank = int(card["Rank"])
+        sends = int(card["Current Period"])
 
-        with col:
-            card_name = card["Card Name"]
-            card_id = card["Card ID"]
-            display_name = card["Display Name"]
-            rank = int(card["Rank"])
-            sends = int(card["Current Period"])
+        # Get occasion from analysis
+        occasion = "General"
+        if card_id in analysis_lookup:
+            occasion = analysis_lookup[card_id].get("occasion", "general").title()
 
-            # Get occasion from analysis
-            occasion = "General"
-            if card_id in analysis_lookup:
-                occasion = analysis_lookup[card_id].get("occasion", "general").title()
+        # Get image
+        image_path = get_card_image_path(card_name)
 
-            # Get image
-            image_path = get_card_image_path(card_name)
-
-            if image_path:
-                img_base64 = get_image_base64(image_path)
-                if img_base64:
-                    img_html = f'<img src="data:image/jpeg;base64,{img_base64}" alt="{display_name}">'
-                else:
-                    img_html = '<div class="no-image-placeholder">No Preview</div>'
+        if image_path:
+            img_base64 = get_image_base64(image_path)
+            if img_base64:
+                img_html = f'<img src="data:image/jpeg;base64,{img_base64}" alt="{display_name}">'
             else:
                 img_html = '<div class="no-image-placeholder">No Preview</div>'
+        else:
+            img_html = '<div class="no-image-placeholder">No Preview</div>'
 
-            # Truncate title
-            title_display = display_name[:50] + "..." if len(display_name) > 50 else display_name
+        # Truncate title
+        title_display = display_name[:45] + "..." if len(display_name) > 45 else display_name
 
-            card_html = f"""
-            <div class="card-item">
-                <div class="card-image-container">
-                    {img_html}
-                    <div class="card-rank-badge">#{rank}</div>
-                    <div class="card-occasion-tag">{occasion}</div>
-                </div>
-                <div class="card-info">
-                    <div class="card-title">{title_display}</div>
-                    <div class="card-sends">
-                        <span class="card-sends-value">{sends:,}</span>
-                        <span class="card-sends-label">sends</span>
-                    </div>
+        card_html = f"""
+        <div class="card-item">
+            <div class="card-image-container">
+                {img_html}
+                <div class="card-rank-badge">#{rank}</div>
+                <div class="card-occasion-tag">{occasion}</div>
+            </div>
+            <div class="card-info">
+                <div class="card-title">{title_display}</div>
+                <div class="card-sends">
+                    <span class="card-sends-value">{sends:,}</span>
+                    <span class="card-sends-label">sends</span>
                 </div>
             </div>
-            """
-            st.markdown(card_html, unsafe_allow_html=True)
+        </div>
+        """
+        cards_html.append(card_html)
+        card_data_list.append({
+            "card_id": card_id,
+            "rank": rank,
+            "sends": sends,
+            "previous": int(card["Previous Period"]),
+            "change": card.get("Change", 0),
+            "change_pct": card.get("Change %", 0)
+        })
 
-            # Add details expander
-            with st.expander("View Details"):
-                detail_col1, detail_col2 = st.columns(2)
+    # Render all cards in a CSS grid
+    st.markdown(f"""
+    <div class="gallery-grid">
+        {''.join(cards_html)}
+    </div>
+    """, unsafe_allow_html=True)
 
-                with detail_col1:
-                    st.markdown(f"**Rank:** #{rank}")
-                    st.markdown(f"**Current Sends:** {sends:,}")
-                    st.markdown(f"**Previous Sends:** {int(card['Previous Period']):,}")
+    # Card details section (collapsible)
+    with st.expander("View Card Details", expanded=False):
+        detail_cols = st.columns(5)
+        for idx, card_data in enumerate(card_data_list):
+            col = detail_cols[idx % 5]
+            with col:
+                card_id = card_data["card_id"]
+                change_color = "#4CAF50" if card_data["change"] >= 0 else "#F44336"
+                st.markdown(f"**#{card_data['rank']}**")
+                st.markdown(f"Sends: {card_data['sends']:,}")
+                st.markdown(f"<span style='color:{change_color}'>{card_data['change']:+,.0f} ({card_data['change_pct']:+.1f}%)</span>", unsafe_allow_html=True)
+                if card_id in analysis_lookup:
+                    analysis = analysis_lookup[card_id]
+                    st.markdown(f"*{analysis.get('design_style', 'N/A').replace('_', ' ').title()}*")
+                st.markdown("---")
 
-                    change = card.get("Change", 0)
-                    change_pct = card.get("Change %", 0)
-                    change_color = "#4CAF50" if change >= 0 else "#F44336"
-                    st.markdown(f"**Change:** <span style='color:{change_color}'>{change:+,.0f} ({change_pct:+.1f}%)</span>", unsafe_allow_html=True)
-
-                with detail_col2:
-                    if card_id in analysis_lookup:
-                        analysis = analysis_lookup[card_id]
-                        st.markdown(f"**Occasion:** {analysis.get('occasion', 'N/A').title()}")
-                        st.markdown(f"**Design Style:** {analysis.get('design_style', 'N/A').replace('_', ' ').title()}")
-
-                        colors = analysis.get("primary_colors", [])
-                        if colors:
-                            st.markdown(f"**Colors:** {', '.join(c.title() for c in colors)}")
-
-                        themes = analysis.get("themes", [])
-                        if themes:
-                            st.markdown(f"**Themes:** {', '.join(t.title() for t in themes)}")
-
-            st.markdown("<br>", unsafe_allow_html=True)
+    st.markdown("<br>", unsafe_allow_html=True)
 
     # Bottom pagination navigation (only show if not showing all)
     if not show_all and total_pages > 1:
