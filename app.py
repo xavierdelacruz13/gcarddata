@@ -3828,7 +3828,13 @@ def calculate_color_similarity(hex1: str, hex2: str) -> float:
 
 
 def get_card_trend_alignment(card_data: dict, trend_data: dict) -> dict:
-    """Calculate how well a card aligns with current trends."""
+    """Calculate how well a card aligns with current trends.
+
+    Scoring methodology:
+    - Each category scored 0-100 based on match quality
+    - No match = 0, partial match = 30-60, strong match = 60-90, exact match = 90-100
+    - Overall score is weighted average requiring multiple category matches for high scores
+    """
     color_scores = []
     style_scores = []
     typo_scores = []
@@ -3838,71 +3844,108 @@ def get_card_trend_alignment(card_data: dict, trend_data: dict) -> dict:
     # Get color name to hex mapping
     color_map = trend_data.get("color_name_to_hex", {}) or {}
 
-    # Color trend alignment
+    # Color trend alignment - check Pantone 2026 match
     card_colors = card_data.get("primary_colors") or []
     pantone = trend_data.get("color_trends", {}).get("pantone_color_of_year", {}) or {}
     pantone_hex = pantone.get("hex", "#888888")
 
     for color_name in card_colors:
         card_hex = color_map.get(color_name.lower(), "#888888")
-        if card_hex != "#RAINBOW":  # Skip multicolor
+        if card_hex != "#RAINBOW":
             sim = calculate_color_similarity(card_hex, pantone_hex)
-            color_scores.append(sim)
+            # Only count strong color matches (>70% similarity)
             if sim > 70:
+                color_scores.append(sim)
                 matching_trends.append(f"Pantone {pantone.get('name', '')}")
 
-    # Check emerging palettes
+    # Check emerging palettes - require strong match
     for palette in (trend_data.get("color_trends", {}).get("emerging_palettes") or []):
+        palette_matches = 0
         for p_color in (palette.get("colors") or []):
             for color_name in card_colors:
                 card_hex = color_map.get(color_name.lower(), "#888888")
                 if card_hex != "#RAINBOW":
                     sim = calculate_color_similarity(card_hex, p_color.get("hex", "#888888"))
-                    if sim > 60:
-                        color_scores.append(sim)
-                        if sim > 75:
-                            matching_trends.append(palette.get("name", ""))
+                    if sim > 75:
+                        palette_matches += 1
+        # Award points based on how many palette colors match
+        if palette_matches >= 2:
+            color_scores.append(min(90, 50 + palette_matches * 15))
+            matching_trends.append(palette.get("name", ""))
+        elif palette_matches == 1:
+            color_scores.append(40)
 
-    # Style trend alignment
+    # Style trend alignment - stricter matching
     card_style = (card_data.get("design_style") or "").lower()
-    for trend in (trend_data.get("illustration_trends") or []):
-        compatible = [s.lower() for s in (trend.get("compatible_styles") or [])]
-        if card_style in compatible:
-            score = trend.get("popularity_score", 50)
-            style_scores.append(score)
-            matching_trends.append(trend.get("name", ""))
-        elif any(card_style in c or c in card_style for c in compatible):
-            style_scores.append(trend.get("popularity_score", 50) * 0.7)
+    if card_style:
+        for trend in (trend_data.get("illustration_trends") or []):
+            compatible = [s.lower() for s in (trend.get("compatible_styles") or [])]
+            # Exact match in compatible styles
+            if card_style in compatible:
+                # Score based on how specific the match is (not just raw weight)
+                base_score = 70 + (len(compatible) <= 3) * 15  # More specific = higher score
+                style_scores.append(base_score)
+                matching_trends.append(trend.get("name", ""))
+            # Partial match
+            elif any(card_style in c or c in card_style for c in compatible):
+                style_scores.append(40)
 
     # Typography trend alignment
     card_typo = (card_data.get("typography_style") or "").lower()
-    for trend in (trend_data.get("typography_trends") or []):
-        compatible = [t.lower() for t in (trend.get("compatible_typography") or [])]
-        if card_typo in compatible or any(card_typo in c for c in compatible):
-            typo_scores.append(trend.get("popularity_score", 50))
-            matching_trends.append(trend.get("name", ""))
-
-    # Theme trend alignment
-    card_themes = [t.lower() for t in (card_data.get("themes") or [])]
-    for trend in (trend_data.get("theme_motif_trends") or []):
-        keywords = [k.lower() for k in (trend.get("keywords") or [])]
-        compatible = [t.lower() for t in (trend.get("compatible_themes") or [])]
-        matches = set(card_themes) & (set(keywords) | set(compatible))
-        if matches:
-            score = len(matches) / max(len(card_themes), 1) * trend.get("popularity_score", 50)
-            theme_scores.append(score)
-            if score > 30:
+    if card_typo:
+        for trend in (trend_data.get("typography_trends") or []):
+            compatible = [t.lower() for t in (trend.get("compatible_typography") or [])]
+            if card_typo in compatible:
+                typo_scores.append(75)
                 matching_trends.append(trend.get("name", ""))
+            elif any(card_typo in c or c in card_typo for c in compatible):
+                typo_scores.append(40)
 
-    # Calculate category scores
-    color_score = max(color_scores) if color_scores else 20
-    style_score = max(style_scores) if style_scores else 20
-    typo_score = max(typo_scores) if typo_scores else 20
-    theme_score = max(theme_scores) if theme_scores else 20
+    # Theme trend alignment - based on keyword overlap percentage
+    card_themes = [t.lower() for t in (card_data.get("themes") or [])]
+    if card_themes:
+        for trend in (trend_data.get("theme_motif_trends") or []):
+            keywords = [k.lower() for k in (trend.get("keywords") or [])]
+            compatible = [t.lower() for t in (trend.get("compatible_themes") or [])]
+            all_trend_terms = set(keywords) | set(compatible)
+            matches = set(card_themes) & all_trend_terms
 
-    # Weighted overall score
-    overall = (color_score * 0.30 + style_score * 0.30 +
-               typo_score * 0.15 + theme_score * 0.25)
+            if matches:
+                # Score based on match percentage, not raw weight
+                match_ratio = len(matches) / max(len(card_themes), 1)
+                coverage_ratio = len(matches) / max(len(all_trend_terms), 1)
+
+                # Require meaningful overlap
+                if match_ratio >= 0.3 and len(matches) >= 2:
+                    score = min(85, 40 + match_ratio * 30 + coverage_ratio * 20)
+                    theme_scores.append(score)
+                    matching_trends.append(trend.get("name", ""))
+                elif len(matches) >= 1:
+                    theme_scores.append(25 + match_ratio * 20)
+
+    # Calculate category scores - default to 0 for no match
+    color_score = max(color_scores) if color_scores else 0
+    style_score = max(style_scores) if style_scores else 0
+    typo_score = max(typo_scores) if typo_scores else 0
+    theme_score = max(theme_scores) if theme_scores else 0
+
+    # Count how many categories have meaningful matches
+    categories_matched = sum([
+        color_score >= 40,
+        style_score >= 40,
+        typo_score >= 40,
+        theme_score >= 40
+    ])
+
+    # Weighted overall score with bonus for multi-category alignment
+    base_overall = (color_score * 0.30 + style_score * 0.30 +
+                    typo_score * 0.15 + theme_score * 0.25)
+
+    # Apply penalty if only 1 category matches (single-dimension alignment)
+    if categories_matched <= 1:
+        overall = base_overall * 0.7
+    else:
+        overall = base_overall
 
     return {
         "color_score": round(color_score, 1),
@@ -3910,6 +3953,7 @@ def get_card_trend_alignment(card_data: dict, trend_data: dict) -> dict:
         "typography_score": round(typo_score, 1),
         "theme_score": round(theme_score, 1),
         "overall_score": round(overall, 1),
+        "categories_matched": categories_matched,
         "matching_trends": list(set(matching_trends))[:5]
     }
 
@@ -3935,36 +3979,46 @@ def aggregate_portfolio_trends(analysis_data: list, trend_data: dict) -> dict:
     scores = [a["overall_score"] for a in alignments]
     avg_score = sum(scores) / len(scores) if scores else 0
 
-    # Count trend-aligned cards (score > 50)
-    aligned_count = sum(1 for s in scores if s > 50)
+    # Tiered alignment counts (stricter thresholds)
+    strong_aligned = sum(1 for a in alignments if a["overall_score"] >= 60 and a.get("categories_matched", 0) >= 2)
+    moderate_aligned = sum(1 for a in alignments if 40 <= a["overall_score"] < 60 or
+                          (a["overall_score"] >= 60 and a.get("categories_matched", 0) < 2))
+    weak_aligned = sum(1 for a in alignments if 20 <= a["overall_score"] < 40)
+    not_aligned = sum(1 for a in alignments if a["overall_score"] < 20)
 
-    # Find opportunities - trends with high popularity but low card coverage
+    # Find opportunities - trends with high relevance but low card coverage
     opportunities = []
     for trend in trend_data.get("illustration_trends", [])[:3]:
         trend_cards = [a for a in alignments if trend.get("name", "") in a.get("matching_trends", [])]
+        relevance = trend.get("relevance_weight", trend.get("popularity_score", 0))
         if len(trend_cards) < 10:
             opportunities.append({
                 "trend": trend.get("name", ""),
-                "popularity": trend.get("popularity_score", 0),
+                "relevance": relevance,
                 "your_cards": len(trend_cards),
-                "opportunity": "High" if trend.get("popularity_score", 0) > 80 else "Medium"
+                "opportunity": "High" if relevance > 85 else "Medium"
             })
 
     for trend in trend_data.get("theme_motif_trends", [])[:3]:
         trend_cards = [a for a in alignments if trend.get("name", "") in a.get("matching_trends", [])]
+        relevance = trend.get("relevance_weight", trend.get("popularity_score", 0))
         if len(trend_cards) < 15:
             opportunities.append({
                 "trend": trend.get("name", ""),
-                "popularity": trend.get("popularity_score", 0),
+                "relevance": relevance,
                 "your_cards": len(trend_cards),
-                "opportunity": "High" if trend.get("popularity_score", 0) > 80 else "Medium"
+                "opportunity": "High" if relevance > 85 else "Medium"
             })
 
     return {
         "total_cards": len(alignments),
         "average_score": round(avg_score, 1),
-        "aligned_count": aligned_count,
-        "aligned_pct": round(aligned_count / len(alignments) * 100, 1) if alignments else 0,
+        "strong_aligned": strong_aligned,
+        "moderate_aligned": moderate_aligned,
+        "weak_aligned": weak_aligned,
+        "not_aligned": not_aligned,
+        "aligned_count": strong_aligned,  # For backward compat, use strong as "aligned"
+        "aligned_pct": round(strong_aligned / len(alignments) * 100, 1) if alignments else 0,
         "trend_leaders": alignments[:10],
         "trend_laggards": alignments[-10:],
         "opportunities": opportunities[:5]
@@ -3991,11 +4045,21 @@ def render_trend_intelligence_hub(df: pd.DataFrame, analysis_lookup: dict, analy
     # Header with refresh button
     col1, col2 = st.columns([4, 1])
     with col1:
+        # Build source links from new structured format
+        sources = trend_data.get("sources", [])
+        if sources and isinstance(sources[0], dict):
+            source_links = " • ".join([
+                f'<a href="{s.get("url", "#")}" target="_blank" style="color: #C65D3B; text-decoration: none;">{s.get("name", "Source")}</a>'
+                for s in sources[:3]
+            ])
+        else:
+            source_links = ", ".join(sources[:3]) if sources else "N/A"
+
         st.markdown(f"""
         <div style="font-size: 0.9rem; color: #8B8680; margin-bottom: 1rem;">
             <strong>Data Version:</strong> {trend_data.get("version", "N/A")} |
             <strong>Last Updated:</strong> {trend_data.get("last_updated", "N/A")} |
-            <strong>Sources:</strong> {", ".join(trend_data.get("sources", [])[:3])}
+            <strong>Sources:</strong> {source_links}
         </div>
         """, unsafe_allow_html=True)
     with col2:
@@ -4035,6 +4099,7 @@ def render_trend_intelligence_hub(df: pd.DataFrame, analysis_lookup: dict, analy
     # Top Illustration Trend
     illust_trends = trend_data.get("illustration_trends", [])
     top_illust = illust_trends[0] if illust_trends else {}
+    illust_weight = top_illust.get('relevance_weight', top_illust.get('popularity_score', 0))
     with col2:
         st.markdown(f"""
         <div style="background: white; border-radius: 12px; padding: 1.5rem; text-align: center;
@@ -4047,15 +4112,16 @@ def render_trend_intelligence_hub(df: pd.DataFrame, analysis_lookup: dict, analy
                 {top_illust.get('name', 'N/A')}
             </div>
             <div style="background: #E8E4DE; border-radius: 10px; height: 8px; margin-top: 0.75rem; overflow: hidden;">
-                <div style="background: #C65D3B; height: 100%; width: {top_illust.get('popularity_score', 0)}%;"></div>
+                <div style="background: #C65D3B; height: 100%; width: {illust_weight}%;"></div>
             </div>
-            <div style="font-size: 0.75rem; color: #4CAF50; margin-top: 0.5rem;">{top_illust.get('growth_rate', '')}</div>
+            <div style="font-size: 0.75rem; color: #8B8680; margin-top: 0.5rem;">Relevance: {illust_weight}</div>
         </div>
         """, unsafe_allow_html=True)
 
     # Typography Trend
     typo_trends = trend_data.get("typography_trends", [])
     top_typo = typo_trends[0] if typo_trends else {}
+    typo_weight = top_typo.get('relevance_weight', top_typo.get('popularity_score', 0))
     with col3:
         st.markdown(f"""
         <div style="background: white; border-radius: 12px; padding: 1.5rem; text-align: center;
@@ -4070,13 +4136,14 @@ def render_trend_intelligence_hub(df: pd.DataFrame, analysis_lookup: dict, analy
             <div style="font-size: 0.8rem; color: #5C5955; margin-top: 0.5rem; font-style: italic;">
                 {top_typo.get('mood', '')}
             </div>
-            <div style="font-size: 0.75rem; color: #C65D3B; margin-top: 0.5rem;">Score: {top_typo.get('popularity_score', 0)}</div>
+            <div style="font-size: 0.75rem; color: #8B8680; margin-top: 0.5rem;">Relevance: {typo_weight}</div>
         </div>
         """, unsafe_allow_html=True)
 
     # Theme Trend
     theme_trends = trend_data.get("theme_motif_trends", [])
     top_theme = theme_trends[0] if theme_trends else {}
+    theme_weight = top_theme.get('relevance_weight', top_theme.get('popularity_score', 0))
     with col4:
         keywords = ", ".join(top_theme.get("keywords", [])[:3])
         st.markdown(f"""
@@ -4090,7 +4157,7 @@ def render_trend_intelligence_hub(df: pd.DataFrame, analysis_lookup: dict, analy
                 {top_theme.get('name', 'N/A')}
             </div>
             <div style="font-size: 0.75rem; color: #8B8680; margin-top: 0.5rem;">{keywords}</div>
-            <div style="font-size: 0.75rem; color: #C65D3B; margin-top: 0.25rem;">Score: {top_theme.get('popularity_score', 0)}</div>
+            <div style="font-size: 0.75rem; color: #8B8680; margin-top: 0.25rem;">Relevance: {theme_weight}</div>
         </div>
         """, unsafe_allow_html=True)
 
@@ -4139,16 +4206,19 @@ def render_trend_intelligence_hub(df: pd.DataFrame, analysis_lookup: dict, analy
         with col1:
             st.markdown("<h4 style='font-family: Playfair Display, serif;'>Illustration Trends</h4>", unsafe_allow_html=True)
             for trend in illust_trends[:5]:
+                trend_weight = trend.get('relevance_weight', trend.get('popularity_score', 0))
+                trend_source = trend.get('source', '')
                 st.markdown(f"""
                 <div style="background: white; border-radius: 8px; padding: 1rem; margin-bottom: 0.75rem; border: 1px solid #E8E4DE;">
                     <div style="display: flex; justify-content: space-between; align-items: center;">
                         <div style="font-weight: 600; color: #2D2A26;">{trend.get('name', '')}</div>
-                        <div style="color: #4CAF50; font-size: 0.85rem;">{trend.get('growth_rate', '')}</div>
+                        <div style="color: #8B8680; font-size: 0.75rem;">Relevance: {trend_weight}</div>
                     </div>
                     <div style="font-size: 0.85rem; color: #5C5955; margin: 0.5rem 0;">{trend.get('description', '')[:100]}...</div>
                     <div style="background: #E8E4DE; border-radius: 6px; height: 6px; overflow: hidden;">
-                        <div style="background: #C65D3B; height: 100%; width: {trend.get('popularity_score', 0)}%;"></div>
+                        <div style="background: #C65D3B; height: 100%; width: {trend_weight}%;"></div>
                     </div>
+                    <div style="font-size: 0.7rem; color: #A8A49E; margin-top: 0.5rem; font-style: italic;">Source: {trend_source}</div>
                 </div>
                 """, unsafe_allow_html=True)
 
@@ -4156,16 +4226,19 @@ def render_trend_intelligence_hub(df: pd.DataFrame, analysis_lookup: dict, analy
             st.markdown("<h4 style='font-family: Playfair Display, serif;'>Theme & Motif Trends</h4>", unsafe_allow_html=True)
             for trend in theme_trends[:5]:
                 keywords = " • ".join(trend.get("keywords", [])[:4])
+                trend_weight = trend.get('relevance_weight', trend.get('popularity_score', 0))
+                trend_source = trend.get('source', '')
                 st.markdown(f"""
                 <div style="background: white; border-radius: 8px; padding: 1rem; margin-bottom: 0.75rem; border: 1px solid #E8E4DE;">
                     <div style="display: flex; justify-content: space-between; align-items: center;">
                         <div style="font-weight: 600; color: #2D2A26;">{trend.get('name', '')}</div>
-                        <div style="background: #C65D3B; color: white; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem;">
-                            {trend.get('popularity_score', 0)}
+                        <div style="background: #E8E4DE; color: #5C5955; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem;">
+                            {trend_weight}
                         </div>
                     </div>
                     <div style="font-size: 0.85rem; color: #5C5955; margin: 0.5rem 0;">{trend.get('description', '')[:100]}...</div>
                     <div style="font-size: 0.75rem; color: #8B8680;">{keywords}</div>
+                    <div style="font-size: 0.7rem; color: #A8A49E; margin-top: 0.5rem; font-style: italic;">Source: {trend_source}</div>
                 </div>
                 """, unsafe_allow_html=True)
 
@@ -4183,14 +4256,20 @@ def render_trend_intelligence_hub(df: pd.DataFrame, analysis_lookup: dict, analy
     col1, col2, col3 = st.columns([1, 1, 1])
 
     with col1:
-        # Alignment donut chart
+        # Tiered alignment donut chart
         fig = go.Figure(data=[go.Pie(
-            labels=["Trend-Aligned", "Classic Style"],
-            values=[portfolio_stats["aligned_count"], portfolio_stats["total_cards"] - portfolio_stats["aligned_count"]],
+            labels=["Strong", "Moderate", "Weak", "Not Aligned"],
+            values=[
+                portfolio_stats.get("strong_aligned", 0),
+                portfolio_stats.get("moderate_aligned", 0),
+                portfolio_stats.get("weak_aligned", 0),
+                portfolio_stats.get("not_aligned", 0)
+            ],
             hole=0.65,
-            marker=dict(colors=["#C65D3B", "#E8E4DE"]),
+            marker=dict(colors=["#4CAF50", "#FF9800", "#FFC107", "#E8E4DE"]),
             textposition='outside',
-            textinfo='percent'
+            textinfo='percent',
+            sort=False
         )])
         fig.update_layout(
             height=250,
@@ -4198,7 +4277,7 @@ def render_trend_intelligence_hub(df: pd.DataFrame, analysis_lookup: dict, analy
             paper_bgcolor="rgba(0,0,0,0)",
             showlegend=False,
             annotations=[dict(
-                text=f'<b>{portfolio_stats["aligned_pct"]:.0f}%</b><br>Aligned',
+                text=f'<b>{portfolio_stats["aligned_pct"]:.0f}%</b><br>Strong',
                 x=0.5, y=0.5,
                 font=dict(size=14, family="Playfair Display, serif", color="#2D2A26"),
                 showarrow=False
@@ -4209,17 +4288,39 @@ def render_trend_intelligence_hub(df: pd.DataFrame, analysis_lookup: dict, analy
     with col2:
         st.markdown(f"""
         <div style="padding: 1rem;">
-            <div style="font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 1rem;">Portfolio Stats</div>
-            <div style="margin-bottom: 0.75rem;">
-                <span style="color: #8B8680;">Average Trend Score:</span>
-                <span style="font-weight: 600; color: #2D2A26; font-size: 1.2rem; margin-left: 0.5rem;">{portfolio_stats['average_score']}</span>
+            <div style="font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 1rem;">Alignment Breakdown</div>
+            <div style="margin-bottom: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                <span style="color: #8B8680; display: flex; align-items: center;">
+                    <span style="width: 10px; height: 10px; background: #4CAF50; border-radius: 2px; margin-right: 0.5rem;"></span>
+                    Strong (60+, 2+ categories):
+                </span>
+                <span style="font-weight: 600; color: #4CAF50;">{portfolio_stats.get('strong_aligned', 0)}</span>
             </div>
-            <div style="margin-bottom: 0.75rem;">
-                <span style="color: #8B8680;">Trend-Aligned Cards:</span>
-                <span style="font-weight: 600; color: #4CAF50; margin-left: 0.5rem;">{portfolio_stats['aligned_count']}</span>
+            <div style="margin-bottom: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                <span style="color: #8B8680; display: flex; align-items: center;">
+                    <span style="width: 10px; height: 10px; background: #FF9800; border-radius: 2px; margin-right: 0.5rem;"></span>
+                    Moderate (40-59):
+                </span>
+                <span style="font-weight: 600; color: #FF9800;">{portfolio_stats.get('moderate_aligned', 0)}</span>
             </div>
-            <div>
-                <span style="color: #8B8680;">Total Cards Analyzed:</span>
+            <div style="margin-bottom: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                <span style="color: #8B8680; display: flex; align-items: center;">
+                    <span style="width: 10px; height: 10px; background: #FFC107; border-radius: 2px; margin-right: 0.5rem;"></span>
+                    Weak (20-39):
+                </span>
+                <span style="font-weight: 600; color: #FFC107;">{portfolio_stats.get('weak_aligned', 0)}</span>
+            </div>
+            <div style="margin-bottom: 0.75rem; display: flex; justify-content: space-between; align-items: center;">
+                <span style="color: #8B8680; display: flex; align-items: center;">
+                    <span style="width: 10px; height: 10px; background: #E8E4DE; border-radius: 2px; margin-right: 0.5rem;"></span>
+                    Not Aligned (&lt;20):
+                </span>
+                <span style="font-weight: 600; color: #9E9E9E;">{portfolio_stats.get('not_aligned', 0)}</span>
+            </div>
+            <div style="border-top: 1px solid #E8E4DE; padding-top: 0.5rem; margin-top: 0.5rem;">
+                <span style="color: #8B8680;">Avg Score:</span>
+                <span style="font-weight: 600; color: #2D2A26; margin-left: 0.5rem;">{portfolio_stats['average_score']}</span>
+                <span style="color: #8B8680; margin-left: 1rem;">Total:</span>
                 <span style="font-weight: 600; color: #2D2A26; margin-left: 0.5rem;">{portfolio_stats['total_cards']}</span>
             </div>
         </div>
@@ -4229,10 +4330,11 @@ def render_trend_intelligence_hub(df: pd.DataFrame, analysis_lookup: dict, analy
         st.markdown("<div style='font-family: Playfair Display, serif; font-size: 1.2rem; margin-bottom: 1rem;'>Opportunities</div>", unsafe_allow_html=True)
         for opp in portfolio_stats.get("opportunities", [])[:3]:
             color = "#C65D3B" if opp["opportunity"] == "High" else "#FF9800"
+            relevance = opp.get('relevance', opp.get('popularity', 0))
             st.markdown(f"""
             <div style="background: {color}15; border-left: 3px solid {color}; padding: 0.5rem 0.75rem; margin-bottom: 0.5rem; border-radius: 0 6px 6px 0;">
                 <div style="font-weight: 600; font-size: 0.85rem; color: #2D2A26;">{opp['trend']}</div>
-                <div style="font-size: 0.75rem; color: #8B8680;">You have {opp['your_cards']} cards • Popularity: {opp['popularity']}</div>
+                <div style="font-size: 0.75rem; color: #8B8680;">You have {opp['your_cards']} cards • Relevance: {relevance}</div>
             </div>
             """, unsafe_allow_html=True)
 
@@ -4259,6 +4361,61 @@ def render_trend_intelligence_hub(df: pd.DataFrame, analysis_lookup: dict, analy
                 <div style="font-size: 0.7rem; color: #8B8680; margin-top: 0.25rem;">{card['sends']:,} sends</div>
             </div>
             """, unsafe_allow_html=True)
+
+    # Methodology & Sources Footer
+    methodology = trend_data.get("methodology", {})
+    sources = trend_data.get("sources", [])
+
+    st.markdown("<br>", unsafe_allow_html=True)
+
+    with st.expander("📚 Sources & Methodology", expanded=False):
+        st.markdown("""
+        <div style="padding: 1rem 0;">
+            <h4 style="font-family: 'Playfair Display', serif; margin-bottom: 1rem; color: #2D2A26;">Data Sources</h4>
+        </div>
+        """, unsafe_allow_html=True)
+
+        # Display sources with links
+        if sources and isinstance(sources[0], dict):
+            for src in sources:
+                verified_badge = "✅" if src.get("verified", False) else "⚠️"
+                st.markdown(f"""
+                <div style="background: white; border-radius: 8px; padding: 0.75rem 1rem; margin-bottom: 0.5rem; border: 1px solid #E8E4DE;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span>{verified_badge}</span>
+                        <a href="{src.get('url', '#')}" target="_blank" style="color: #C65D3B; text-decoration: none; font-weight: 500;">
+                            {src.get('name', 'Source')}
+                        </a>
+                    </div>
+                    <div style="font-size: 0.8rem; color: #8B8680; margin-top: 0.25rem; margin-left: 1.5rem;">
+                        {src.get('description', '')}
+                    </div>
+                </div>
+                """, unsafe_allow_html=True)
+
+        st.markdown("""
+        <div style="padding: 1.5rem 0 1rem;">
+            <h4 style="font-family: 'Playfair Display', serif; margin-bottom: 1rem; color: #2D2A26;">Methodology</h4>
+        </div>
+        """, unsafe_allow_html=True)
+
+        st.markdown(f"""
+        <div style="background: #FDFBF7; border-radius: 8px; padding: 1rem; border-left: 3px solid #C65D3B;">
+            <div style="font-size: 0.85rem; color: #5C5955; line-height: 1.6;">
+                <strong style="color: #2D2A26;">Relevance Weights:</strong> {methodology.get('note', 'Editorial estimates based on trend prominence in source coverage.')}
+            </div>
+            <div style="font-size: 0.85rem; color: #5C5955; line-height: 1.6; margin-top: 0.75rem;">
+                <strong style="color: #2D2A26;">Scoring Method:</strong> {methodology.get('scoring', 'Weights range from 0-100 indicating relative importance for alignment.')}
+            </div>
+            <div style="font-size: 0.85rem; color: #5C5955; line-height: 1.6; margin-top: 0.75rem;">
+                <strong style="color: #2D2A26;">Color Alignment:</strong> {methodology.get('color_alignment', 'Calculated using hex color distance formula.')}
+            </div>
+        </div>
+        <div style="font-size: 0.75rem; color: #A8A49E; margin-top: 1rem; font-style: italic;">
+            Note: Trend data is synthesized from verified industry sources. Relevance weights are editorial estimates, not market research percentages.
+            Portfolio alignment scores help identify which cards align with current design trends but should not be used as the sole basis for business decisions.
+        </div>
+        """, unsafe_allow_html=True)
 
 
 # =============================================================================

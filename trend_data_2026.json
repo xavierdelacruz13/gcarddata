@@ -2,17 +2,41 @@
   "last_updated": "2026-01-14",
   "version": "2026.Q1",
   "sources": [
-    "Pantone Color Institute",
-    "Creative Bloq",
-    "Adobe",
-    "Fontfabric",
-    "GCU Community"
+    {
+      "name": "Pantone Color Institute",
+      "url": "https://www.pantone.com/color-of-the-year/2026",
+      "description": "Official Pantone Color of the Year 2026 announcement",
+      "verified": true
+    },
+    {
+      "name": "Creative Bloq - Design Trends",
+      "url": "https://www.creativebloq.com/design/graphic-design/texture-warmth-and-tactile-rebellion-the-big-graphic-design-trends-for-2026",
+      "description": "Graphic design trends analysis for 2026",
+      "verified": true
+    },
+    {
+      "name": "Creative Bloq - Typography",
+      "url": "https://www.creativebloq.com/design/fonts-typography/breaking-rules-and-bringing-joy-top-typography-trends-for-2026",
+      "description": "Typography trends forecast for 2026",
+      "verified": true
+    },
+    {
+      "name": "GCU Community",
+      "url": "https://gcucommunity.com/2025/07/18/graphic-design-trends-for-2026-fresh-inspiration-for-your-greeting-cards/",
+      "description": "Greeting card specific design trends",
+      "verified": true
+    },
+    {
+      "name": "CNN Style",
+      "url": "https://www.cnn.com/2025/12/04/style/pantone-color-of-the-year-2026-intl-scli",
+      "description": "Pantone 2026 announcement coverage",
+      "verified": true
+    }
   ],
-  "source_urls": {
-    "pantone": "https://www.pantone.com/color-of-the-year/2026",
-    "design_trends": "https://www.creativebloq.com/design/graphic-design/texture-warmth-and-tactile-rebellion-the-big-graphic-design-trends-for-2026",
-    "typography": "https://www.creativebloq.com/design/fonts-typography/breaking-rules-and-bringing-joy-top-typography-trends-for-2026",
-    "greeting_cards": "https://gcucommunity.com/2025/07/18/graphic-design-trends-for-2026-fresh-inspiration-for-your-greeting-cards/"
+  "methodology": {
+    "note": "Relevance weights are editorial estimates based on trend prominence in source articles and industry coverage. They represent relative importance for portfolio alignment, not market research percentages.",
+    "scoring": "Weights range from 0-100 and indicate how strongly a trend should influence alignment scoring. Higher weights = more prominent in 2026 trend coverage.",
+    "color_alignment": "Color similarity calculated using hex color distance formula. Scores above 70 indicate strong alignment with Pantone 2026 palette."
   },
 
   "color_trends": {
@@ -22,7 +46,8 @@
       "hex": "#F0EEE9",
       "description": "A billowy, balanced white imbued with a feeling of serenity. Cloud Dancer serves as a symbol of calming influence in a society rediscovering the value of quiet reflection. Associated with new beginnings, it signifies our desire for a fresh start.",
       "mood": "Serene, calming, fresh, pure",
-      "note": "First time Pantone has chosen a shade of white for Color of the Year"
+      "note": "First time Pantone has chosen a shade of white for Color of the Year",
+      "source": "Pantone Color Institute"
     },
     "emerging_palettes": [
       {
@@ -34,7 +59,8 @@
           {"name": "Sage Whisper", "hex": "#D4DED1"}
         ],
         "mood": "Calm, peaceful, grounded",
-        "best_for": ["sympathy", "thinking_of_you", "thank_you", "wedding"]
+        "best_for": ["sympathy", "thinking_of_you", "thank_you", "wedding"],
+        "source_note": "Palette inspired by Cloud Dancer and 2026 neutral trend coverage"
       },
       {
         "name": "Tactile Warmth",
@@ -45,7 +71,8 @@
           {"name": "Burnt Umber", "hex": "#8B4513"}
         ],
         "mood": "Warm, organic, handcrafted",
-        "best_for": ["thank_you", "birthday", "fall", "friendship"]
+        "best_for": ["thank_you", "birthday", "fall", "friendship"],
+        "source_note": "Based on Creative Bloq tactile warmth trend coverage"
       },
       {
         "name": "Joyful Maximalism",
@@ -56,7 +83,8 @@
           {"name": "Kelly Green", "hex": "#4CBB17"}
         ],
         "mood": "Bold, energetic, celebratory",
-        "best_for": ["birthday", "congratulations", "celebration", "graduation"]
+        "best_for": ["birthday", "congratulations", "celebration", "graduation"],
+        "source_note": "Based on GCU Community punk/expressive style coverage"
       },
       {
         "name": "Retro Futurism",
@@ -67,7 +95,8 @@
           {"name": "Space Navy", "hex": "#1E3A5F"}
         ],
         "mood": "Futuristic, nostalgic, optimistic",
-        "best_for": ["new_year", "graduation", "congratulations", "birthday"]
+        "best_for": ["new_year", "graduation", "congratulations", "birthday"],
+        "source_note": "Based on GCU Community retro revival trend"
       }
     ],
     "seasonal_shifts": {
@@ -98,42 +127,42 @@
     {
       "name": "Naive & Imperfect Design",
       "description": "Childlike, imperfect, human. Uneven fills, scratchy linework, smiley suns, and illustrations that look handmade with visible human touch. A deliberate rejection of AI's hyper-polished aesthetic.",
-      "popularity_score": 95,
-      "growth_rate": "+52% YoY",
+      "relevance_weight": 95,
       "compatible_styles": ["illustrated", "whimsical", "cute", "handmade", "artistic"],
-      "keywords": ["naive", "childlike", "imperfect", "handmade", "wobbly", "human", "scratchy", "organic"]
+      "keywords": ["naive", "childlike", "imperfect", "handmade", "wobbly", "human", "scratchy", "organic"],
+      "source": "Creative Bloq - 'messy, meaningful and made by humans' illustration trends"
     },
     {
       "name": "Anti-AI Crafting",
       "description": "Deliberate rejection of AI's hyper-polished aesthetic. Wobbly outlines, loose illustration, wrong spacing, and textures that look like risograph or leaky marker. Emphasizes unmistakably human-made work.",
-      "popularity_score": 92,
-      "growth_rate": "+48% YoY",
+      "relevance_weight": 92,
       "compatible_styles": ["illustrated", "artistic", "retro_vintage", "handmade"],
-      "keywords": ["handcrafted", "imperfect", "risograph", "analog", "textured", "human", "anti-ai", "authentic"]
+      "keywords": ["handcrafted", "imperfect", "risograph", "analog", "textured", "human", "anti-ai", "authentic"],
+      "source": "Creative Bloq - tactile rebellion theme"
     },
     {
       "name": "Mixed Media Collage",
       "description": "Blending photography, illustration, collage, and 3D elements to create layered visuals that feel tactile, unexpected, and full of personality.",
-      "popularity_score": 88,
-      "growth_rate": "+35% YoY",
+      "relevance_weight": 88,
       "compatible_styles": ["artistic", "modern", "collage", "mixed_media", "bold_graphic"],
-      "keywords": ["collage", "mixed media", "layered", "tactile", "photography", "3D", "texture"]
+      "keywords": ["collage", "mixed media", "layered", "tactile", "photography", "3D", "texture"],
+      "source": "GCU Community - punk & expressive style trend"
     },
     {
       "name": "Textured Flat Design",
       "description": "Flat illustrations enhanced with grain, noise, and organic textures. Risograph-inspired aesthetic that adds warmth and tactility to both physical and digital designs.",
-      "popularity_score": 86,
-      "growth_rate": "+30% YoY",
+      "relevance_weight": 86,
       "compatible_styles": ["illustrated", "minimalist", "retro_vintage", "modern"],
-      "keywords": ["grain", "texture", "risograph", "noise", "flat", "warm", "tactile"]
+      "keywords": ["grain", "texture", "risograph", "noise", "flat", "warm", "tactile"],
+      "source": "GCU Community - grainy textures trend"
     },
     {
       "name": "Maximalist Chaos",
       "description": "Loud, layered, and unapologetically full of personality. A rebellion against sterile, hyper-polished branding with bold patterns, intricate details, and vibrant colors.",
-      "popularity_score": 84,
-      "growth_rate": "+28% YoY",
+      "relevance_weight": 84,
       "compatible_styles": ["bold_graphic", "illustrated", "colorful", "artistic"],
-      "keywords": ["maximalist", "bold", "layered", "vibrant", "chaos", "personality", "detailed"]
+      "keywords": ["maximalist", "bold", "layered", "vibrant", "chaos", "personality", "detailed"],
+      "source": "Creative Bloq - personality over uniformity theme"
     }
   ],
 
@@ -141,34 +170,38 @@
     {
       "name": "Expressive Kinetic Type",
       "description": "Letters that bounce, twist, overlap, or interact with illustrations. Typography as the hero image - big, stacked, stretched, rotated. Letterforms become UI, diagrams, and visual elements.",
-      "popularity_score": 94,
+      "relevance_weight": 94,
       "compatible_typography": ["display", "sans_serif", "custom"],
       "mood": "Dynamic, playful, bold, expressive",
-      "keywords": ["kinetic", "expressive", "bouncing", "warping", "dynamic", "bold", "oversized"]
+      "keywords": ["kinetic", "expressive", "bouncing", "warping", "dynamic", "bold", "oversized"],
+      "source": "Creative Bloq Typography Trends 2026"
     },
     {
       "name": "Bubbly & Puffy Letterforms",
       "description": "Oversized sans-serifs, bubbly and puffy letterforms, wavy and distorted bubble-like fonts. Playful and approachable typography that brings joy.",
-      "popularity_score": 88,
+      "relevance_weight": 88,
       "compatible_typography": ["display", "sans_serif", "bubble"],
       "mood": "Fun, approachable, joyful, friendly",
-      "keywords": ["bubbly", "puffy", "rounded", "soft", "playful", "fun", "wavy"]
+      "keywords": ["bubbly", "puffy", "rounded", "soft", "playful", "fun", "wavy"],
+      "source": "Creative Bloq Typography Trends 2026"
     },
     {
       "name": "Handwritten Revival",
       "description": "Handwritten-style fonts adding personal touch. Loopy cursives and authentic scripts that feel genuine and intimate, especially for personal occasions.",
-      "popularity_score": 85,
+      "relevance_weight": 85,
       "compatible_typography": ["handwritten", "script", "brush", "cursive"],
       "mood": "Personal, intimate, authentic, warm",
-      "keywords": ["handwritten", "script", "personal", "authentic", "cursive", "loopy", "intimate"]
+      "keywords": ["handwritten", "script", "personal", "authentic", "cursive", "loopy", "intimate"],
+      "source": "Creative Bloq Typography Trends 2026"
     },
     {
       "name": "High-Contrast Serifs",
       "description": "The return of elegant high-contrast serifs. Modern serifs with dramatic thick-thin contrast bringing sophistication and editorial quality.",
-      "popularity_score": 82,
+      "relevance_weight": 82,
       "compatible_typography": ["serif", "elegant", "editorial", "classic"],
       "mood": "Sophisticated, elegant, editorial, refined",
-      "keywords": ["serif", "contrast", "elegant", "editorial", "classic", "refined"]
+      "keywords": ["serif", "contrast", "elegant", "editorial", "classic", "refined"],
+      "source": "Creative Bloq Typography Trends 2026"
     }
   ],
 
@@ -179,7 +212,8 @@
       "keywords": ["handmade", "authentic", "imperfect", "human", "crafted", "organic", "personal"],
       "compatible_themes": ["handmade", "organic", "personal", "artistic", "craft"],
       "occasions": ["thank_you", "thinking_of_you", "friendship", "birthday"],
-      "popularity_score": 96
+      "relevance_weight": 96,
+      "source": "Creative Bloq - primary 2026 theme"
     },
     {
       "name": "Joyful Celebration",
@@ -187,7 +221,8 @@
       "keywords": ["celebration", "joy", "confetti", "party", "bold", "colorful", "festive", "happy"],
       "compatible_themes": ["celebration", "party", "confetti", "balloons", "cake"],
       "occasions": ["birthday", "congratulations", "graduation", "new_year", "celebration"],
-      "popularity_score": 89
+      "relevance_weight": 89,
+      "source": "GCU Community - joyful maximalism"
     },
     {
       "name": "Calm & Mindfulness",
@@ -195,7 +230,8 @@
       "keywords": ["calm", "serene", "peaceful", "mindful", "quiet", "reflection", "zen", "gentle"],
       "compatible_themes": ["nature", "minimal", "soft", "peaceful", "botanical"],
       "occasions": ["sympathy", "thinking_of_you", "get_well", "encouragement", "wedding"],
-      "popularity_score": 87
+      "relevance_weight": 87,
+      "source": "Pantone - Cloud Dancer meaning"
     },
     {
       "name": "Retro Futurism",
@@ -203,7 +239,8 @@
       "keywords": ["retro", "futuristic", "chrome", "space", "cosmic", "neon", "vintage", "sci-fi"],
       "compatible_themes": ["abstract", "geometric", "tech", "space", "celebration"],
       "occasions": ["new_year", "graduation", "congratulations", "birthday"],
-      "popularity_score": 81
+      "relevance_weight": 81,
+      "source": "GCU Community - retro revival trend"
     },
     {
       "name": "Eco & Sustainability",
@@ -211,7 +248,8 @@
       "keywords": ["eco", "sustainable", "nature", "botanical", "earth", "organic", "green", "natural"],
       "compatible_themes": ["nature", "botanical", "flowers", "earth", "organic"],
       "occasions": ["thank_you", "thinking_of_you", "birthday", "general"],
-      "popularity_score": 78
+      "relevance_weight": 78,
+      "source": "GCU Community - climate & sustainability motifs"
     },
     {
       "name": "Personalization & Unique",
@@ -219,7 +257,8 @@
       "keywords": ["personal", "unique", "custom", "individual", "special", "one-of-a-kind"],
       "compatible_themes": ["personal", "custom", "unique", "special"],
       "occasions": ["birthday", "anniversary", "wedding", "thank_you"],
-      "popularity_score": 85
+      "relevance_weight": 85,
+      "source": "GCU Community - personalization trend"
     }
   ],
 
@@ -269,6 +308,7 @@
     "defining_theme": "2026 is defined by the deliberate rejection of AI's hyper-polished aesthetic in favor of work that feels unmistakably made by human hands.",
     "pantone_significance": "First time Pantone chose white - symbolizing calm and fresh starts in a frenetic society.",
     "design_direction": "Uniformity is out, character is in. Designers are reaching for more personality, more craft, and more joy.",
-    "greeting_card_focus": "Millennials are now the largest card buyers - they're not occasion-driven but design-driven, buying when they see something that makes them think of someone."
+    "greeting_card_focus": "Millennials are now the largest card buyers - they're not occasion-driven but design-driven, buying when they see something that makes them think of someone.",
+    "sources_note": "All insights synthesized from verified industry sources listed above."
   }
 }
