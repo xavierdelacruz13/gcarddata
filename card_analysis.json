@@ -1,0 +1,5320 @@
+[
+  {
+    "rank": 1,
+    "card_id": "1809",
+    "card_name": "Have the Best Birthday Ever Paper&Stuff",
+    "sends_current": 6373,
+    "sends_previous": 6186,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "pink",
+      "green",
+      "blue"
+    ],
+    "themes": [
+      "cake",
+      "confetti"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 2,
+    "card_id": "1997",
+    "card_name": "Yay Happy Birthday Spaghetti & Meatballs",
+    "sends_current": 5690,
+    "sends_previous": 5723,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "pink",
+      "gold",
+      "multicolor"
+    ],
+    "themes": [
+      "cake",
+      "confetti"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 3,
+    "card_id": "1996",
+    "card_name": "Hope your Birthday is Sprinkled With Joy Spaghetti & Meatballs",
+    "sends_current": 4314,
+    "sends_previous": 4029,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "pink",
+      "gold",
+      "multicolor"
+    ],
+    "themes": [
+      "cake",
+      "food"
+    ],
+    "typography_style": "serif"
+  },
+  {
+    "rank": 4,
+    "card_id": "1872",
+    "card_name": "Make A Wish Karen Schipper",
+    "sends_current": 3694,
+    "sends_previous": 3600,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "pink",
+      "red",
+      "yellow"
+    ],
+    "themes": [
+      "cake"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 5,
+    "card_id": "2332",
+    "card_name": "Birthday Wishes Melanie Johnsson",
+    "sends_current": 3133,
+    "sends_previous": 3300,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "green",
+      "pink",
+      "yellow"
+    ],
+    "themes": [
+      "cake",
+      "confetti"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 6,
+    "card_id": "1160",
+    "card_name": "Happy Birthday Priyanka Darlin' Spotted",
+    "sends_current": 2611,
+    "sends_previous": 2505,
+    "occasion": "birthday",
+    "design_style": "minimalist",
+    "primary_colors": [
+      "green",
+      "gold",
+      "white"
+    ],
+    "themes": [
+      "patterns"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 7,
+    "card_id": "1698",
+    "card_name": "Aviva Atri Birthday Cake",
+    "sends_current": 2405,
+    "sends_previous": 2377,
+    "occasion": "birthday",
+    "design_style": "geometric",
+    "primary_colors": [
+      "pink",
+      "orange",
+      "green"
+    ],
+    "themes": [
+      "cake",
+      "confetti"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 8,
+    "card_id": "1565",
+    "card_name": "happy mothers Day Karen Schipper",
+    "sends_current": 2026,
+    "sends_previous": 2026,
+    "occasion": "mothers_day",
+    "design_style": "watercolor",
+    "primary_colors": [
+      "peach",
+      "blue",
+      "green"
+    ],
+    "themes": [
+      "flowers",
+      "nature"
+    ],
+    "typography_style": "serif"
+  },
+  {
+    "rank": 9,
+    "card_id": "192",
+    "card_name": "Hey You HBD Poketo",
+    "sends_current": 1958,
+    "sends_previous": 1945,
+    "occasion": "birthday",
+    "design_style": "modern",
+    "primary_colors": [
+      "blue",
+      "coral",
+      "white"
+    ],
+    "themes": [
+      "abstract"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 10,
+    "card_id": "1808",
+    "card_name": "Happy Birthday Paper&Stuff Gradient",
+    "sends_current": 1910,
+    "sends_previous": 1847,
+    "occasion": "birthday",
+    "design_style": "bold_graphic",
+    "primary_colors": [
+      "orange",
+      "teal",
+      "white"
+    ],
+    "themes": [
+      "abstract"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 11,
+    "card_id": "652",
+    "card_name": "Happy Birthday jordan gadeke Balloon",
+    "sends_current": 1855,
+    "sends_previous": 1865,
+    "occasion": "birthday",
+    "design_style": "playful_cute",
+    "primary_colors": [
+      "yellow",
+      "red",
+      "white"
+    ],
+    "themes": [
+      "balloons",
+      "characters"
+    ],
+    "typography_style": "display"
+  },
+  {
+    "rank": 12,
+    "card_id": "1342",
+    "card_name": "Happy Birthday Moses Kruschat",
+    "sends_current": 1721,
+    "sends_previous": 1654,
+    "occasion": "birthday",
+    "design_style": "retro_vintage",
+    "primary_colors": [
+      "orange",
+      "teal",
+      "black"
+    ],
+    "themes": [
+      "abstract"
+    ],
+    "typography_style": "display"
+  },
+  {
+    "rank": 13,
+    "card_id": "1728",
+    "card_name": "You Deserve A Treat Jillian Goeler",
+    "sends_current": 1680,
+    "sends_previous": 1647,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "pink",
+      "cream",
+      "red"
+    ],
+    "themes": [
+      "cake",
+      "food"
+    ],
+    "typography_style": "display"
+  },
+  {
+    "rank": 14,
+    "card_id": "900",
+    "card_name": "Happy Birthday Candles Oscar Tapeswing",
+    "sends_current": 1644,
+    "sends_previous": 1593,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "mint",
+      "multicolor",
+      "cream"
+    ],
+    "themes": [
+      "cake"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 15,
+    "card_id": "2075",
+    "card_name": "Its Your Birthday Sip Back and Relax Amy Zhang",
+    "sends_current": 1599,
+    "sends_previous": 1655,
+    "occasion": "birthday",
+    "design_style": "watercolor",
+    "primary_colors": [
+      "pink",
+      "orange",
+      "white"
+    ],
+    "themes": [
+      "food"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 16,
+    "card_id": "2334",
+    "card_name": "Happy Bday Doggy Melanie Johnsson",
+    "sends_current": 1578,
+    "sends_previous": 1619,
+    "occasion": "birthday",
+    "design_style": "playful_cute",
+    "primary_colors": [
+      "yellow",
+      "pink",
+      "blue"
+    ],
+    "themes": [
+      "animals"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 17,
+    "card_id": "2118",
+    "card_name": "Happy Birthday Dicky Bird",
+    "sends_current": 1575,
+    "sends_previous": 1602,
+    "occasion": "birthday",
+    "design_style": "geometric",
+    "primary_colors": [
+      "green",
+      "blue",
+      "orange"
+    ],
+    "themes": [
+      "animals",
+      "balloons"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 18,
+    "card_id": "1161",
+    "card_name": "Thank You Priyanka Darlin' Spotted",
+    "sends_current": 1561,
+    "sends_previous": 1540,
+    "occasion": "thank_you",
+    "design_style": "minimalist",
+    "primary_colors": [
+      "blue",
+      "gold",
+      "white"
+    ],
+    "themes": [
+      "patterns"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 19,
+    "card_id": "2392",
+    "card_name": "Merry Christmas Jumble - Green Paper Co.",
+    "sends_current": 1497,
+    "sends_previous": 1499,
+    "occasion": "christmas",
+    "design_style": "typography_focused",
+    "primary_colors": [
+      "red",
+      "pink",
+      "white"
+    ],
+    "themes": [
+      "abstract"
+    ],
+    "typography_style": "serif"
+  },
+  {
+    "rank": 20,
+    "card_id": "1114",
+    "card_name": "Birth Yay! paper&co",
+    "sends_current": 1468,
+    "sends_previous": 1445,
+    "occasion": "birthday",
+    "design_style": "bold_graphic",
+    "primary_colors": [
+      "red",
+      "multicolor",
+      "white"
+    ],
+    "themes": [
+      "confetti"
+    ],
+    "typography_style": "display"
+  },
+  {
+    "rank": 21,
+    "card_id": "1543",
+    "card_name": "Happy Bday Dawg Antonay Studio",
+    "sends_current": 1449,
+    "sends_previous": 1436,
+    "occasion": "birthday",
+    "design_style": "playful_cute",
+    "primary_colors": [
+      "teal",
+      "yellow",
+      "pink"
+    ],
+    "themes": [
+      "animals",
+      "characters",
+      "balloons"
+    ],
+    "typography_style": "display"
+  },
+  {
+    "rank": 22,
+    "card_id": "1621",
+    "card_name": "Older Bud Wiser Rumble Cards Happy Birthday",
+    "sends_current": 1419,
+    "sends_previous": 1418,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "purple",
+      "red",
+      "brown"
+    ],
+    "themes": [
+      "food"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 23,
+    "card_id": "1007",
+    "card_name": "Happy Birthday AliRae Aguirre Floral",
+    "sends_current": 1373,
+    "sends_previous": 1368,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "pink",
+      "green",
+      "red"
+    ],
+    "themes": [
+      "flowers",
+      "nature"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 24,
+    "card_id": "2099",
+    "card_name": "Happy Birthday Meinhass Archives",
+    "sends_current": 1356,
+    "sends_previous": 1380,
+    "occasion": "birthday",
+    "design_style": "retro_vintage",
+    "primary_colors": [
+      "purple",
+      "pink",
+      "orange"
+    ],
+    "themes": [
+      "animals",
+      "nature"
+    ],
+    "typography_style": "display"
+  },
+  {
+    "rank": 25,
+    "card_id": "1191",
+    "card_name": "Bday Candles Milk Bar Animation",
+    "sends_current": 1301,
+    "sends_previous": 1285,
+    "occasion": "birthday",
+    "design_style": "modern",
+    "primary_colors": [
+      "pink",
+      "white",
+      "multicolor"
+    ],
+    "themes": [
+      "cake",
+      "confetti"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 26,
+    "card_id": "1643",
+    "card_name": "Happy Bday Priyanka Darlin",
+    "sends_current": 1232,
+    "sends_previous": 1143,
+    "occasion": "birthday",
+    "design_style": "bold_graphic",
+    "primary_colors": [
+      "black",
+      "multicolor",
+      "white"
+    ],
+    "themes": [
+      "abstract"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 27,
+    "card_id": "1369",
+    "card_name": "Let Us Eat Cake Hemlock House Studio Cakes",
+    "sends_current": 1227,
+    "sends_previous": 1209,
+    "occasion": "birthday",
+    "design_style": "elegant",
+    "primary_colors": [
+      "pink",
+      "orange",
+      "cream"
+    ],
+    "themes": [
+      "cake",
+      "food"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 28,
+    "card_id": "1060",
+    "card_name": "Another Trip Around The Sun Adelfi",
+    "sends_current": 1216,
+    "sends_previous": 1276,
+    "occasion": "birthday",
+    "design_style": "elegant",
+    "primary_colors": [
+      "blue",
+      "gold",
+      "white"
+    ],
+    "themes": [
+      "nature",
+      "abstract"
+    ],
+    "typography_style": "serif"
+  },
+  {
+    "rank": 29,
+    "card_id": "1100",
+    "card_name": "Hope Your Birthday Is Jam-Packed With Love Amy Zhang Bread and Jam",
+    "sends_current": 1185,
+    "sends_previous": 1192,
+    "occasion": "birthday",
+    "design_style": "watercolor",
+    "primary_colors": [
+      "white",
+      "red",
+      "brown"
+    ],
+    "themes": [
+      "food",
+      "hearts"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 30,
+    "card_id": "1667",
+    "card_name": "Happy Birthday Dicky Bird Spray Paint",
+    "sends_current": 1165,
+    "sends_previous": 1154,
+    "occasion": "birthday",
+    "design_style": "bold_graphic",
+    "primary_colors": [
+      "multicolor",
+      "white",
+      "yellow"
+    ],
+    "themes": [
+      "abstract",
+      "patterns"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 31,
+    "card_id": "1560",
+    "card_name": "Happy Mother's Day Dicky Bird",
+    "sends_current": 1163,
+    "sends_previous": 1163,
+    "occasion": "mothers_day",
+    "design_style": "geometric",
+    "primary_colors": [
+      "pink",
+      "red",
+      "green"
+    ],
+    "themes": [
+      "flowers"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 32,
+    "card_id": "1712",
+    "card_name": "A Little Something For You Amy Zhang",
+    "sends_current": 1153,
+    "sends_previous": 1254,
+    "occasion": "general",
+    "design_style": "watercolor",
+    "primary_colors": [
+      "white",
+      "brown",
+      "pink"
+    ],
+    "themes": [
+      "food"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 33,
+    "card_id": "1383",
+    "card_name": "Birthday Wishes Faye Guanipa Floral",
+    "sends_current": 1151,
+    "sends_previous": 1126,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "orange",
+      "teal",
+      "cream"
+    ],
+    "themes": [
+      "flowers",
+      "nature"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 34,
+    "card_id": "1701",
+    "card_name": "Thanks Aviva Atri",
+    "sends_current": 1129,
+    "sends_previous": 1107,
+    "occasion": "thank_you",
+    "design_style": "typography_focused",
+    "primary_colors": [
+      "pink",
+      "orange",
+      "yellow"
+    ],
+    "themes": [
+      "abstract"
+    ],
+    "typography_style": "display"
+  },
+  {
+    "rank": 35,
+    "card_id": "1088",
+    "card_name": "Happy Birthday You Lovely Soul Lauren Marina Sun",
+    "sends_current": 1124,
+    "sends_previous": 1083,
+    "occasion": "birthday",
+    "design_style": "minimalist",
+    "primary_colors": [
+      "green",
+      "cream",
+      "white"
+    ],
+    "themes": [
+      "nature"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 36,
+    "card_id": "1823",
+    "card_name": "Just A Note Amy Zhang",
+    "sends_current": 1124,
+    "sends_previous": 1089,
+    "occasion": "general",
+    "design_style": "minimalist",
+    "primary_colors": [
+      "sage",
+      "green",
+      "white"
+    ],
+    "themes": [
+      "nature"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 37,
+    "card_id": "2297",
+    "card_name": "Happy Belated Birthday Aviva Atri",
+    "sends_current": 1113,
+    "sends_previous": 1142,
+    "occasion": "birthday",
+    "design_style": "minimalist",
+    "primary_colors": [
+      "cream",
+      "orange",
+      "blue"
+    ],
+    "themes": [
+      "balloons"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 38,
+    "card_id": "2413",
+    "card_name": "Here's Some Holiday Cheer - Green Paper Co.",
+    "sends_current": 1102,
+    "sends_previous": 1108,
+    "occasion": "christmas",
+    "design_style": "bold_graphic",
+    "primary_colors": [
+      "red",
+      "green",
+      "blue"
+    ],
+    "themes": [
+      "patterns"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 39,
+    "card_id": "722",
+    "card_name": "Happy Bday Analogbynat",
+    "sends_current": 1100,
+    "sends_previous": 1099,
+    "occasion": "birthday",
+    "design_style": "modern",
+    "primary_colors": [
+      "blue",
+      "purple",
+      "pink"
+    ],
+    "themes": [
+      "abstract"
+    ],
+    "typography_style": "display"
+  },
+  {
+    "rank": 40,
+    "card_id": "2274",
+    "card_name": "Sending Pieces, Love, And Joy this Thanksgiving Amy Zhang",
+    "sends_current": 1076,
+    "sends_previous": 1076,
+    "occasion": "thanksgiving",
+    "design_style": "watercolor",
+    "primary_colors": [
+      "orange",
+      "brown",
+      "white"
+    ],
+    "themes": [
+      "food"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 41,
+    "card_id": "1668",
+    "card_name": "Happy Birthday Dicky Bird Gaming",
+    "sends_current": 1064,
+    "sends_previous": 1051,
+    "occasion": "birthday",
+    "design_style": "retro_vintage",
+    "primary_colors": [
+      "multicolor",
+      "white",
+      "pink"
+    ],
+    "themes": [
+      "characters",
+      "patterns"
+    ],
+    "typography_style": "display"
+  },
+  {
+    "rank": 42,
+    "card_id": "2396",
+    "card_name": "Merry Christmas Ladder - Green Paper Co",
+    "sends_current": 1012,
+    "sends_previous": 1013,
+    "occasion": "christmas",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "red",
+      "blue",
+      "gold"
+    ],
+    "themes": [
+      "nature",
+      "characters"
+    ],
+    "typography_style": "display"
+  },
+  {
+    "rank": 43,
+    "card_id": "1857",
+    "card_name": "Happy Belated Birthday Melanie Johnsson",
+    "sends_current": 993,
+    "sends_previous": 983,
+    "occasion": "birthday",
+    "design_style": "playful_cute",
+    "primary_colors": [
+      "yellow",
+      "red",
+      "pink"
+    ],
+    "themes": [
+      "cake",
+      "confetti"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 44,
+    "card_id": "2336",
+    "card_name": "Happy B-day Balloon Melanie Johnsson",
+    "sends_current": 957,
+    "sends_previous": 989,
+    "occasion": "birthday",
+    "design_style": "playful_cute",
+    "primary_colors": [
+      "orange",
+      "multicolor",
+      "blue"
+    ],
+    "themes": [
+      "balloons"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 45,
+    "card_id": "1865",
+    "card_name": "Happy Valentines Day Forage Paper Co",
+    "sends_current": 921,
+    "sends_previous": 921,
+    "occasion": "valentines",
+    "design_style": "watercolor",
+    "primary_colors": [
+      "pink",
+      "red",
+      "white"
+    ],
+    "themes": [
+      "flowers",
+      "balloons",
+      "hearts"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 46,
+    "card_id": "1321",
+    "card_name": "Happy Holidays Priyanka Darlin",
+    "sends_current": 915,
+    "sends_previous": 914,
+    "occasion": "christmas",
+    "design_style": "minimalist",
+    "primary_colors": [
+      "gold",
+      "black",
+      "white"
+    ],
+    "themes": [
+      "patterns"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 47,
+    "card_id": "1676",
+    "card_name": "Thank You Adelfi Oranges",
+    "sends_current": 890,
+    "sends_previous": 866,
+    "occasion": "thank_you",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "orange",
+      "green",
+      "cream"
+    ],
+    "themes": [
+      "food",
+      "nature"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 48,
+    "card_id": "1685",
+    "card_name": "Birthday Beers Matt Joyce",
+    "sends_current": 868,
+    "sends_previous": 855,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "teal",
+      "orange",
+      "navy"
+    ],
+    "themes": [
+      "food"
+    ],
+    "typography_style": "mixed"
+  },
+  {
+    "rank": 49,
+    "card_id": "54",
+    "card_name": "Make a Wish Nickel & Penny",
+    "sends_current": 860,
+    "sends_previous": 863,
+    "occasion": "birthday",
+    "design_style": "elegant",
+    "primary_colors": [
+      "blue",
+      "gold",
+      "multicolor"
+    ],
+    "themes": [
+      "cake",
+      "confetti"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 50,
+    "card_id": "981",
+    "card_name": "Happy Birthday Yolanda Poh",
+    "sends_current": 835,
+    "sends_previous": 802,
+    "occasion": "birthday",
+    "design_style": "playful_cute",
+    "primary_colors": [
+      "blue",
+      "white",
+      "periwinkle"
+    ],
+    "themes": [
+      "hearts",
+      "patterns"
+    ],
+    "typography_style": "display"
+  },
+  {
+    "rank": 51,
+    "card_id": "422",
+    "card_name": "Happy Birthday Ashley Le Quere slice",
+    "sends_current": 834,
+    "sends_previous": 811,
+    "occasion": "birthday",
+    "design_style": "playful_cute",
+    "primary_colors": [
+      "blue",
+      "pink",
+      "orange"
+    ],
+    "themes": [
+      "cake",
+      "food"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 52,
+    "card_id": "1856",
+    "card_name": "I Love You Soo Muuch Melanie johnsson",
+    "sends_current": 818,
+    "sends_previous": 804,
+    "occasion": "love",
+    "design_style": "typography_focused",
+    "primary_colors": [
+      "red",
+      "pink",
+      "white"
+    ],
+    "themes": [
+      "abstract"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 53,
+    "card_id": "1916",
+    "card_name": "Friendship Flowers Rosie Pink",
+    "sends_current": 818,
+    "sends_previous": 815,
+    "occasion": "friendship",
+    "design_style": "playful_cute",
+    "primary_colors": [
+      "pink",
+      "coral",
+      "yellow"
+    ],
+    "themes": [
+      "flowers"
+    ],
+    "typography_style": "display"
+  },
+  {
+    "rank": 54,
+    "card_id": "2245",
+    "card_name": "Wishing You A Merry Christmas Paper & Stuff",
+    "sends_current": 810,
+    "sends_previous": 812,
+    "occasion": "christmas",
+    "design_style": "minimalist",
+    "primary_colors": [
+      "orange",
+      "green",
+      "white"
+    ],
+    "themes": [
+      "nature"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 55,
+    "card_id": "2279",
+    "card_name": "Happy Birthday from All of Us Lauren Heydt",
+    "sends_current": 802,
+    "sends_previous": 829,
+    "occasion": "birthday",
+    "design_style": "typography_focused",
+    "primary_colors": [
+      "blue",
+      "green",
+      "yellow"
+    ],
+    "themes": [
+      "abstract"
+    ],
+    "typography_style": "display"
+  },
+  {
+    "rank": 56,
+    "card_id": "1875",
+    "card_name": "Happy Birthday Cake Karen Schipper",
+    "sends_current": 792,
+    "sends_previous": 790,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "blue",
+      "white",
+      "multicolor"
+    ],
+    "themes": [
+      "cake",
+      "confetti"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 57,
+    "card_id": "1982",
+    "card_name": "To The Woman Who Inspires And Amazes Me the Most Jaclyn Caris",
+    "sends_current": 787,
+    "sends_previous": 787,
+    "occasion": "mothers_day",
+    "design_style": "retro_vintage",
+    "primary_colors": [
+      "pink",
+      "orange",
+      "yellow"
+    ],
+    "themes": [
+      "hearts",
+      "abstract"
+    ],
+    "typography_style": "mixed"
+  },
+  {
+    "rank": 58,
+    "card_id": "1214",
+    "card_name": "Ice Cream Melissa Blair Animation",
+    "sends_current": 780,
+    "sends_previous": 767,
+    "occasion": "birthday",
+    "design_style": "playful_cute",
+    "primary_colors": [
+      "pink",
+      "white",
+      "multicolor"
+    ],
+    "themes": [
+      "food",
+      "confetti"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 59,
+    "card_id": "1008",
+    "card_name": "Happy Mother's Day AliRae Aguirre",
+    "sends_current": 775,
+    "sends_previous": 775,
+    "occasion": "mothers_day",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "green",
+      "pink",
+      "coral"
+    ],
+    "themes": [
+      "flowers",
+      "nature"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 60,
+    "card_id": "1227",
+    "card_name": "Another Year Another Journey Happy BirthdayKaren Schipper Land Rover",
+    "sends_current": 773,
+    "sends_previous": 755,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "blue",
+      "orange",
+      "teal"
+    ],
+    "themes": [
+      "nature"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 61,
+    "card_id": "1849",
+    "card_name": "Happy Birthday Jacqueline Colley Cake Slice",
+    "sends_current": 769,
+    "sends_previous": 742,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "mint",
+      "pink",
+      "coral"
+    ],
+    "themes": [
+      "cake",
+      "confetti"
+    ],
+    "typography_style": "display"
+  },
+  {
+    "rank": 62,
+    "card_id": "1103",
+    "card_name": "Happy Mother's Day Happy Go Lucky Pancakes",
+    "sends_current": 767,
+    "sends_previous": 767,
+    "occasion": "mothers_day",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "cream",
+      "green",
+      "orange"
+    ],
+    "themes": [
+      "food"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 63,
+    "card_id": "1172",
+    "card_name": "Have The Sweetest Birthday Ashley Le Quere",
+    "sends_current": 764,
+    "sends_previous": 771,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "cream",
+      "blue",
+      "yellow"
+    ],
+    "themes": [
+      "food"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 64,
+    "card_id": "1272",
+    "card_name": "Happy Birthday Melanie Johnsson Cupcake",
+    "sends_current": 760,
+    "sends_previous": 741,
+    "occasion": "birthday",
+    "design_style": "playful_cute",
+    "primary_colors": [
+      "black",
+      "yellow",
+      "lavender"
+    ],
+    "themes": [
+      "cake",
+      "hearts",
+      "confetti"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 65,
+    "card_id": "1747",
+    "card_name": "Happy Ducking Birthday Brittany Paige",
+    "sends_current": 750,
+    "sends_previous": 751,
+    "occasion": "birthday",
+    "design_style": "minimalist",
+    "primary_colors": [
+      "blue",
+      "white"
+    ],
+    "themes": [
+      "abstract"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 66,
+    "card_id": "1033",
+    "card_name": "You're A Classic Amy Zhang",
+    "sends_current": 715,
+    "sends_previous": 713,
+    "occasion": "birthday",
+    "design_style": "watercolor",
+    "primary_colors": [
+      "black",
+      "orange",
+      "cream"
+    ],
+    "themes": [
+      "abstract"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 67,
+    "card_id": "516",
+    "card_name": "Happy Birthday Oscar Tapeswing",
+    "sends_current": 697,
+    "sends_previous": 676,
+    "occasion": "birthday",
+    "design_style": "geometric",
+    "primary_colors": [
+      "blue",
+      "white",
+      "yellow"
+    ],
+    "themes": [
+      "cake",
+      "confetti"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 68,
+    "card_id": "1281",
+    "card_name": "Thank You Brook Gossen Animation",
+    "sends_current": 696,
+    "sends_previous": 708,
+    "occasion": "thank_you",
+    "design_style": "playful_cute",
+    "primary_colors": [
+      "blue",
+      "multicolor",
+      "white"
+    ],
+    "themes": [
+      "patterns"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 69,
+    "card_id": "2144",
+    "card_name": "Happy Birthday You Party Animal Amy Zhnag",
+    "sends_current": 693,
+    "sends_previous": 717,
+    "occasion": "birthday",
+    "design_style": "watercolor",
+    "primary_colors": [
+      "cream",
+      "pink",
+      "white"
+    ],
+    "themes": [
+      "animals",
+      "food"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 70,
+    "card_id": "1370",
+    "card_name": "Magic Birthday Wishes Hemlock House Studio",
+    "sends_current": 692,
+    "sends_previous": 697,
+    "occasion": "birthday",
+    "design_style": "retro_vintage",
+    "primary_colors": [
+      "cream",
+      "brown",
+      "green"
+    ],
+    "themes": [
+      "nature",
+      "flowers"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 71,
+    "card_id": "1890",
+    "card_name": "Happy Mothers Day Dicky Bird Lady Bug",
+    "sends_current": 687,
+    "sends_previous": 687,
+    "occasion": "mothers_day",
+    "design_style": "bold_graphic",
+    "primary_colors": [
+      "pink",
+      "green",
+      "yellow"
+    ],
+    "themes": [
+      "flowers",
+      "animals"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 72,
+    "card_id": "1854",
+    "card_name": "Happy Valentines Melanie Johnsson",
+    "sends_current": 665,
+    "sends_previous": 664,
+    "occasion": "valentines",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "pink",
+      "red",
+      "brown"
+    ],
+    "themes": [
+      "flowers",
+      "hearts"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 73,
+    "card_id": "474",
+    "card_name": "Pisces Faye Guanipa",
+    "sends_current": 643,
+    "sends_previous": 643,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "navy",
+      "teal",
+      "gold"
+    ],
+    "themes": [
+      "animals",
+      "nature"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 74,
+    "card_id": "1611",
+    "card_name": "Happy Father's Day AliRae Aguirre",
+    "sends_current": 633,
+    "sends_previous": 633,
+    "occasion": "fathers_day",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "black",
+      "green",
+      "purple"
+    ],
+    "themes": [
+      "flowers",
+      "nature"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 75,
+    "card_id": "1088",
+    "card_name": "Happy Birthday You Lovely Soul Lauren Marina Sun",
+    "sends_current": 1124,
+    "sends_previous": 1083,
+    "occasion": "birthday",
+    "design_style": "minimalist",
+    "primary_colors": [
+      "green",
+      "cream",
+      "white"
+    ],
+    "themes": [
+      "nature"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 101,
+    "card_id": 1999,
+    "card_name": "HBD Spaghetti & Meatballs",
+    "current_sends": 436,
+    "previous_sends": 460,
+    "occasion": "birthday",
+    "design_style": "modern",
+    "primary_colors": [
+      "orange",
+      "pink",
+      "black"
+    ],
+    "themes": [
+      "checkerboard pattern",
+      "geometric",
+      "retro"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 102,
+    "card_id": 1766,
+    "card_name": "Happy Holidays Paper&Stuff",
+    "current_sends": 458,
+    "previous_sends": 459,
+    "occasion": "holiday",
+    "design_style": "typography_focused",
+    "primary_colors": [
+      "green",
+      "cream",
+      "white"
+    ],
+    "themes": [
+      "bold typography",
+      "overlapping letters",
+      "festive"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 103,
+    "card_id": 369,
+    "card_name": "Happy Birthday Isabella Humphrey Dogs",
+    "current_sends": 446,
+    "previous_sends": 459,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "sage green",
+      "orange",
+      "cream"
+    ],
+    "themes": [
+      "dogs",
+      "cats",
+      "party hats",
+      "animals",
+      "pets"
+    ],
+    "typography_style": "hand_lettered"
+  },
+  {
+    "rank": 104,
+    "card_id": 469,
+    "card_name": "Aquarius Faye Guanipa",
+    "current_sends": 460,
+    "previous_sends": 459,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "navy blue",
+      "coral",
+      "sage green"
+    ],
+    "themes": [
+      "zodiac",
+      "aquarius",
+      "octopus",
+      "constellation",
+      "sea life",
+      "astrology"
+    ],
+    "typography_style": "hand_lettered"
+  },
+  {
+    "rank": 105,
+    "card_id": 1736,
+    "card_name": "Gobble til You Wobble Emily Doliner",
+    "current_sends": 458,
+    "previous_sends": 458,
+    "occasion": "holiday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "light blue",
+      "black",
+      "orange"
+    ],
+    "themes": [
+      "thanksgiving",
+      "turkey",
+      "cowboy boots",
+      "stars",
+      "whimsical"
+    ],
+    "typography_style": "script"
+  },
+  {
+    "rank": 106,
+    "card_id": 776,
+    "card_name": "Be Merry Leena Kisonen",
+    "current_sends": 453,
+    "previous_sends": 453,
+    "occasion": "holiday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "red",
+      "white",
+      "gold"
+    ],
+    "themes": [
+      "dove",
+      "christmas",
+      "peace",
+      "holly",
+      "festive",
+      "snow dots"
+    ],
+    "typography_style": "script"
+  },
+  {
+    "rank": 107,
+    "card_id": 1439,
+    "card_name": "For You Melanie Johnsson Flowers",
+    "current_sends": 443,
+    "previous_sends": 449,
+    "occasion": "thinking_of_you",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "blue",
+      "orange",
+      "pink"
+    ],
+    "themes": [
+      "flowers",
+      "vase",
+      "retro",
+      "daisy",
+      "colorful",
+      "cheerful"
+    ],
+    "typography_style": "script"
+  },
+  {
+    "rank": 108,
+    "card_id": 512,
+    "card_name": "Let's Paw-ty Oscar Tapeswing",
+    "current_sends": 451,
+    "previous_sends": 448,
+    "occasion": "birthday",
+    "design_style": "modern",
+    "primary_colors": [
+      "light blue",
+      "coral",
+      "orange"
+    ],
+    "themes": [
+      "cat",
+      "party hat",
+      "pun",
+      "pets",
+      "geometric"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 109,
+    "card_id": 514,
+    "card_name": "Birthday Dude Oscar tapeswing",
+    "current_sends": 494,
+    "previous_sends": 448,
+    "occasion": "birthday",
+    "design_style": "modern",
+    "primary_colors": [
+      "mint green",
+      "tan",
+      "coral"
+    ],
+    "themes": [
+      "dog",
+      "terrier",
+      "party hat",
+      "pets",
+      "geometric"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 110,
+    "card_id": 1182,
+    "card_name": "Thank You So Much AnalogbyNat",
+    "current_sends": 437,
+    "previous_sends": 447,
+    "occasion": "thank_you",
+    "design_style": "photographic",
+    "primary_colors": [
+      "blue",
+      "yellow",
+      "white"
+    ],
+    "themes": [
+      "sky",
+      "clouds",
+      "retro",
+      "sparkles",
+      "dreamy"
+    ],
+    "typography_style": "serif"
+  },
+  {
+    "rank": 111,
+    "card_id": 1987,
+    "card_name": "Mom Lauren Marina",
+    "current_sends": 434,
+    "previous_sends": 435,
+    "occasion": "mothers_day",
+    "design_style": null,
+    "primary_colors": null,
+    "themes": null,
+    "typography_style": null,
+    "note": "IMAGE FILE NOT FOUND"
+  },
+  {
+    "rank": 112,
+    "card_id": 79,
+    "card_name": "Happy Anniversary Hue Complete Me",
+    "current_sends": 425,
+    "previous_sends": 430,
+    "occasion": "anniversary",
+    "design_style": "minimalist",
+    "primary_colors": [
+      "blush pink",
+      "black",
+      "red"
+    ],
+    "themes": [
+      "hearts",
+      "love",
+      "romantic",
+      "simple",
+      "elegant"
+    ],
+    "typography_style": "script"
+  },
+  {
+    "rank": 113,
+    "card_id": 1470,
+    "card_name": "Happy Valentines Day Alirae Aguirre",
+    "current_sends": 430,
+    "previous_sends": 429,
+    "occasion": "valentines",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "orange",
+      "pink",
+      "teal"
+    ],
+    "themes": [
+      "flowers",
+      "folk art",
+      "floral",
+      "botanical",
+      "decorative"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 114,
+    "card_id": 1845,
+    "card_name": "You Are The Best Vintage Jacqueline Colley",
+    "current_sends": 431,
+    "previous_sends": 429,
+    "occasion": "thinking_of_you",
+    "design_style": "vintage",
+    "primary_colors": [
+      "pink",
+      "teal",
+      "gold"
+    ],
+    "themes": [
+      "champagne bottle",
+      "celebration",
+      "retro label",
+      "sunburst",
+      "bubbly"
+    ],
+    "typography_style": "mixed"
+  },
+  {
+    "rank": 115,
+    "card_id": 1381,
+    "card_name": "Happy Birthday Fancy Pants Faye Guanipa",
+    "current_sends": 425,
+    "previous_sends": 427,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "coral red",
+      "lavender",
+      "olive green"
+    ],
+    "themes": [
+      "fashion",
+      "flare pants",
+      "fancy shoes",
+      "hand",
+      "stylish"
+    ],
+    "typography_style": "hand_lettered"
+  },
+  {
+    "rank": 116,
+    "card_id": 471,
+    "card_name": "Taurus Faye Guanipa",
+    "current_sends": 425,
+    "previous_sends": 425,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "cream",
+      "green",
+      "red"
+    ],
+    "themes": [
+      "zodiac",
+      "taurus",
+      "bull",
+      "constellation",
+      "florals",
+      "astrology",
+      "botanical"
+    ],
+    "typography_style": "hand_lettered"
+  },
+  {
+    "rank": 117,
+    "card_id": 572,
+    "card_name": "Happy 4th Ashley Le Quere",
+    "current_sends": 424,
+    "previous_sends": 424,
+    "occasion": "holiday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "red",
+      "blue",
+      "cream"
+    ],
+    "themes": [
+      "fourth of july",
+      "american flag",
+      "fireworks",
+      "hamburger",
+      "hot dog",
+      "patriotic",
+      "USA map"
+    ],
+    "typography_style": "hand_lettered"
+  },
+  {
+    "rank": 118,
+    "card_id": 1198,
+    "card_name": "Cheers To The Golden Years Amy Zhang",
+    "current_sends": 420,
+    "previous_sends": 415,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "cream",
+      "brown",
+      "tan"
+    ],
+    "themes": [
+      "golden girls",
+      "pop culture",
+      "TV reference",
+      "hairstyles",
+      "faces",
+      "retro"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 119,
+    "card_id": 1431,
+    "card_name": "You're The Sweetest Valentine Faye Guanipa Lollipop",
+    "current_sends": 412,
+    "previous_sends": 412,
+    "occasion": "valentines",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "coral pink",
+      "red",
+      "yellow"
+    ],
+    "themes": [
+      "heart lollipop",
+      "candy",
+      "valentine",
+      "sweet",
+      "ruffle",
+      "bow"
+    ],
+    "typography_style": "hand_lettered"
+  },
+  {
+    "rank": 120,
+    "card_id": 863,
+    "card_name": "Sending you lots of love spaghetti & meatballs",
+    "current_sends": 409,
+    "previous_sends": 412,
+    "occasion": "thinking_of_you",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "cream",
+      "yellow",
+      "green"
+    ],
+    "themes": [
+      "envelope",
+      "flowers",
+      "mail",
+      "sunflowers",
+      "hearts",
+      "happy mail"
+    ],
+    "typography_style": "script"
+  },
+  {
+    "rank": 121,
+    "card_id": 2007,
+    "card_name": "Happy Birthday Katie Benn Cars",
+    "current_sends": 428,
+    "previous_sends": 410,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "red",
+      "blue",
+      "green"
+    ],
+    "themes": [
+      "cars",
+      "vehicles",
+      "crayon style",
+      "childlike",
+      "colorful",
+      "taxi",
+      "bus"
+    ],
+    "typography_style": "hand_lettered"
+  },
+  {
+    "rank": 122,
+    "card_id": 1538,
+    "card_name": "Happy Easter AliRae Aguirre",
+    "current_sends": 409,
+    "previous_sends": 409,
+    "occasion": "holiday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "pink",
+      "green",
+      "yellow"
+    ],
+    "themes": [
+      "easter",
+      "bunny",
+      "rabbit",
+      "flowers",
+      "folk art",
+      "spring",
+      "botanical"
+    ],
+    "typography_style": "hand_lettered"
+  },
+  {
+    "rank": 123,
+    "card_id": 1724,
+    "card_name": "Have a little Treat Jillian Goeller",
+    "current_sends": 399,
+    "previous_sends": 409,
+    "occasion": "thinking_of_you",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "pink",
+      "yellow",
+      "red"
+    ],
+    "themes": [
+      "ice cream sundae",
+      "dessert",
+      "cherries",
+      "sprinkles",
+      "retro diner",
+      "treat"
+    ],
+    "typography_style": "hand_lettered"
+  },
+  {
+    "rank": 124,
+    "card_id": 93,
+    "card_name": "Biggie Birthday Spaghetti & Meatballs",
+    "current_sends": 417,
+    "previous_sends": 409,
+    "occasion": "birthday",
+    "design_style": "minimalist",
+    "primary_colors": [
+      "white",
+      "black",
+      "gold"
+    ],
+    "themes": [
+      "biggie smalls",
+      "notorious BIG",
+      "hip hop",
+      "crown",
+      "sunglasses",
+      "pop culture"
+    ],
+    "typography_style": "hand_lettered"
+  },
+  {
+    "rank": 125,
+    "card_id": 801,
+    "card_name": "Feliz Cumpleanos Grow Mija",
+    "current_sends": 408,
+    "previous_sends": 405,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "blue",
+      "pink",
+      "white"
+    ],
+    "themes": [
+      "cupcake",
+      "birthday candle",
+      "spanish",
+      "frosting",
+      "sprinkles",
+      "celebration"
+    ],
+    "typography_style": "hand_lettered"
+  },
+  {
+    "rank": 126,
+    "card_id": 1986,
+    "card_name": "I'm So Grateful For You Lauren Marina",
+    "current_sends": 396,
+    "previous_sends": 404,
+    "occasion": "thank_you",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "black",
+      "cream",
+      "white"
+    ],
+    "themes": [
+      "botanical",
+      "flowers",
+      "leaves",
+      "nature",
+      "folk art",
+      "woodcut style"
+    ],
+    "typography_style": "hand_lettered"
+  },
+  {
+    "rank": 127,
+    "card_id": 2000,
+    "card_name": "Hello Spaghetti & Meatballs Smile",
+    "current_sends": 387,
+    "previous_sends": 400,
+    "occasion": "thinking_of_you",
+    "design_style": "playful",
+    "primary_colors": [
+      "yellow",
+      "black"
+    ],
+    "themes": [
+      "smiley faces",
+      "happy",
+      "pattern",
+      "retro"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 128,
+    "card_id": 328,
+    "card_name": "Happy Birthday brook gossen Red and Yellow Abstract",
+    "current_sends": 380,
+    "previous_sends": 398,
+    "occasion": "birthday",
+    "design_style": "abstract",
+    "primary_colors": [
+      "red",
+      "orange",
+      "pink"
+    ],
+    "themes": [
+      "squiggles",
+      "abstract shapes",
+      "dots",
+      "playful lines",
+      "brushstrokes"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 129,
+    "card_id": 1298,
+    "card_name": "Merry Christmas From Our Fam To Yours Hood Greetings",
+    "current_sends": 394,
+    "previous_sends": 394,
+    "occasion": "holiday",
+    "design_style": "typography_focused",
+    "primary_colors": [
+      "red",
+      "green",
+      "white"
+    ],
+    "themes": [
+      "Christmas",
+      "retro lettering",
+      "stars",
+      "family"
+    ],
+    "typography_style": "script"
+  },
+  {
+    "rank": 130,
+    "card_id": 2009,
+    "card_name": "Thank You For Everything Dad Paper & Stuff",
+    "current_sends": 391,
+    "previous_sends": 392,
+    "occasion": "fathers_day",
+    "design_style": "typography_focused",
+    "primary_colors": [
+      "green",
+      "light blue",
+      "cream"
+    ],
+    "themes": [
+      "gratitude",
+      "dad",
+      "bold text",
+      "modern typography"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 131,
+    "card_id": 1779,
+    "card_name": "Happy Holidays AliRae Aguirre",
+    "current_sends": 390,
+    "previous_sends": 390,
+    "occasion": "holiday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "sage green",
+      "red",
+      "cream"
+    ],
+    "themes": [
+      "wreath",
+      "holly",
+      "berries",
+      "pine branches",
+      "folk art",
+      "winter"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 132,
+    "card_id": 723,
+    "card_name": "I'm Happy You Exist Analogbynat",
+    "current_sends": 373,
+    "previous_sends": 383,
+    "occasion": "thinking_of_you",
+    "design_style": "photographic",
+    "primary_colors": [
+      "light blue",
+      "tan",
+      "yellow"
+    ],
+    "themes": [
+      "desert",
+      "mountains",
+      "woman",
+      "nature",
+      "landscape",
+      "vintage photography"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 133,
+    "card_id": 2224,
+    "card_name": "Have a Fun Filled Birthday Ashley Le Quere",
+    "current_sends": 391,
+    "previous_sends": 382,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "pink",
+      "blue",
+      "yellow"
+    ],
+    "themes": [
+      "carnival",
+      "fair",
+      "roller coaster",
+      "balloon animals",
+      "balloons",
+      "fireworks",
+      "cotton candy cart",
+      "celebration"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 134,
+    "card_id": 1029,
+    "card_name": "Better Late Than Never Amy Zhang",
+    "current_sends": 409,
+    "previous_sends": 370,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "brown",
+      "cream",
+      "olive green"
+    ],
+    "themes": [
+      "turtle",
+      "tortoise",
+      "party hat",
+      "belated birthday",
+      "humor",
+      "minimalist animal"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 135,
+    "card_id": 1655,
+    "card_name": "Let's Party lazy Disco",
+    "current_sends": 371,
+    "previous_sends": 370,
+    "occasion": "birthday",
+    "design_style": "whimsical",
+    "primary_colors": [
+      "yellow",
+      "pink",
+      "light blue"
+    ],
+    "themes": [
+      "party",
+      "heart",
+      "disco",
+      "party hat",
+      "stars",
+      "celebration",
+      "retro",
+      "cartoon character"
+    ],
+    "typography_style": "hand_lettered"
+  },
+  {
+    "rank": 136,
+    "card_id": 2016,
+    "card_name": "Birthday Cake lines Paper&Stuff",
+    "current_sends": 363,
+    "previous_sends": 368,
+    "occasion": "birthday",
+    "design_style": "minimalist",
+    "primary_colors": [
+      "multicolor",
+      "cream",
+      "pastel"
+    ],
+    "themes": [
+      "birthday cake",
+      "candles",
+      "stripes",
+      "lines",
+      "geometric",
+      "abstract cake"
+    ],
+    "typography_style": "minimal_text"
+  },
+  {
+    "rank": 137,
+    "card_id": 812,
+    "card_name": "This Calls For Confetti Shannon Snow",
+    "current_sends": 371,
+    "previous_sends": 367,
+    "occasion": "congrats",
+    "design_style": "whimsical",
+    "primary_colors": [
+      "yellow",
+      "multicolor",
+      "orange"
+    ],
+    "themes": [
+      "confetti",
+      "celebration",
+      "colorful letters",
+      "stars",
+      "festive",
+      "hand-painted"
+    ],
+    "typography_style": "hand_lettered"
+  },
+  {
+    "rank": 138,
+    "card_id": 1803,
+    "card_name": "Happy Birthday Confetti Cleveland Cavaliers",
+    "current_sends": 362,
+    "previous_sends": 366,
+    "occasion": "birthday",
+    "design_style": "elegant",
+    "primary_colors": [
+      "navy blue",
+      "burgundy",
+      "gold"
+    ],
+    "themes": [
+      "confetti",
+      "stars",
+      "celebration",
+      "sports team colors",
+      "Cleveland Cavaliers"
+    ],
+    "typography_style": "script"
+  },
+  {
+    "rank": 139,
+    "card_id": 1245,
+    "card_name": "I Yam So Very Thankful For You Amy Zhang Yams",
+    "current_sends": 363,
+    "previous_sends": 363,
+    "occasion": "thank_you",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "purple",
+      "yellow",
+      "cream"
+    ],
+    "themes": [
+      "yams",
+      "sweet potatoes",
+      "food pun",
+      "Thanksgiving",
+      "gratitude",
+      "pattern"
+    ],
+    "typography_style": "hand_lettered"
+  },
+  {
+    "rank": 140,
+    "card_id": 1353,
+    "card_name": "Happy Birthday Karen Schipper Trolley",
+    "current_sends": 349,
+    "previous_sends": 355,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "red",
+      "gold",
+      "multicolor"
+    ],
+    "themes": [
+      "hotel bellhop",
+      "luggage cart",
+      "presents",
+      "gifts",
+      "bunting",
+      "confetti",
+      "celebration"
+    ],
+    "typography_style": "hand_lettered"
+  },
+  {
+    "rank": 141,
+    "card_id": 1148,
+    "card_name": "Fourth of July Kevin Adams",
+    "current_sends": 351,
+    "previous_sends": 351,
+    "occasion": "holiday",
+    "design_style": "vintage",
+    "primary_colors": [
+      "red",
+      "blue",
+      "white"
+    ],
+    "themes": [
+      "Fourth of July",
+      "Independence Day",
+      "patriotic",
+      "stars",
+      "American",
+      "sunburst",
+      "marquee letters"
+    ],
+    "typography_style": "serif"
+  },
+  {
+    "rank": 142,
+    "card_id": 1763,
+    "card_name": "To From Paper&Stuff",
+    "current_sends": 350,
+    "previous_sends": 350,
+    "occasion": "other",
+    "design_style": "modern",
+    "primary_colors": [
+      "green",
+      "orange",
+      "cream"
+    ],
+    "themes": [
+      "gift tag",
+      "stamps",
+      "bows",
+      "ribbons",
+      "grid pattern",
+      "labels"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 143,
+    "card_id": 379,
+    "card_name": "Let them eat cake Julia Walck",
+    "current_sends": 367,
+    "previous_sends": 349,
+    "occasion": "birthday",
+    "design_style": "vintage",
+    "primary_colors": [
+      "pink",
+      "yellow",
+      "brown"
+    ],
+    "themes": [
+      "cakes",
+      "desserts",
+      "collage",
+      "retro imagery",
+      "bakery",
+      "indulgence"
+    ],
+    "typography_style": "serif"
+  },
+  {
+    "rank": 144,
+    "card_id": 573,
+    "card_name": "Dad You're Flipping Amazing Ashley Le Quere",
+    "current_sends": 344,
+    "previous_sends": 346,
+    "occasion": "fathers_day",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "green",
+      "cream",
+      "black"
+    ],
+    "themes": [
+      "BBQ",
+      "grill",
+      "spatula",
+      "sausages",
+      "kebab",
+      "summer",
+      "cooking",
+      "dad pun"
+    ],
+    "typography_style": "hand_lettered"
+  },
+  {
+    "rank": 145,
+    "card_id": 1159,
+    "card_name": "Congrats Priyanka Darlin' Spotted",
+    "current_sends": 344,
+    "previous_sends": 344,
+    "occasion": "congrats",
+    "design_style": "modern",
+    "primary_colors": [
+      "black",
+      "white",
+      "gold"
+    ],
+    "themes": [
+      "dalmatian spots",
+      "polka dots",
+      "pattern",
+      "chic",
+      "animal print"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 146,
+    "card_id": 1748,
+    "card_name": "Happy 29th Birthday Again Brittany Paige",
+    "current_sends": 330,
+    "previous_sends": 342,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "mint green",
+      "pink",
+      "red"
+    ],
+    "themes": [
+      "birthday cake",
+      "cherries",
+      "frosting",
+      "humor",
+      "age joke",
+      "29th birthday"
+    ],
+    "typography_style": "script"
+  },
+  {
+    "rank": 147,
+    "card_id": 1784,
+    "card_name": "Dicky Bird Ornament",
+    "current_sends": 342,
+    "previous_sends": 342,
+    "occasion": "holiday",
+    "design_style": "modern",
+    "primary_colors": [
+      "green",
+      "yellow",
+      "red"
+    ],
+    "themes": [
+      "Christmas ornament",
+      "stripes",
+      "diagonal lines",
+      "bauble",
+      "geometric"
+    ],
+    "typography_style": "minimal_text"
+  },
+  {
+    "rank": 148,
+    "card_id": 2333,
+    "card_name": "Green Cupcake Melanie Johnsson",
+    "current_sends": 353,
+    "previous_sends": 342,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "green",
+      "orange",
+      "cream"
+    ],
+    "themes": [
+      "cupcake",
+      "sprinkles",
+      "frosting",
+      "dessert",
+      "celebration",
+      "birthday treat"
+    ],
+    "typography_style": "minimal_text"
+  },
+  {
+    "rank": 149,
+    "card_id": 1904,
+    "card_name": "Thank You Folio",
+    "current_sends": 330,
+    "previous_sends": 335,
+    "occasion": "thank_you",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "blue",
+      "green",
+      "orange"
+    ],
+    "themes": [
+      "tulips",
+      "flowers",
+      "vase",
+      "ceramic",
+      "porcelain",
+      "botanical",
+      "floral arrangement"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 150,
+    "card_id": 203,
+    "card_name": "Thank You So Very Much Ilana Griffo",
+    "current_sends": 337,
+    "previous_sends": 335,
+    "occasion": "thank_you",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "black",
+      "coral",
+      "blue"
+    ],
+    "themes": [
+      "flowers",
+      "floral",
+      "hand lettering",
+      "colorful blooms",
+      "gratitude"
+    ],
+    "typography_style": "mixed"
+  },
+  {
+    "rank": 151,
+    "card_id": "2010",
+    "card_name": "Thank You For Everything Mom Paper&Stuff",
+    "sends_current": 332,
+    "sends_previous": 332,
+    "occasion": "mothers_day",
+    "design_style": "typography_focused",
+    "primary_colors": [
+      "orange",
+      "pink",
+      "cream"
+    ],
+    "themes": [
+      "abstract"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 152,
+    "card_id": "1884",
+    "card_name": "Hand with Hearts Ashley Le Quere",
+    "sends_current": 331,
+    "sends_previous": 311,
+    "occasion": "love",
+    "design_style": "minimalist",
+    "primary_colors": [
+      "pink",
+      "black",
+      "cream"
+    ],
+    "themes": [
+      "hearts"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 153,
+    "card_id": "1158",
+    "card_name": "Happy Birthday Oscar De La Cruz Blocks",
+    "sends_current": 330,
+    "sends_previous": 323,
+    "occasion": "birthday",
+    "design_style": "geometric",
+    "primary_colors": [
+      "orange",
+      "teal",
+      "cream"
+    ],
+    "themes": [
+      "patterns"
+    ],
+    "typography_style": "display"
+  },
+  {
+    "rank": 154,
+    "card_id": "1534",
+    "card_name": "Feel Better Soon paper&stuff",
+    "sends_current": 328,
+    "sends_previous": 319,
+    "occasion": "get_well",
+    "design_style": "minimalist",
+    "primary_colors": [
+      "orange",
+      "pink",
+      "green"
+    ],
+    "themes": [
+      "flowers"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 155,
+    "card_id": "541",
+    "card_name": "Wine Party Brittany Paige",
+    "sends_current": 327,
+    "sends_previous": 327,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "green",
+      "pink",
+      "white"
+    ],
+    "themes": [
+      "food"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 156,
+    "card_id": "460",
+    "card_name": "Thinking of You sarah foelske",
+    "sends_current": 326,
+    "sends_previous": 323,
+    "occasion": "general",
+    "design_style": "typography_focused",
+    "primary_colors": [
+      "black",
+      "yellow",
+      "green"
+    ],
+    "themes": [
+      "flowers",
+      "nature"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 157,
+    "card_id": "106",
+    "card_name": "Happy birthday Best Tea jaclyn Caris",
+    "sends_current": 323,
+    "sends_previous": 325,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "coral",
+      "teal",
+      "cream"
+    ],
+    "themes": [
+      "food"
+    ],
+    "typography_style": "display"
+  },
+  {
+    "rank": 158,
+    "card_id": "1166",
+    "card_name": "HBD Mat Voyce Animation",
+    "sends_current": 322,
+    "sends_previous": 317,
+    "occasion": "birthday",
+    "design_style": "bold_graphic",
+    "primary_colors": [
+      "teal",
+      "blue",
+      "yellow"
+    ],
+    "themes": [
+      "abstract"
+    ],
+    "typography_style": "display"
+  },
+  {
+    "rank": 159,
+    "card_id": "1075",
+    "card_name": "Happy Birthday To A Real Playa Spaghetti & Meatballs Record Player",
+    "sends_current": 321,
+    "sends_previous": 319,
+    "occasion": "birthday",
+    "design_style": "minimalist",
+    "primary_colors": [
+      "mint",
+      "black",
+      "pink"
+    ],
+    "themes": [
+      "abstract"
+    ],
+    "typography_style": "serif"
+  },
+  {
+    "rank": 160,
+    "card_id": "1016",
+    "card_name": "Welcome Baby Forage Paper Co.",
+    "sends_current": 316,
+    "sends_previous": 319,
+    "occasion": "general",
+    "design_style": "watercolor",
+    "primary_colors": [
+      "blue",
+      "yellow",
+      "pink"
+    ],
+    "themes": [
+      "balloons",
+      "animals"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 161,
+    "card_id": "1896",
+    "card_name": "Happy Bearthday Dicky Bird",
+    "sends_current": 315,
+    "sends_previous": 313,
+    "occasion": "birthday",
+    "design_style": "minimalist",
+    "primary_colors": [
+      "tan",
+      "brown",
+      "cream"
+    ],
+    "themes": [
+      "animals"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 162,
+    "card_id": "2223",
+    "card_name": "I See Cake In Your Future Ashley Le Quere",
+    "sends_current": 314,
+    "sends_previous": 309,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "pink",
+      "blue",
+      "green"
+    ],
+    "themes": [
+      "cake"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 163,
+    "card_id": "1768",
+    "card_name": "Holding You In My Heart Adelfi",
+    "sends_current": 311,
+    "sends_previous": 309,
+    "occasion": "love",
+    "design_style": "watercolor",
+    "primary_colors": [
+      "orange",
+      "yellow",
+      "pink"
+    ],
+    "themes": [
+      "hearts"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 164,
+    "card_id": "1983",
+    "card_name": "I See A Strong and Powerful Woman Jaclyn Caris",
+    "sends_current": 307,
+    "sends_previous": 306,
+    "occasion": "general",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "pink",
+      "blue",
+      "orange"
+    ],
+    "themes": [
+      "patterns"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 165,
+    "card_id": "1689",
+    "card_name": "To Another Year of Adventures Matt Joyce",
+    "sends_current": 300,
+    "sends_previous": 309,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "red",
+      "teal",
+      "yellow"
+    ],
+    "themes": [
+      "nature"
+    ],
+    "typography_style": "mixed"
+  },
+  {
+    "rank": 166,
+    "card_id": "518",
+    "card_name": "Happy Easter!",
+    "sends_current": 300,
+    "sends_previous": 300,
+    "occasion": "easter",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "pastel_pink",
+      "pastel_blue",
+      "yellow"
+    ],
+    "themes": [
+      "patterns"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 167,
+    "card_id": "1230",
+    "card_name": "With Deepest Sympathy Karen Schipper",
+    "sends_current": 299,
+    "sends_previous": 289,
+    "occasion": "sympathy",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "black",
+      "yellow",
+      "blue"
+    ],
+    "themes": [
+      "flowers",
+      "nature"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 168,
+    "card_id": "1451",
+    "card_name": "Will You Be My Valentine Yes No Oscar De La Cruz",
+    "sends_current": 299,
+    "sends_previous": 291,
+    "occasion": "valentines",
+    "design_style": "retro_vintage",
+    "primary_colors": [
+      "pink",
+      "cream",
+      "magenta"
+    ],
+    "themes": [
+      "patterns"
+    ],
+    "typography_style": "display"
+  },
+  {
+    "rank": 169,
+    "card_id": "1549",
+    "card_name": "Birthday Wishes Jacqueline Colley",
+    "sends_current": 293,
+    "sends_previous": 280,
+    "occasion": "birthday",
+    "design_style": "retro_vintage",
+    "primary_colors": [
+      "pink",
+      "teal",
+      "orange"
+    ],
+    "themes": [
+      "cake"
+    ],
+    "typography_style": "display"
+  },
+  {
+    "rank": 170,
+    "card_id": "1569",
+    "card_name": "Dear Grandma Spaghetti & Meatballs",
+    "sends_current": 289,
+    "sends_previous": 286,
+    "occasion": "general",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "lavender",
+      "pink",
+      "yellow"
+    ],
+    "themes": [
+      "flowers"
+    ],
+    "typography_style": "mixed"
+  },
+  {
+    "rank": 171,
+    "card_id": "1646",
+    "card_name": "Paper&Stuff Squiggles",
+    "sends_current": 289,
+    "sends_previous": 264,
+    "occasion": "general",
+    "design_style": "geometric",
+    "primary_colors": [
+      "blue",
+      "orange",
+      "navy"
+    ],
+    "themes": [
+      "patterns",
+      "abstract"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 172,
+    "card_id": "1106",
+    "card_name": "Hats Off To You Melanie Johnsson Graduation Caps",
+    "sends_current": 288,
+    "sends_previous": 288,
+    "occasion": "congratulations",
+    "design_style": "playful_cute",
+    "primary_colors": [
+      "lavender",
+      "orange",
+      "teal"
+    ],
+    "themes": [
+      "abstract"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 173,
+    "card_id": "1002",
+    "card_name": "Team Work Dream Work Melanie Johnsson",
+    "sends_current": 285,
+    "sends_previous": 291,
+    "occasion": "thank_you",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "brown",
+      "blue",
+      "cream"
+    ],
+    "themes": [
+      "abstract"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 174,
+    "card_id": "1545",
+    "card_name": "Thank You Antonay Studio",
+    "sends_current": 282,
+    "sends_previous": 282,
+    "occasion": "thank_you",
+    "design_style": "retro_vintage",
+    "primary_colors": [
+      "pink",
+      "red",
+      "teal"
+    ],
+    "themes": [
+      "flowers",
+      "characters"
+    ],
+    "typography_style": "display"
+  },
+  {
+    "rank": 175,
+    "card_id": "1757",
+    "card_name": "Happy Thanksgiving Melanie johnsson",
+    "sends_current": 279,
+    "sends_previous": 279,
+    "occasion": "thanksgiving",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "olive",
+      "orange",
+      "brown"
+    ],
+    "themes": [
+      "nature",
+      "food"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 176,
+    "card_id": "1213",
+    "card_name": "Thanks A Bunch Melissa Blair Bananas",
+    "sends_current": 277,
+    "sends_previous": 268,
+    "occasion": "thank_you",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "blue",
+      "yellow",
+      "white"
+    ],
+    "themes": [
+      "food"
+    ],
+    "typography_style": "mixed"
+  },
+  {
+    "rank": 177,
+    "card_id": "728",
+    "card_name": "Take A Break analogbynat",
+    "sends_current": 277,
+    "sends_previous": 277,
+    "occasion": "general",
+    "design_style": "retro_vintage",
+    "primary_colors": [
+      "teal",
+      "orange",
+      "pink"
+    ],
+    "themes": [
+      "nature"
+    ],
+    "typography_style": "display"
+  },
+  {
+    "rank": 178,
+    "card_id": "1717",
+    "card_name": "Happy Thanksgiving Karen Schipper",
+    "sends_current": 272,
+    "sends_previous": 272,
+    "occasion": "thanksgiving",
+    "design_style": "watercolor",
+    "primary_colors": [
+      "red",
+      "blue",
+      "green"
+    ],
+    "themes": [
+      "nature"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 179,
+    "card_id": "964",
+    "card_name": "Special Delivery Spaghetti & Meatballs",
+    "sends_current": 271,
+    "sends_previous": 271,
+    "occasion": "love",
+    "design_style": "minimalist",
+    "primary_colors": [
+      "pink",
+      "red",
+      "black"
+    ],
+    "themes": [
+      "hearts"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 180,
+    "card_id": "1533",
+    "card_name": "Sending Happy THoughts paper&stuff",
+    "sends_current": 266,
+    "sends_previous": 268,
+    "occasion": "general",
+    "design_style": "playful_cute",
+    "primary_colors": [
+      "yellow",
+      "orange",
+      "pink"
+    ],
+    "themes": [
+      "abstract"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 181,
+    "card_id": "1080",
+    "card_name": "Hey Mom, I'm Annoying But I Love You Giulia Hartz Cake",
+    "sends_current": 258,
+    "sends_previous": 259,
+    "occasion": "mothers_day",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "pink",
+      "blue",
+      "red"
+    ],
+    "themes": [
+      "cake",
+      "hearts"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 182,
+    "card_id": "1847",
+    "card_name": "Happy Birthday To You Jacqueline Colley",
+    "sends_current": 250,
+    "sends_previous": 254,
+    "occasion": "birthday",
+    "design_style": "retro_vintage",
+    "primary_colors": [
+      "orange",
+      "pink",
+      "teal"
+    ],
+    "themes": [
+      "cake",
+      "confetti"
+    ],
+    "typography_style": "display"
+  },
+  {
+    "rank": 183,
+    "card_id": "1848",
+    "card_name": "Love You To The Moon Jacqueline Colley",
+    "sends_current": 250,
+    "sends_previous": 245,
+    "occasion": "love",
+    "design_style": "retro_vintage",
+    "primary_colors": [
+      "orange",
+      "pink",
+      "cream"
+    ],
+    "themes": [
+      "abstract"
+    ],
+    "typography_style": "mixed"
+  },
+  {
+    "rank": 184,
+    "card_id": "2349",
+    "card_name": "Treat Yourself Melanie Johnsson",
+    "sends_current": 250,
+    "sends_previous": 256,
+    "occasion": "birthday",
+    "design_style": "typography_focused",
+    "primary_colors": [
+      "blue",
+      "yellow"
+    ],
+    "themes": [
+      "abstract"
+    ],
+    "typography_style": "serif"
+  },
+  {
+    "rank": 185,
+    "card_id": "1871",
+    "card_name": "Hope Your Birthday is A Blast Karen Schipper",
+    "sends_current": 248,
+    "sends_previous": 243,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "blue",
+      "teal",
+      "green"
+    ],
+    "themes": [
+      "nature",
+      "confetti"
+    ],
+    "typography_style": "display"
+  },
+  {
+    "rank": 186,
+    "card_id": "171",
+    "card_name": "It's Your Day Ashley Le Quere",
+    "sends_current": 246,
+    "sends_previous": 235,
+    "occasion": "birthday",
+    "design_style": "bold_graphic",
+    "primary_colors": [
+      "navy",
+      "pink",
+      "yellow"
+    ],
+    "themes": [
+      "cake",
+      "confetti"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 187,
+    "card_id": "2346",
+    "card_name": "Smiley Cupcake Melanie Johnsson",
+    "sends_current": 241,
+    "sends_previous": 246,
+    "occasion": "birthday",
+    "design_style": "playful_cute",
+    "primary_colors": [
+      "brown",
+      "blue",
+      "white"
+    ],
+    "themes": [
+      "cake",
+      "food"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 188,
+    "card_id": "1442",
+    "card_name": "Happy Galentine's Day To My Favorite Melanie Johnsson",
+    "sends_current": 240,
+    "sends_previous": 240,
+    "occasion": "valentines",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "maroon",
+      "pink",
+      "orange"
+    ],
+    "themes": [
+      "characters"
+    ],
+    "typography_style": "mixed"
+  },
+  {
+    "rank": 189,
+    "card_id": "36",
+    "card_name": "thank you for being you Melanie Johnsson",
+    "sends_current": 240,
+    "sends_previous": 235,
+    "occasion": "thank_you",
+    "design_style": "typography_focused",
+    "primary_colors": [
+      "mustard",
+      "pink",
+      "black"
+    ],
+    "themes": [
+      "abstract"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 190,
+    "card_id": "1862",
+    "card_name": "You Are So Loved Lauren Marina",
+    "sends_current": 239,
+    "sends_previous": 237,
+    "occasion": "love",
+    "design_style": "typography_focused",
+    "primary_colors": [
+      "pink",
+      "white"
+    ],
+    "themes": [
+      "hearts"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 191,
+    "card_id": "1895",
+    "card_name": "Happy Birthday Dicky Bird Cake",
+    "sends_current": 237,
+    "sends_previous": 238,
+    "occasion": "birthday",
+    "design_style": "minimalist",
+    "primary_colors": [
+      "pink",
+      "brown",
+      "cream"
+    ],
+    "themes": [
+      "cake",
+      "confetti"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 192,
+    "card_id": "1778",
+    "card_name": "Happy New Year Katie Benn",
+    "sends_current": 236,
+    "sends_previous": 236,
+    "occasion": "new_year",
+    "design_style": "watercolor",
+    "primary_colors": [
+      "yellow",
+      "red",
+      "green"
+    ],
+    "themes": [
+      "confetti",
+      "abstract"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 193,
+    "card_id": "470",
+    "card_name": "Virgo Faye Guanipa",
+    "sends_current": 236,
+    "sends_previous": 236,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "mint",
+      "pink",
+      "orange"
+    ],
+    "themes": [
+      "animals",
+      "nature"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 194,
+    "card_id": "543",
+    "card_name": "Love You Mom Faye Guanipa",
+    "sends_current": 236,
+    "sends_previous": 236,
+    "occasion": "mothers_day",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "green",
+      "red",
+      "pink"
+    ],
+    "themes": [
+      "flowers",
+      "patterns"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 195,
+    "card_id": "2244",
+    "card_name": "And They Lived Happily Ever After Ashley Le Quere",
+    "sends_current": 234,
+    "sends_previous": 232,
+    "occasion": "anniversary",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "pink",
+      "gold",
+      "cream"
+    ],
+    "themes": [
+      "abstract"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 196,
+    "card_id": "1988",
+    "card_name": "Hoppy Easter Spaghetti & Meatballs",
+    "sends_current": 233,
+    "sends_previous": 233,
+    "occasion": "easter",
+    "design_style": "playful_cute",
+    "primary_colors": [
+      "pink",
+      "white",
+      "orange"
+    ],
+    "themes": [
+      "animals",
+      "flowers"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 197,
+    "card_id": "2111",
+    "card_name": "No Tricks All Treats Jillian Goeler",
+    "sends_current": 233,
+    "sends_previous": 233,
+    "occasion": "halloween",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "orange",
+      "pink",
+      "red"
+    ],
+    "themes": [
+      "cake",
+      "characters"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 198,
+    "card_id": "170",
+    "card_name": "Here's a Cake Ashley Le Quere",
+    "sends_current": 232,
+    "sends_previous": 240,
+    "occasion": "birthday",
+    "design_style": "bold_graphic",
+    "primary_colors": [
+      "green",
+      "coral",
+      "pink"
+    ],
+    "themes": [
+      "cake",
+      "confetti"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 199,
+    "card_id": "477",
+    "card_name": "Gemini Faye Guanipa",
+    "sends_current": 231,
+    "sends_previous": 231,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "mint",
+      "orange",
+      "teal"
+    ],
+    "themes": [
+      "animals",
+      "flowers"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 200,
+    "card_id": "1269",
+    "card_name": "Have A Delightful Birthday Ash & Chess Cakes",
+    "sends_current": 230,
+    "sends_previous": 228,
+    "occasion": "birthday",
+    "design_style": "retro_vintage",
+    "primary_colors": [
+      "pink",
+      "orange",
+      "lavender"
+    ],
+    "themes": [
+      "cake"
+    ],
+    "typography_style": "display"
+  },
+  {
+    "rank": 201,
+    "card_id": "1539",
+    "card_name": "Happy Easter Hemlock House Studio",
+    "sends_current": 229,
+    "sends_previous": 229,
+    "occasion": "easter",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "orange",
+      "blue",
+      "green"
+    ],
+    "themes": [
+      "patterns"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 202,
+    "card_id": "1894",
+    "card_name": "Happy Birthday Dicky Bird Burger",
+    "sends_current": 229,
+    "sends_previous": 229,
+    "occasion": "birthday",
+    "design_style": "minimalist",
+    "primary_colors": [
+      "brown",
+      "red",
+      "green"
+    ],
+    "themes": [
+      "food"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 203,
+    "card_id": "294",
+    "card_name": "Happy Birthday Bad Ass Spaghetti & Meatballs",
+    "sends_current": 229,
+    "sends_previous": 230,
+    "occasion": "birthday",
+    "design_style": "minimalist",
+    "primary_colors": [
+      "pink",
+      "coral",
+      "white"
+    ],
+    "themes": [
+      "patterns",
+      "food"
+    ],
+    "typography_style": "serif"
+  },
+  {
+    "rank": 204,
+    "card_id": "1258",
+    "card_name": "Happy Birthday Grow Mija Pink Cake",
+    "sends_current": 227,
+    "sends_previous": 228,
+    "occasion": "birthday",
+    "design_style": "playful_cute",
+    "primary_colors": [
+      "pink",
+      "blue",
+      "yellow"
+    ],
+    "themes": [
+      "cake"
+    ],
+    "typography_style": "display"
+  },
+  {
+    "rank": 205,
+    "card_id": "210",
+    "card_name": "Thank You Brook Gossen",
+    "sends_current": 226,
+    "sends_previous": 227,
+    "occasion": "thank_you",
+    "design_style": "elegant",
+    "primary_colors": [
+      "black",
+      "green",
+      "yellow"
+    ],
+    "themes": [
+      "flowers",
+      "nature"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 206,
+    "card_id": "1380",
+    "card_name": "Birthday Dogs Faye Gunipa",
+    "sends_current": 225,
+    "sends_previous": 222,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "lavender",
+      "pink",
+      "yellow"
+    ],
+    "themes": [
+      "animals",
+      "balloons",
+      "cake"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 207,
+    "card_id": "2270",
+    "card_name": "Time to Party by Triangulos by Melanie Johnsson",
+    "sends_current": 225,
+    "sends_previous": 230,
+    "occasion": "birthday",
+    "design_style": "geometric",
+    "primary_colors": [
+      "yellow",
+      "orange",
+      "blue"
+    ],
+    "themes": [
+      "characters",
+      "abstract"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 208,
+    "card_id": "1952",
+    "card_name": "August Baby Kerrie McNeill",
+    "sends_current": 224,
+    "sends_previous": 224,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "teal",
+      "pink",
+      "green"
+    ],
+    "themes": [
+      "flowers",
+      "nature"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 209,
+    "card_id": "1059",
+    "card_name": "Thank You Adelfi",
+    "sends_current": 223,
+    "sends_previous": 221,
+    "occasion": "thank_you",
+    "design_style": "elegant",
+    "primary_colors": [
+      "cream",
+      "pink",
+      "orange"
+    ],
+    "themes": [
+      "flowers"
+    ],
+    "typography_style": "display"
+  },
+  {
+    "rank": 210,
+    "card_id": "870",
+    "card_name": "Belated Bday Jasmina zornic",
+    "sends_current": 223,
+    "sends_previous": 218,
+    "occasion": "birthday",
+    "design_style": "bold_graphic",
+    "primary_colors": [
+      "green",
+      "blue",
+      "pink"
+    ],
+    "themes": [
+      "confetti",
+      "abstract"
+    ],
+    "typography_style": "display"
+  },
+  {
+    "rank": 211,
+    "card_id": "1364",
+    "card_name": "Deepest Sympathy Hemlock House Studio",
+    "sends_current": 222,
+    "sends_previous": 221,
+    "occasion": "sympathy",
+    "design_style": "elegant",
+    "primary_colors": [
+      "blue",
+      "green",
+      "pink"
+    ],
+    "themes": [
+      "flowers",
+      "nature",
+      "animals"
+    ],
+    "typography_style": "serif"
+  },
+  {
+    "rank": 212,
+    "card_id": "299",
+    "card_name": "Happy Birthday Abstract Spaghetti & Meatballs",
+    "sends_current": 221,
+    "sends_previous": 216,
+    "occasion": "birthday",
+    "design_style": "modern",
+    "primary_colors": [
+      "yellow",
+      "pink",
+      "blue"
+    ],
+    "themes": [
+      "abstract"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 213,
+    "card_id": "1520",
+    "card_name": "Time For Cake Sakina Saidi",
+    "sends_current": 220,
+    "sends_previous": 206,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "pink",
+      "red",
+      "teal"
+    ],
+    "themes": [
+      "cake",
+      "characters",
+      "food"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 214,
+    "card_id": "1605",
+    "card_name": "Thank you for being a friend mimi moffie",
+    "sends_current": 219,
+    "sends_previous": 215,
+    "occasion": "friendship",
+    "design_style": "retro_vintage",
+    "primary_colors": [
+      "pink",
+      "white"
+    ],
+    "themes": [
+      "abstract"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 215,
+    "card_id": "359",
+    "card_name": "Hugs Hugs Hugs Zoe Wodarz",
+    "sends_current": 219,
+    "sends_previous": 220,
+    "occasion": "love",
+    "design_style": "typography_focused",
+    "primary_colors": [
+      "red",
+      "pink",
+      "white"
+    ],
+    "themes": [
+      "patterns"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 216,
+    "card_id": "665",
+    "card_name": "Belated Bday Fion Koh",
+    "sends_current": 219,
+    "sends_previous": 215,
+    "occasion": "birthday",
+    "design_style": "modern",
+    "primary_colors": [
+      "pastel_green",
+      "pastel_blue",
+      "pink"
+    ],
+    "themes": [
+      "abstract"
+    ],
+    "typography_style": "display"
+  },
+  {
+    "rank": 217,
+    "card_id": "1519",
+    "card_name": "Thank You French Toast Studio",
+    "sends_current": 215,
+    "sends_previous": 217,
+    "occasion": "thank_you",
+    "design_style": "minimalist",
+    "primary_colors": [
+      "teal",
+      "cream",
+      "white"
+    ],
+    "themes": [
+      "flowers"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 218,
+    "card_id": "479",
+    "card_name": "Cancer Faye Guanipa",
+    "sends_current": 215,
+    "sends_previous": 215,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "pink",
+      "orange",
+      "teal"
+    ],
+    "themes": [
+      "animals",
+      "nature"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 219,
+    "card_id": "710",
+    "card_name": "SIS Jasmina Zornic",
+    "sends_current": 215,
+    "sends_previous": 217,
+    "occasion": "general",
+    "design_style": "bold_graphic",
+    "primary_colors": [
+      "pink",
+      "cream",
+      "orange"
+    ],
+    "themes": [
+      "hearts",
+      "confetti"
+    ],
+    "typography_style": "display"
+  },
+  {
+    "rank": 220,
+    "card_id": "1064",
+    "card_name": "Happy Mother's Day To My Bestie Hood Greetings",
+    "sends_current": 213,
+    "sends_previous": 213,
+    "occasion": "mothers_day",
+    "design_style": "retro_vintage",
+    "primary_colors": [
+      "cream",
+      "navy",
+      "pink"
+    ],
+    "themes": [
+      "flowers",
+      "animals"
+    ],
+    "typography_style": "display"
+  },
+  {
+    "rank": 221,
+    "card_id": "784",
+    "card_name": "Merry & Bright Leena Kisonen",
+    "sends_current": 213,
+    "sends_previous": 213,
+    "occasion": "christmas",
+    "design_style": "minimalist",
+    "primary_colors": [
+      "pink",
+      "green",
+      "red"
+    ],
+    "themes": [
+      "nature"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 222,
+    "card_id": "1409",
+    "card_name": "Congrats Clay Hickson Confetti Balloons",
+    "sends_current": 212,
+    "sends_previous": 206,
+    "occasion": "congratulations",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "pink",
+      "green",
+      "orange"
+    ],
+    "themes": [
+      "balloons",
+      "confetti"
+    ],
+    "typography_style": "display"
+  },
+  {
+    "rank": 223,
+    "card_id": "1544",
+    "card_name": "Time For Bday Cake Antonay Studio",
+    "sends_current": 211,
+    "sends_previous": 202,
+    "occasion": "birthday",
+    "design_style": "retro_vintage",
+    "primary_colors": [
+      "blue",
+      "yellow",
+      "pink"
+    ],
+    "themes": [
+      "cake",
+      "characters"
+    ],
+    "typography_style": "display"
+  },
+  {
+    "rank": 224,
+    "card_id": "1601",
+    "card_name": "To The Best Dad Happy Fathers Day Karen Schipper",
+    "sends_current": 209,
+    "sends_previous": 209,
+    "occasion": "fathers_day",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "green",
+      "cream",
+      "red"
+    ],
+    "themes": [
+      "characters"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 225,
+    "card_id": "877",
+    "card_name": "Shake Shake Shake It's Your Birthday melanie johnsson",
+    "sends_current": 205,
+    "sends_previous": 200,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "blue",
+      "peach",
+      "brown"
+    ],
+    "themes": [
+      "characters"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 226,
+    "card_id": "1407",
+    "card_name": "Happy Birthday Clay Hickson Cake",
+    "sends_current": 204,
+    "sends_previous": 197,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "pink",
+      "teal",
+      "yellow"
+    ],
+    "themes": [
+      "cake"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 227,
+    "card_id": "1742",
+    "card_name": "Christmas Is Giving Giulia Hartz",
+    "sends_current": 204,
+    "sends_previous": 204,
+    "occasion": "christmas",
+    "design_style": "minimalist",
+    "primary_colors": [
+      "light_blue",
+      "red",
+      "black"
+    ],
+    "themes": [
+      "characters"
+    ],
+    "typography_style": "serif"
+  },
+  {
+    "rank": 228,
+    "card_id": "2383",
+    "card_name": "Happy Thanksgiving - Spaghetti & Meatballs",
+    "sends_current": 204,
+    "sends_previous": 204,
+    "occasion": "thanksgiving",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "multicolor",
+      "white",
+      "red"
+    ],
+    "themes": [
+      "balloons",
+      "characters"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 229,
+    "card_id": "2302",
+    "card_name": "Happy Anniversary Aviva Atri",
+    "sends_current": 203,
+    "sends_previous": 205,
+    "occasion": "anniversary",
+    "design_style": "retro_vintage",
+    "primary_colors": [
+      "olive_green",
+      "pink",
+      "brown"
+    ],
+    "themes": [
+      "cake",
+      "patterns"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 230,
+    "card_id": "752",
+    "card_name": "Wreath Zoe wodarz",
+    "sends_current": 203,
+    "sends_previous": 203,
+    "occasion": "christmas",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "green",
+      "red",
+      "white"
+    ],
+    "themes": [
+      "nature",
+      "patterns"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 231,
+    "card_id": "1224",
+    "card_name": "Hello Love You Miss You Thinking of You Sophie Potter Flowers",
+    "sends_current": 202,
+    "sends_previous": 196,
+    "occasion": "general",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "dark_green",
+      "pink",
+      "orange"
+    ],
+    "themes": [
+      "flowers"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 232,
+    "card_id": "2015",
+    "card_name": "Happy Birthday To My Bestie Paper&Stuff",
+    "sends_current": 202,
+    "sends_previous": 198,
+    "occasion": "birthday",
+    "design_style": "bold_graphic",
+    "primary_colors": [
+      "purple",
+      "teal",
+      "orange"
+    ],
+    "themes": [
+      "cake",
+      "confetti"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 233,
+    "card_id": "1063",
+    "card_name": "You + Me Name A More Iconic Duo Hood Greetings",
+    "sends_current": 200,
+    "sends_previous": 199,
+    "occasion": "friendship",
+    "design_style": "typography_focused",
+    "primary_colors": [
+      "pink",
+      "black",
+      "white"
+    ],
+    "themes": [
+      "abstract"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 234,
+    "card_id": "1753",
+    "card_name": "New Year New Memories Melanie Johnsson",
+    "sends_current": 199,
+    "sends_previous": 200,
+    "occasion": "new_year",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "pink",
+      "blue",
+      "navy"
+    ],
+    "themes": [
+      "abstract"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 235,
+    "card_id": "1993",
+    "card_name": "Hittin The Clubs Spaghetti & Meatballs",
+    "sends_current": 199,
+    "sends_previous": 199,
+    "occasion": "fathers_day",
+    "design_style": "minimalist",
+    "primary_colors": [
+      "green",
+      "white",
+      "tan"
+    ],
+    "themes": [
+      "abstract"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 236,
+    "card_id": "1018",
+    "card_name": "Happy Easter Forage Paper Co.",
+    "sends_current": 198,
+    "sends_previous": 198,
+    "occasion": "easter",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "dark_green",
+      "pink",
+      "yellow"
+    ],
+    "themes": [
+      "flowers",
+      "nature"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 237,
+    "card_id": "1071",
+    "card_name": "Party Jacqueline Colley Confetti Popper",
+    "sends_current": 198,
+    "sends_previous": 197,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "mint",
+      "orange",
+      "pink"
+    ],
+    "themes": [
+      "confetti"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 238,
+    "card_id": "1362",
+    "card_name": "Hope You Feel Better Soon Karen Schipper",
+    "sends_current": 198,
+    "sends_previous": 196,
+    "occasion": "get_well",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "navy",
+      "white",
+      "yellow"
+    ],
+    "themes": [
+      "nature",
+      "abstract"
+    ],
+    "typography_style": "mixed"
+  },
+  {
+    "rank": 239,
+    "card_id": "1893",
+    "card_name": "Hello Baby Dicky Bird",
+    "sends_current": 197,
+    "sends_previous": 194,
+    "occasion": "general",
+    "design_style": "minimalist",
+    "primary_colors": [
+      "tan",
+      "white",
+      "brown"
+    ],
+    "themes": [
+      "animals"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 240,
+    "card_id": "1967",
+    "card_name": "Love Love Love Nysha Lilly",
+    "sends_current": 192,
+    "sends_previous": 191,
+    "occasion": "love",
+    "design_style": "watercolor",
+    "primary_colors": [
+      "pink",
+      "red",
+      "brown"
+    ],
+    "themes": [
+      "hearts"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 241,
+    "card_id": "236",
+    "card_name": "Merry christmas & happy new year brook gossen",
+    "sends_current": 192,
+    "sends_previous": 193,
+    "occasion": "christmas",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "white",
+      "peach",
+      "green"
+    ],
+    "themes": [
+      "patterns"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 242,
+    "card_id": "312",
+    "card_name": "AInt no birthday laws Spaghetti & Meatballs",
+    "sends_current": 192,
+    "sends_previous": 189,
+    "occasion": "birthday",
+    "design_style": "minimalist",
+    "primary_colors": [
+      "pink",
+      "white",
+      "black"
+    ],
+    "themes": [
+      "food"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 243,
+    "card_id": "1185",
+    "card_name": "Merci Priyanka Darlin' Flowers",
+    "sends_current": 190,
+    "sends_previous": 190,
+    "occasion": "thank_you",
+    "design_style": "bold_graphic",
+    "primary_colors": [
+      "black",
+      "multicolor",
+      "white"
+    ],
+    "themes": [
+      "flowers"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 244,
+    "card_id": "1946",
+    "card_name": "July Baby Kerrie McNeill",
+    "sends_current": 190,
+    "sends_previous": 190,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "green",
+      "pink",
+      "blue"
+    ],
+    "themes": [
+      "flowers",
+      "nature"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 245,
+    "card_id": "602",
+    "card_name": "Ancient History Giulia Hartz",
+    "sends_current": 190,
+    "sends_previous": 187,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "cream",
+      "pink",
+      "yellow"
+    ],
+    "themes": [
+      "cake"
+    ],
+    "typography_style": "serif"
+  },
+  {
+    "rank": 246,
+    "card_id": "548",
+    "card_name": "Happy Mother's Day Opal Thirteen Bouquet",
+    "sends_current": 189,
+    "sends_previous": 189,
+    "occasion": "mothers_day",
+    "design_style": "watercolor",
+    "primary_colors": [
+      "gray",
+      "tan",
+      "green"
+    ],
+    "themes": [
+      "flowers",
+      "nature"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 247,
+    "card_id": "1184",
+    "card_name": "Thank You Priyanka Darlin' Flowers",
+    "sends_current": 187,
+    "sends_previous": 215,
+    "occasion": "thank_you",
+    "design_style": "bold_graphic",
+    "primary_colors": [
+      "black",
+      "multicolor",
+      "white"
+    ],
+    "themes": [
+      "flowers",
+      "patterns"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 248,
+    "card_id": "1568",
+    "card_name": "If I could choose I'd still pick you to be my mom Karen Schipper",
+    "sends_current": 187,
+    "sends_previous": 186,
+    "occasion": "mothers_day",
+    "design_style": "watercolor",
+    "primary_colors": [
+      "yellow",
+      "pink",
+      "white"
+    ],
+    "themes": [
+      "flowers",
+      "nature"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 249,
+    "card_id": "2265",
+    "card_name": "Your Birthday> Tiktoks Comeback Kat Rodman",
+    "sends_current": 187,
+    "sends_previous": 190,
+    "occasion": "birthday",
+    "design_style": "modern",
+    "primary_colors": [
+      "white",
+      "black",
+      "pink"
+    ],
+    "themes": [
+      "abstract"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 250,
+    "card_id": "1183",
+    "card_name": "Happy Anniversary AnalogbyNat",
+    "sends_current": 186,
+    "sends_previous": 182,
+    "occasion": "anniversary",
+    "design_style": "retro_vintage",
+    "primary_colors": [
+      "blue",
+      "orange",
+      "pink"
+    ],
+    "themes": [
+      "abstract"
+    ],
+    "typography_style": "display"
+  },
+  {
+    "rank": 251,
+    "card_id": "480",
+    "card_name": "Aries Faye Guanipa",
+    "sends_current": 184,
+    "sends_previous": 184,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "cream",
+      "green",
+      "orange"
+    ],
+    "themes": [
+      "nature",
+      "animals"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 252,
+    "card_id": "737",
+    "card_name": "Happy Holidays Dude oscar tapeswing",
+    "sends_current": 184,
+    "sends_previous": 183,
+    "occasion": "christmas",
+    "design_style": "geometric",
+    "primary_colors": [
+      "teal",
+      "tan",
+      "red"
+    ],
+    "themes": [
+      "animals"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 253,
+    "card_id": "1629",
+    "card_name": "Party Animals Rumble Cards x Ashley Le Quere",
+    "sends_current": 183,
+    "sends_previous": 180,
+    "occasion": "birthday",
+    "design_style": "playful_cute",
+    "primary_colors": [
+      "blue",
+      "pink",
+      "yellow"
+    ],
+    "themes": [
+      "animals",
+      "confetti"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 254,
+    "card_id": "1677",
+    "card_name": "Welcome Little One Adelfi",
+    "sends_current": 183,
+    "sends_previous": 184,
+    "occasion": "general",
+    "design_style": "watercolor",
+    "primary_colors": [
+      "cream",
+      "orange",
+      "green"
+    ],
+    "themes": [
+      "animals",
+      "flowers",
+      "nature"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 255,
+    "card_id": "1985",
+    "card_name": "Cheers To You Babe Jaclyn Caris",
+    "sends_current": 183,
+    "sends_previous": 186,
+    "occasion": "congratulations",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "pink",
+      "orange",
+      "green"
+    ],
+    "themes": [
+      "food"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 256,
+    "card_id": "1164",
+    "card_name": "Super Happy Anniversary Priyanka Darlin'",
+    "sends_current": 182,
+    "sends_previous": 181,
+    "occasion": "anniversary",
+    "design_style": "playful_cute",
+    "primary_colors": [
+      "white",
+      "green",
+      "orange"
+    ],
+    "themes": [
+      "flowers"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 257,
+    "card_id": "1867",
+    "card_name": "Love Forage Paper Co",
+    "sends_current": 180,
+    "sends_previous": 179,
+    "occasion": "love",
+    "design_style": "watercolor",
+    "primary_colors": [
+      "pink",
+      "green",
+      "white"
+    ],
+    "themes": [
+      "flowers",
+      "nature"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 258,
+    "card_id": "2290",
+    "card_name": "You are Crushing It - Lauren Heydt",
+    "sends_current": 180,
+    "sends_previous": 186,
+    "occasion": "congratulations",
+    "design_style": "playful_cute",
+    "primary_colors": [
+      "blue",
+      "pink",
+      "orange"
+    ],
+    "themes": [
+      "abstract"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 259,
+    "card_id": "1448",
+    "card_name": "Thinkin' Bout You Jaclyn Caris Hearts",
+    "sends_current": 179,
+    "sends_previous": 178,
+    "occasion": "love",
+    "design_style": "modern",
+    "primary_colors": [
+      "black",
+      "orange",
+      "pink"
+    ],
+    "themes": [
+      "hearts"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 260,
+    "card_id": "1874",
+    "card_name": "Happy Valentine's Day Karen Schipper",
+    "sends_current": 179,
+    "sends_previous": 179,
+    "occasion": "valentines",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "pink",
+      "red",
+      "black"
+    ],
+    "themes": [
+      "characters"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 261,
+    "card_id": "927",
+    "card_name": "Thank You Wreath Amy Zhang",
+    "sends_current": 178,
+    "sends_previous": 179,
+    "occasion": "thank_you",
+    "design_style": "watercolor",
+    "primary_colors": [
+      "green",
+      "white",
+      "sage"
+    ],
+    "themes": [
+      "nature"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 262,
+    "card_id": "1019",
+    "card_name": "Get Well Soon Forage Paper Co.",
+    "sends_current": 176,
+    "sends_previous": 169,
+    "occasion": "get_well",
+    "design_style": "watercolor",
+    "primary_colors": [
+      "yellow",
+      "teal",
+      "white"
+    ],
+    "themes": [
+      "flowers",
+      "nature"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 263,
+    "card_id": "1652",
+    "card_name": "I'm Sorry Lazy Disco",
+    "sends_current": 176,
+    "sends_previous": 175,
+    "occasion": "general",
+    "design_style": "playful_cute",
+    "primary_colors": [
+      "blue",
+      "pink",
+      "white"
+    ],
+    "themes": [
+      "flowers"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 264,
+    "card_id": "1145",
+    "card_name": "Dear Bestie You Deserve The World I Hope You Know That Yolanda Poh",
+    "sends_current": 175,
+    "sends_previous": 174,
+    "occasion": "friendship",
+    "design_style": "playful_cute",
+    "primary_colors": [
+      "purple",
+      "white",
+      "lavender"
+    ],
+    "themes": [
+      "flowers",
+      "patterns"
+    ],
+    "typography_style": "display"
+  },
+  {
+    "rank": 265,
+    "card_id": "1567",
+    "card_name": "#1 Mom Jasmina Zornic",
+    "sends_current": 175,
+    "sends_previous": 175,
+    "occasion": "mothers_day",
+    "design_style": "bold_graphic",
+    "primary_colors": [
+      "purple",
+      "orange",
+      "white"
+    ],
+    "themes": [
+      "abstract"
+    ],
+    "typography_style": "display"
+  },
+  {
+    "rank": 266,
+    "card_id": "1622",
+    "card_name": "Paper Hugs Rumble Cards",
+    "sends_current": 175,
+    "sends_previous": 171,
+    "occasion": "general",
+    "design_style": "minimalist",
+    "primary_colors": [
+      "cream",
+      "pink",
+      "multicolor"
+    ],
+    "themes": [
+      "abstract"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 267,
+    "card_id": "1634",
+    "card_name": "Lost Count Rumble Cards x Ashley Le Quere",
+    "sends_current": 175,
+    "sends_previous": 172,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "pink",
+      "blue",
+      "cream"
+    ],
+    "themes": [
+      "cake",
+      "confetti"
+    ],
+    "typography_style": "display"
+  },
+  {
+    "rank": 268,
+    "card_id": "1020",
+    "card_name": "Happy Birthday Handsome Forage Paper Co.",
+    "sends_current": 174,
+    "sends_previous": 176,
+    "occasion": "birthday",
+    "design_style": "watercolor",
+    "primary_colors": [
+      "white",
+      "green",
+      "blue"
+    ],
+    "themes": [
+      "abstract"
+    ],
+    "typography_style": "mixed"
+  },
+  {
+    "rank": 269,
+    "card_id": "1468",
+    "card_name": "Why You So Cute Though",
+    "sends_current": 174,
+    "sends_previous": 172,
+    "occasion": "love",
+    "design_style": "playful_cute",
+    "primary_colors": [
+      "pink",
+      "red",
+      "black"
+    ],
+    "themes": [
+      "hearts",
+      "patterns"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 270,
+    "card_id": "1700",
+    "card_name": "Aviva Atri Pink Bow",
+    "sends_current": 174,
+    "sends_previous": 177,
+    "occasion": "general",
+    "design_style": "minimalist",
+    "primary_colors": [
+      "cream",
+      "pink",
+      "coral"
+    ],
+    "themes": [
+      "abstract"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 271,
+    "card_id": "2348",
+    "card_name": "Rainbow Thanks Melanie Johnsson",
+    "sends_current": 174,
+    "sends_previous": 179,
+    "occasion": "thank_you",
+    "design_style": "bold_graphic",
+    "primary_colors": [
+      "black",
+      "multicolor",
+      "pink"
+    ],
+    "themes": [
+      "abstract"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 272,
+    "card_id": "424",
+    "card_name": "Let's Party Ashley Le Quere Hat",
+    "sends_current": 173,
+    "sends_previous": 173,
+    "occasion": "birthday",
+    "design_style": "playful_cute",
+    "primary_colors": [
+      "cream",
+      "teal",
+      "pink"
+    ],
+    "themes": [
+      "abstract",
+      "confetti"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 273,
+    "card_id": "1907",
+    "card_name": "To The Best Pops on Father's Day",
+    "sends_current": 172,
+    "sends_previous": 172,
+    "occasion": "fathers_day",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "red",
+      "white",
+      "tan"
+    ],
+    "themes": [
+      "food"
+    ],
+    "typography_style": "serif"
+  },
+  {
+    "rank": 274,
+    "card_id": "1591",
+    "card_name": "Good Morning Lydia Burton",
+    "sends_current": 169,
+    "sends_previous": 166,
+    "occasion": "general",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "teal",
+      "brown",
+      "white"
+    ],
+    "themes": [
+      "food"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 275,
+    "card_id": "1958",
+    "card_name": "Happy Galentine's Day Nysha Lilly",
+    "sends_current": 169,
+    "sends_previous": 169,
+    "occasion": "valentines",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "pink",
+      "green",
+      "red"
+    ],
+    "themes": [
+      "cake",
+      "food"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 276,
+    "card_id": "1995",
+    "card_name": "Hello Baby Spaghetti & Meatballs",
+    "sends_current": 169,
+    "sends_previous": 167,
+    "occasion": "general",
+    "design_style": "minimalist",
+    "primary_colors": [
+      "white",
+      "blue",
+      "orange"
+    ],
+    "themes": [
+      "animals",
+      "abstract"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 277,
+    "card_id": "771",
+    "card_name": "Cheers To The New Year Ashley le Quere",
+    "sends_current": 169,
+    "sends_previous": 168,
+    "occasion": "new_year",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "peach",
+      "pink",
+      "green"
+    ],
+    "themes": [
+      "food"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 278,
+    "card_id": "408",
+    "card_name": "Yay all day khali amanda",
+    "sends_current": 168,
+    "sends_previous": 168,
+    "occasion": "congratulations",
+    "design_style": "watercolor",
+    "primary_colors": [
+      "light_blue",
+      "multicolor",
+      "peach"
+    ],
+    "themes": [
+      "confetti"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 279,
+    "card_id": "284",
+    "card_name": "Thank You Adelfi",
+    "sends_current": 167,
+    "sends_previous": 167,
+    "occasion": "thank_you",
+    "design_style": "minimalist",
+    "primary_colors": [
+      "cream",
+      "multicolor",
+      "rainbow"
+    ],
+    "themes": [
+      "abstract"
+    ],
+    "typography_style": "serif"
+  },
+  {
+    "rank": 280,
+    "card_id": "1411",
+    "card_name": "Happy Valentine's Day Clay Hickson",
+    "sends_current": 164,
+    "sends_previous": 164,
+    "occasion": "valentines",
+    "design_style": "retro_vintage",
+    "primary_colors": [
+      "red",
+      "orange",
+      "pink"
+    ],
+    "themes": [
+      "hearts",
+      "characters"
+    ],
+    "typography_style": "display"
+  },
+  {
+    "rank": 281,
+    "card_id": "1780",
+    "card_name": "Happy New Year AliRae Aguirre",
+    "sends_current": 164,
+    "sends_previous": 165,
+    "occasion": "new_year",
+    "design_style": "elegant",
+    "primary_colors": [
+      "navy",
+      "gold",
+      "purple"
+    ],
+    "themes": [
+      "abstract",
+      "confetti"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 282,
+    "card_id": "2248",
+    "card_name": "Merry Merry Merry Paper&Stuff",
+    "sends_current": 163,
+    "sends_previous": 163,
+    "occasion": "christmas",
+    "design_style": "geometric",
+    "primary_colors": [
+      "green",
+      "orange",
+      "cream"
+    ],
+    "themes": [
+      "patterns"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 283,
+    "card_id": "595",
+    "card_name": "hi hi hi Brook Gossen",
+    "sends_current": 163,
+    "sends_previous": 162,
+    "occasion": "general",
+    "design_style": "playful_cute",
+    "primary_colors": [
+      "cream",
+      "green",
+      "multicolor"
+    ],
+    "themes": [
+      "abstract",
+      "patterns"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 284,
+    "card_id": "739",
+    "card_name": "Candy Cane Zoe wodarz",
+    "sends_current": 163,
+    "sends_previous": 163,
+    "occasion": "christmas",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "pink",
+      "red",
+      "white"
+    ],
+    "themes": [
+      "food",
+      "patterns"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 285,
+    "card_id": "1257",
+    "card_name": "Together In Spirit Happy Thanksgiving Forage Paper Co.",
+    "sends_current": 162,
+    "sends_previous": 162,
+    "occasion": "thanksgiving",
+    "design_style": "watercolor",
+    "primary_colors": [
+      "navy",
+      "gold",
+      "pink"
+    ],
+    "themes": [
+      "food"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 286,
+    "card_id": "1909",
+    "card_name": "Let's Eat Cake Folio",
+    "sends_current": 162,
+    "sends_previous": 164,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "brown",
+      "multicolor",
+      "red"
+    ],
+    "themes": [
+      "cake",
+      "flowers"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 287,
+    "card_id": "1102",
+    "card_name": "Let's Ketchup Sending You A Squeeze! Amy Zhang Ketchup Bottle",
+    "sends_current": 160,
+    "sends_previous": 157,
+    "occasion": "general",
+    "design_style": "watercolor",
+    "primary_colors": [
+      "white",
+      "red",
+      "green"
+    ],
+    "themes": [
+      "food"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 288,
+    "card_id": "2097",
+    "card_name": "Hello Meinhass Archives",
+    "sends_current": 160,
+    "sends_previous": 160,
+    "occasion": "general",
+    "design_style": "retro_vintage",
+    "primary_colors": [
+      "blue",
+      "orange",
+      "green"
+    ],
+    "themes": [
+      "abstract",
+      "animals"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 289,
+    "card_id": "1092",
+    "card_name": "Thank You Very Much Lauren Marina",
+    "sends_current": 159,
+    "sends_previous": 156,
+    "occasion": "thank_you",
+    "design_style": "minimalist",
+    "primary_colors": [
+      "white",
+      "green",
+      "pink"
+    ],
+    "themes": [
+      "flowers",
+      "nature"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 290,
+    "card_id": "1336",
+    "card_name": "Happy Bday paper&stuff Dots",
+    "sends_current": 158,
+    "sends_previous": 153,
+    "occasion": "birthday",
+    "design_style": "bold_graphic",
+    "primary_colors": [
+      "multicolor",
+      "white",
+      "orange"
+    ],
+    "themes": [
+      "patterns"
+    ],
+    "typography_style": "display"
+  },
+  {
+    "rank": 291,
+    "card_id": "2063",
+    "card_name": "Thanks For Your hard Work Melanie Johnsson",
+    "sends_current": 158,
+    "sends_previous": 158,
+    "occasion": "thank_you",
+    "design_style": "bold_graphic",
+    "primary_colors": [
+      "black",
+      "blue",
+      "orange"
+    ],
+    "themes": [
+      "patterns"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 292,
+    "card_id": "671",
+    "card_name": "Gift Surprise olga ambrosova",
+    "sends_current": 158,
+    "sends_previous": 162,
+    "occasion": "general",
+    "design_style": "bold_graphic",
+    "primary_colors": [
+      "purple",
+      "magenta",
+      "yellow"
+    ],
+    "themes": [
+      "abstract"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 293,
+    "card_id": "1855",
+    "card_name": "Forever Together Melanie Johnsson",
+    "sends_current": 157,
+    "sends_previous": 157,
+    "occasion": "love",
+    "design_style": "playful_cute",
+    "primary_colors": [
+      "red",
+      "pink",
+      "cream"
+    ],
+    "themes": [
+      "hearts",
+      "characters"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 294,
+    "card_id": "1014",
+    "card_name": "So Lucky To Have You Amy Zhang",
+    "sends_current": 156,
+    "sends_previous": 156,
+    "occasion": "love",
+    "design_style": "watercolor",
+    "primary_colors": [
+      "white",
+      "pink",
+      "green"
+    ],
+    "themes": [
+      "hearts",
+      "patterns"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 295,
+    "card_id": "1105",
+    "card_name": "Happy Graduation Day To You Melanie Johnsson",
+    "sends_current": 155,
+    "sends_previous": 155,
+    "occasion": "congratulations",
+    "design_style": "bold_graphic",
+    "primary_colors": [
+      "orange",
+      "teal",
+      "yellow"
+    ],
+    "themes": [
+      "abstract",
+      "patterns"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 296,
+    "card_id": "1252",
+    "card_name": "Have A Cracking Day! Matt Joyce",
+    "sends_current": 155,
+    "sends_previous": 146,
+    "occasion": "birthday",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "yellow",
+      "white",
+      "brown"
+    ],
+    "themes": [
+      "food"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 297,
+    "card_id": "1625",
+    "card_name": "I Love Every Pizza You Rumble Cards x Susie Hammer",
+    "sends_current": 155,
+    "sends_previous": 154,
+    "occasion": "love",
+    "design_style": "playful_cute",
+    "primary_colors": [
+      "yellow",
+      "orange",
+      "pink"
+    ],
+    "themes": [
+      "food",
+      "hearts"
+    ],
+    "typography_style": "display"
+  },
+  {
+    "rank": 298,
+    "card_id": "1709",
+    "card_name": "It's co-coa-cold outside Amy Zhang",
+    "sends_current": 154,
+    "sends_previous": 143,
+    "occasion": "christmas",
+    "design_style": "minimalist",
+    "primary_colors": [
+      "mint",
+      "teal",
+      "brown"
+    ],
+    "themes": [
+      "food"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 299,
+    "card_id": "1749",
+    "card_name": "Graduating What Like Its Hard Brittany Paige",
+    "sends_current": 154,
+    "sends_previous": 152,
+    "occasion": "congratulations",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "white",
+      "black",
+      "red"
+    ],
+    "themes": [
+      "characters"
+    ],
+    "typography_style": "handwritten"
+  },
+  {
+    "rank": 300,
+    "card_id": "933",
+    "card_name": "Inhale Exhale PosterLad",
+    "sends_current": 154,
+    "sends_previous": 142,
+    "occasion": "general",
+    "design_style": "typography_focused",
+    "primary_colors": [
+      "white",
+      "black",
+      "multicolor"
+    ],
+    "themes": [
+      "abstract"
+    ],
+    "typography_style": "display"
+  },
+  {
+    "rank": 301,
+    "card_id": "1115",
+    "card_name": "Love You Dad paper&stuff",
+    "sends_current": 153,
+    "sends_previous": 153,
+    "occasion": "fathers_day",
+    "design_style": "typography_focused",
+    "primary_colors": [
+      "blue",
+      "yellow",
+      "orange"
+    ],
+    "themes": [
+      "abstract"
+    ],
+    "typography_style": "sans_serif"
+  },
+  {
+    "rank": 302,
+    "card_id": "1293",
+    "card_name": "The Three Wisemen Spaghetti & Meatballs",
+    "sends_current": 153,
+    "sends_previous": 153,
+    "occasion": "christmas",
+    "design_style": "illustrated",
+    "primary_colors": [
+      "mint",
+      "multicolor",
+      "brown"
+    ],
+    "themes": [
+      "characters"
+    ],
+    "typography_style": "handwritten"
+  }
+]
