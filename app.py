@@ -4557,15 +4557,16 @@ def render_category_breakdown(analysis_lookup: dict):
             st.plotly_chart(fig_bar, use_container_width=True, config={"displayModeBar": False})
 
             # ── Top Cards Visual Gallery ───────────────────────────────────
+            top_50 = cat_df.head(50)
             st.markdown(f"""
             <div class="chart-container" style="margin-top: 1.5rem;">
-                <div class="chart-title">Top {cat_name} Cards</div>
+                <div class="chart-title">Top {len(top_50)} {cat_name} Cards</div>
                 <div class="chart-subtitle">Visual gallery of the highest-performing cards</div>
             </div>
             """, unsafe_allow_html=True)
 
             gallery_cards_html = []
-            for _, grow in top_10.iterrows():
+            for _, grow in top_50.iterrows():
                 card_name = grow["Card Name"]
                 card_id = grow["Card ID"]
                 display_name = grow["Display Name"]
