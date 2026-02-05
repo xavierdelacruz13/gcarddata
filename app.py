@@ -950,6 +950,9 @@ IMAGES_DIR = BASE_DIR / "card_images"
 CSV_FILE = BASE_DIR / "Top 300 Cards - 2025.csv"
 ANALYSIS_FILE = BASE_DIR / "card_analysis.json"
 TREND_DATA_FILE = BASE_DIR / "trend_data_2026.json"
+VALENTINE_CSV = BASE_DIR / "valentine_cards.csv"
+BIRTHDAY_CSV = BASE_DIR / "birthday_cards.csv"
+THANKYOU_CSV = BASE_DIR / "thankyou_cards.csv"
 CARDS_PER_PAGE = 15
 
 # Warm color palette for charts
@@ -1043,6 +1046,27 @@ def get_default_trend_data() -> dict:
         "theme_motif_trends": [],
         "color_name_to_hex": {}
     }
+
+
+@st.cache_data(ttl=3600)
+def load_category_csv(filepath: Path) -> pd.DataFrame:
+    """Load a 3-column category CSV (Metric, Card Name, Sends) and return a clean DataFrame."""
+    if not filepath.exists():
+        return pd.DataFrame()
+
+    try:
+        df = pd.read_csv(filepath)
+        # Third column is the date-range sends column (name varies)
+        cols = df.columns.tolist()
+        df = df.rename(columns={cols[0]: "Metric", cols[1]: "Card Name", cols[2]: "Sends"})
+        df = df[df["Metric"] == "Total Events of Sent"].copy()
+        df["Sends"] = pd.to_numeric(df["Sends"], errors="coerce").fillna(0).astype(int)
+        df["Card ID"] = df["Card Name"].apply(lambda x: str(x).split("_")[0] if "_" in str(x) else "")
+        df["Display Name"] = df["Card Name"].apply(lambda x: "_".join(str(x).split("_")[1:]) if "_" in str(x) else str(x))
+        df = df.sort_values("Sends", ascending=False).reset_index(drop=True)
+        return df[["Card Name", "Card ID", "Display Name", "Sends"]]
+    except Exception:
+        return pd.DataFrame()
 
 
 def get_card_image_path(card_name: str) -> Path | None:
@@ -1809,7 +1833,7 @@ def render_artist_performance(analysis_data: list, csv_df: pd.DataFrame):
     st.markdown("""
     <div class="section-container">
         <div class="section-header">
-            <span class="section-number">04</span>
+            <span class="section-number">05</span>
             <h2 class="section-title">Artist Performance Intelligence</h2>
             <div class="section-line"></div>
         </div>
@@ -2011,7 +2035,7 @@ def render_gallery(df: pd.DataFrame, analysis_lookup: dict):
     st.markdown("""
     <div class="section-container">
         <div class="section-header">
-            <span class="section-number">05</span>
+            <span class="section-number">06</span>
             <h2 class="section-title">Card Gallery</h2>
             <div class="section-line"></div>
         </div>
@@ -2607,7 +2631,7 @@ def render_card_comparison(df: pd.DataFrame, analysis_lookup: dict):
     st.markdown("""
     <div class="section-container">
         <div class="section-header">
-            <span class="section-number">04</span>
+            <span class="section-number">05</span>
             <h2 class="section-title">Card Comparison Tool</h2>
             <div class="section-line"></div>
         </div>
@@ -2925,7 +2949,7 @@ def render_data_table(df: pd.DataFrame, analysis_lookup: dict):
     st.markdown("""
     <div class="section-container">
         <div class="section-header">
-            <span class="section-number">05</span>
+            <span class="section-number">06</span>
             <h2 class="section-title">Data Table</h2>
             <div class="section-line"></div>
         </div>
@@ -2981,7 +3005,7 @@ def render_portfolio_gap_analysis(df: pd.DataFrame, analysis_lookup: dict, analy
     st.markdown("""
     <div class="section-container">
         <div class="section-header">
-            <span class="section-number">05</span>
+            <span class="section-number">06</span>
             <h2 class="section-title">Portfolio Gap Analysis</h2>
             <div class="section-line"></div>
         </div>
@@ -3502,7 +3526,7 @@ def render_creative_brief_generator(analysis_data: list):
     st.markdown("""
     <div class="section-container">
         <div class="section-header">
-            <span class="section-number">06</span>
+            <span class="section-number">07</span>
             <h2 class="section-title">AI Creative Brief Generator</h2>
             <div class="section-line"></div>
         </div>
@@ -4035,7 +4059,7 @@ def render_trend_intelligence_hub(df: pd.DataFrame, analysis_lookup: dict, analy
     st.markdown("""
     <div class="section-container">
         <div class="section-header">
-            <span class="section-number">07</span>
+            <span class="section-number">08</span>
             <h2 class="section-title">Trend Intelligence Hub</h2>
             <div class="section-line"></div>
         </div>
@@ -4419,6 +4443,337 @@ def render_trend_intelligence_hub(df: pd.DataFrame, analysis_lookup: dict, analy
 
 
 # =============================================================================
+# CATEGORY BREAKDOWN
+# =============================================================================
+def render_category_breakdown(analysis_lookup: dict):
+    """Render the Category Breakdown section for Valentine, Birthday, and Thank You."""
+
+    st.markdown("""
+    <div class="section-container">
+        <div class="section-header">
+            <span class="section-number">04</span>
+            <h2 class="section-title">Category Breakdown</h2>
+            <div class="section-line"></div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown("""
+    <p style="font-family: 'Source Sans 3', sans-serif; font-size: 1rem; color: #5C5955;
+              line-height: 1.6; margin-bottom: 1.5rem; max-width: 700px;">
+        Deep-dive performance data for three key occasions — Valentine's Day, Birthday, and Thank You —
+        sourced from dedicated category reports.
+    </p>
+    """, unsafe_allow_html=True)
+
+    # Color hex mapping (same as executive summary)
+    color_hex = {
+        "pink": "#FFB6C1", "white": "#FFFFFF", "orange": "#FF8C42", "green": "#5C8A6E",
+        "blue": "#6B8E9B", "yellow": "#F4D03F", "red": "#C0392B", "cream": "#FDF8F3",
+        "black": "#2D2A26", "teal": "#008080", "multicolor": "linear-gradient(90deg, #FF6B6B, #4ECDC4, #45B7D1)",
+        "brown": "#8B7355", "gold": "#D4AF37", "coral": "#FF7F50", "purple": "#9B59B6",
+        "navy": "#34495E", "tan": "#D2B48C", "mint": "#98D8C8", "lavender": "#E6E6FA",
+        "peach": "#FFCBA4", "sage": "#9CAF88", "sage green": "#9CAF88"
+    }
+
+    categories = [
+        ("Valentine's Day", VALENTINE_CSV, "#C65D3B"),
+        ("Birthday", BIRTHDAY_CSV, "#5C8A6E"),
+        ("Thank You", THANKYOU_CSV, "#6B8E9B"),
+    ]
+
+    sub_tabs = st.tabs([cat[0] for cat in categories])
+
+    for tab, (cat_name, csv_path, accent_color) in zip(sub_tabs, categories):
+        with tab:
+            cat_df = load_category_csv(csv_path)
+
+            if cat_df.empty:
+                st.info(f"No data available for {cat_name}. Ensure {csv_path.name} exists.")
+                continue
+
+            # ── Hero stat row ──────────────────────────────────────────────
+            total_sends = int(cat_df["Sends"].sum())
+            num_cards = len(cat_df)
+            top_card = cat_df.iloc[0]["Display Name"] if not cat_df.empty else "N/A"
+            avg_sends = int(total_sends / num_cards) if num_cards > 0 else 0
+
+            hero_stats = [
+                (f"{total_sends:,}", "Total Sends", accent_color),
+                (f"{num_cards}", "Cards", "#8B7355"),
+                (top_card[:30] + ("..." if len(str(top_card)) > 30 else ""), "Top Card", "#D4AF37"),
+                (f"{avg_sends:,}", "Avg Sends/Card", "#A0522D"),
+            ]
+
+            cols = st.columns(4)
+            for col, (value, label, border_color) in zip(cols, hero_stats):
+                with col:
+                    st.markdown(f"""
+                    <div style="background: white; padding: 1rem; border-radius: 8px; border-left: 3px solid {border_color};">
+                        <div style="font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #2D2A26; font-weight: 600;">
+                            {value}
+                        </div>
+                        <div style="font-size: 0.75rem; color: #8B8680; text-transform: uppercase; letter-spacing: 0.5px;">
+                            {label}
+                        </div>
+                    </div>
+                    """, unsafe_allow_html=True)
+
+            # ── Top 10 horizontal bar chart ────────────────────────────────
+            top_10 = cat_df.head(10).copy()
+            top_10["Short Name"] = top_10["Display Name"].apply(
+                lambda x: str(x)[:35] + "..." if len(str(x)) > 35 else str(x)
+            )
+
+            st.markdown(f"""
+            <div class="chart-container" style="margin-top: 1.5rem;">
+                <div class="chart-title">Top 10 {cat_name} Cards</div>
+                <div class="chart-subtitle">Highest-performing cards by total sends</div>
+            </div>
+            """, unsafe_allow_html=True)
+
+            fig_bar = go.Figure()
+            fig_bar.add_trace(go.Bar(
+                x=top_10["Sends"].values[::-1],
+                y=top_10["Short Name"].values[::-1],
+                orientation='h',
+                marker=dict(
+                    color=CHART_COLORS[:10][::-1],
+                    line=dict(width=0)
+                ),
+                hovertemplate="<b>%{y}</b><br>Sends: %{x:,.0f}<extra></extra>"
+            ))
+
+            fig_bar.update_layout(
+                height=400,
+                margin=dict(l=0, r=20, t=10, b=10),
+                paper_bgcolor="rgba(0,0,0,0)",
+                plot_bgcolor="rgba(0,0,0,0)",
+                font=dict(family="Source Sans 3, sans-serif", color="#2D2A26"),
+                xaxis=dict(showgrid=True, gridcolor="rgba(45, 42, 38, 0.06)", zeroline=False),
+                yaxis=dict(showgrid=False, zeroline=False),
+                showlegend=False,
+            )
+            st.plotly_chart(fig_bar, use_container_width=True, config={"displayModeBar": False})
+
+            # ── Top Cards Visual Gallery ───────────────────────────────────
+            st.markdown(f"""
+            <div class="chart-container" style="margin-top: 1.5rem;">
+                <div class="chart-title">Top {cat_name} Cards</div>
+                <div class="chart-subtitle">Visual gallery of the highest-performing cards</div>
+            </div>
+            """, unsafe_allow_html=True)
+
+            gallery_cards_html = []
+            for _, grow in top_10.iterrows():
+                card_name = grow["Card Name"]
+                card_id = grow["Card ID"]
+                display_name = grow["Display Name"]
+                sends = int(grow["Sends"])
+
+                image_path = get_card_image_path(card_name)
+                if image_path:
+                    img_b64 = get_image_base64(image_path)
+                    if img_b64:
+                        img_html = f'<img src="data:image/jpeg;base64,{img_b64}" alt="{display_name}">'
+                    else:
+                        img_html = '<div class="no-image-placeholder">No Preview</div>'
+                else:
+                    img_html = '<div class="no-image-placeholder">No Preview</div>'
+
+                title_display = str(display_name)[:45] + ("..." if len(str(display_name)) > 45 else "")
+                title_display = title_display.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
+
+                gallery_cards_html.append(
+                    f'<div class="card-item">'
+                    f'<div class="card-image-container">{img_html}'
+                    f'<div class="card-occasion-tag">{cat_name}</div>'
+                    f'</div>'
+                    f'<div class="card-info">'
+                    f'<div class="card-title">{title_display}</div>'
+                    f'<div class="card-sends"><span class="card-sends-value">{sends:,}</span>'
+                    f'<span class="card-sends-label">sends</span></div>'
+                    f'</div></div>'
+                )
+
+            st.markdown(f'<div class="gallery-grid">{"".join(gallery_cards_html)}</div>', unsafe_allow_html=True)
+
+            # ── Gather analysis metadata for this category ─────────────────
+            cat_design_styles = {}
+            cat_colors = {}
+            cat_themes = {}
+            cat_artists = {}
+
+            for _, row in cat_df.iterrows():
+                card_id = row["Card ID"]
+                sends = row["Sends"]
+                analysis = analysis_lookup.get(card_id, {})
+
+                style = analysis.get("design_style")
+                if style:
+                    cat_design_styles[style] = cat_design_styles.get(style, 0) + 1
+
+                card_colors = analysis.get("primary_colors")
+                if card_colors and isinstance(card_colors, list):
+                    for c in card_colors:
+                        cat_colors[c] = cat_colors.get(c, 0) + 1
+
+                card_themes = analysis.get("themes")
+                if card_themes and isinstance(card_themes, list):
+                    for t in card_themes:
+                        cat_themes[t] = cat_themes.get(t, 0) + 1
+
+                # Extract artist from display name
+                display_name = row["Display Name"]
+                artist = extract_artist_from_card_name(str(display_name))
+                if artist != "Unknown Artist":
+                    cat_artists[artist] = cat_artists.get(artist, 0) + sends
+
+            # ── Design Style donut + Color swatches (side by side) ─────────
+            col1, col2 = st.columns(2, gap="large")
+
+            with col1:
+                st.markdown(f"""
+                <div class="chart-container" style="margin-top: 1.5rem;">
+                    <div class="chart-title">Design Styles</div>
+                    <div class="chart-subtitle">Visual approach distribution for {cat_name} cards</div>
+                </div>
+                """, unsafe_allow_html=True)
+
+                if cat_design_styles:
+                    style_df = pd.DataFrame([
+                        {"Style": k.replace("_", " ").title(), "Count": v}
+                        for k, v in sorted(cat_design_styles.items(), key=lambda x: -x[1])[:8]
+                    ])
+
+                    fig_donut = go.Figure(data=[go.Pie(
+                        labels=style_df["Style"],
+                        values=style_df["Count"],
+                        hole=0.4,
+                        marker=dict(
+                            colors=['#C65D3B', '#5C8A6E', '#6B8E9B', '#8B7355', '#A69076',
+                                    '#D4846A', '#7BA393', '#98BBB0'][:len(style_df)],
+                            line=dict(color='#FDFBF7', width=2)
+                        ),
+                        textposition='outside',
+                        textinfo='label+percent',
+                        textfont=dict(size=10),
+                        hovertemplate="<b>%{label}</b><br>Cards: %{value}<br>Share: %{percent}<extra></extra>"
+                    )])
+
+                    fig_donut.update_layout(
+                        height=350,
+                        margin=dict(l=20, r=20, t=20, b=20),
+                        paper_bgcolor="rgba(0,0,0,0)",
+                        font=dict(family="Source Sans 3, sans-serif", color="#2D2A26"),
+                        showlegend=False,
+                    )
+                    st.plotly_chart(fig_donut, use_container_width=True, config={"displayModeBar": False})
+                else:
+                    st.caption("No design style data available.")
+
+            with col2:
+                st.markdown(f"""
+                <div class="chart-container" style="margin-top: 1.5rem;">
+                    <div class="chart-title">Color Palette</div>
+                    <div class="chart-subtitle">Top colors used in {cat_name} cards</div>
+                </div>
+                """, unsafe_allow_html=True)
+
+                top_cat_colors = sorted(cat_colors.items(), key=lambda x: -x[1])[:8]
+                if top_cat_colors:
+                    swatch_cols = st.columns(4)
+                    for idx, (color_name, count) in enumerate(top_cat_colors):
+                        hex_val = color_hex.get(color_name.lower(), "#CCC")
+                        is_gradient = "gradient" in hex_val
+                        bg_style = f"background: {hex_val};" if is_gradient else f"background-color: {hex_val};"
+                        border_style = "border: 1px solid #DDD;" if color_name.lower() in ["white", "cream"] else ""
+
+                        with swatch_cols[idx % 4]:
+                            st.markdown(f'''<div style="text-align: center; padding: 0.5rem;">
+<div style="width: 50px; height: 50px; border-radius: 50%; {bg_style} {border_style} margin: 0 auto; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></div>
+<div style="font-size: 0.8rem; color: #2D2A26; margin-top: 0.5rem; font-weight: 500;">{color_name.title()}</div>
+<div style="font-size: 0.7rem; color: #8B8680;">{count} cards</div>
+</div>''', unsafe_allow_html=True)
+                else:
+                    st.caption("No color data available.")
+
+            # ── Top Themes bar chart ───────────────────────────────────────
+            st.markdown(f"""
+            <div class="chart-container" style="margin-top: 1.5rem;">
+                <div class="chart-title">Top Themes</div>
+                <div class="chart-subtitle">Most common visual themes in {cat_name} cards</div>
+            </div>
+            """, unsafe_allow_html=True)
+
+            if cat_themes:
+                theme_df = pd.DataFrame([
+                    {"Theme": k.title(), "Count": v}
+                    for k, v in sorted(cat_themes.items(), key=lambda x: -x[1])[:12]
+                ])
+
+                fig_theme = go.Figure()
+                fig_theme.add_trace(go.Bar(
+                    x=theme_df["Theme"],
+                    y=theme_df["Count"],
+                    marker=dict(color=accent_color, line=dict(width=0)),
+                    text=theme_df["Count"],
+                    textposition='outside',
+                    hovertemplate="<b>%{x}</b><br>Appears in %{y} cards<extra></extra>"
+                ))
+
+                fig_theme.update_layout(
+                    height=300,
+                    margin=dict(l=0, r=0, t=10, b=60),
+                    paper_bgcolor="rgba(0,0,0,0)",
+                    plot_bgcolor="rgba(0,0,0,0)",
+                    font=dict(family="Source Sans 3, sans-serif", color="#2D2A26"),
+                    xaxis=dict(showgrid=False, zeroline=False, tickangle=-45),
+                    yaxis=dict(showgrid=True, gridcolor="rgba(45,42,38,0.06)", zeroline=False),
+                    showlegend=False,
+                )
+                st.plotly_chart(fig_theme, use_container_width=True, config={"displayModeBar": False})
+            else:
+                st.caption("No theme data available.")
+
+            # ── Top Artists leaderboard ────────────────────────────────────
+            st.markdown(f"""
+            <div class="chart-container" style="margin-top: 1.5rem;">
+                <div class="chart-title">Top Artists</div>
+                <div class="chart-subtitle">Leading contributors to {cat_name} by total sends</div>
+            </div>
+            """, unsafe_allow_html=True)
+
+            if cat_artists:
+                top_artist_list = sorted(cat_artists.items(), key=lambda x: -x[1])[:10]
+
+                table_rows = ""
+                for rank, (artist, sends) in enumerate(top_artist_list, 1):
+                    rank_style = f"color: {accent_color}; font-weight: 700;" if rank <= 3 else "color: #8B8680;"
+                    table_rows += f"""
+                    <tr style="border-bottom: 1px solid rgba(45, 42, 38, 0.06);">
+                        <td style="padding: 0.6rem 0.75rem; font-family: 'Playfair Display', serif; {rank_style} font-size: 0.9rem;">{rank}</td>
+                        <td style="padding: 0.6rem 0.75rem; font-family: 'Source Sans 3', sans-serif; color: #2D2A26; font-weight: 500;">{artist}</td>
+                        <td style="padding: 0.6rem 0.75rem; font-family: 'Playfair Display', serif; color: #2D2A26; font-weight: 600; text-align: right;">{sends:,}</td>
+                    </tr>"""
+
+                st.markdown(f"""
+                <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden;">
+                    <thead>
+                        <tr style="background: #FDF8F3; border-bottom: 2px solid {accent_color};">
+                            <th style="padding: 0.75rem; text-align: left; font-family: 'Source Sans 3', sans-serif; font-size: 0.75rem; color: #8B8680; text-transform: uppercase; letter-spacing: 0.5px; width: 50px;">Rank</th>
+                            <th style="padding: 0.75rem; text-align: left; font-family: 'Source Sans 3', sans-serif; font-size: 0.75rem; color: #8B8680; text-transform: uppercase; letter-spacing: 0.5px;">Artist</th>
+                            <th style="padding: 0.75rem; text-align: right; font-family: 'Source Sans 3', sans-serif; font-size: 0.75rem; color: #8B8680; text-transform: uppercase; letter-spacing: 0.5px;">Total Sends</th>
+                        </tr>
+                    </thead>
+                    <tbody>{table_rows}</tbody>
+                </table>
+                """, unsafe_allow_html=True)
+            else:
+                st.caption("No artist data available.")
+
+
+# =============================================================================
 # MAIN APPLICATION
 # =============================================================================
 def main():
@@ -4451,10 +4806,11 @@ def main():
     # Render artist performance intelligence
     render_artist_performance(analysis_data, df)
 
-    # Tabs for Gallery, Data Table, Card Comparison, Portfolio Gap Analysis, Creative Briefs, and Trend Intelligence
-    tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
+    # Tabs for Gallery, Data Table, Card Comparison, Portfolio Gap Analysis, Creative Briefs, Trend Intelligence, and Category Breakdown
+    tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs([
         "Gallery", "Data Table", "Card Comparison",
-        "Portfolio Gap Analysis", "Creative Briefs", "Trend Intelligence"
+        "Portfolio Gap Analysis", "Creative Briefs", "Trend Intelligence",
+        "Category Breakdown"
     ])
 
     with tab1:
@@ -4474,6 +4830,9 @@ def main():
 
     with tab6:
         render_trend_intelligence_hub(filtered_df, analysis_lookup, analysis_data)
+
+    with tab7:
+        render_category_breakdown(analysis_lookup)
 
 
 if __name__ == "__main__":
